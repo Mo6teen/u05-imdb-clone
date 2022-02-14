@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\MoviesController;
-use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +20,3 @@ Route::get('/', function () {
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
 
-Route::get('/accounts', [AccountController::class, 'allAccounts']);
