@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
+Route::get('/movie/{title}', [MoviesController::class, 'showMovie']);
 
 Route::get('/accounts', [AccountController::class, 'allAccounts']);

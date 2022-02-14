@@ -7,15 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
-    @foreach($movies as $movie) 
-    <div>
-        {{ $movie->title }}
-        {{ $movie->description }}
-        {{ $movie->genre }}
-        {{ $movie->actors }}
-    </div>
-    @endforeach
 
+    <section>
+        @foreach($movies as $movie) 
+            <div>
+                {{ $movie->title }}
+                {{ $movie->description }}
+                {{ $movie->genre }}
+                {{ $movie->actors }}
+            </div>
+        @endforeach
+    </section>
 </body>
 </html>
