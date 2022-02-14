@@ -1,3 +1,5 @@
+@extends('dashboard')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +18,7 @@
         {{ $movie->actors }}
     </div>
     @endforeach
-
+    
+    @endsection
 </body>
 </html>
