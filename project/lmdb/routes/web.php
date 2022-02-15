@@ -15,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
+Route::get('/', [MoviesController::class, 'introMovies']);
+
+// Route::get('/navbar', function () {
+//     return view('homepage');
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

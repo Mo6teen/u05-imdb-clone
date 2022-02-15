@@ -8,8 +8,18 @@ use Illuminate\Http\Request;
 class MoviesController extends Controller
 {
     //CRUD
-    public function allMovies() {
+
+    //Gett all movies to show in /movies
+    public function allMovies()
+    {
         $movies = Movies::get();
-        return view('movies', ['movies'=>$movies]);
+        return view('movies', ['movies' => $movies]);
+    }
+
+    //Gett all movies to show in homepage.
+    public function introMovies()
+    {
+        $movies = Movies::get();
+        return view('homepage', ['movies' => $movies]);
     }
 }
