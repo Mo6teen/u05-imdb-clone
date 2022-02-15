@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\MoviesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
