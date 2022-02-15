@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
-Route::get('/', [MoviesController::class, 'introMovies']);
+Route::get('/', [MoviesController::class, 'index']);
 
 Auth::routes();
 
@@ -33,3 +33,17 @@ Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name(
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('test', function () {
+    return view('test');
+});
