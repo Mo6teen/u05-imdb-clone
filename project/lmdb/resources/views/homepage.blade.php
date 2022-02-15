@@ -38,6 +38,7 @@
           <li><a href="#" class="nav-link">Browse Categorys</a></li>
           <li><a href="#" class="nav-link">Top Rated</a></li>
           <li><a href="#" class="nav-link">Coming Soon</a></li>
+          <li><a href="/login" class="nav-link">Signin/Register</a></li>
         </div>
       </div>
     </div>
@@ -61,7 +62,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
 
