@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\MoviesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,6 @@ Route::get('/', function () {
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
 Route::get('/', [MoviesController::class, 'introMovies']);
-
-// Route::get('/navbar', function () {
-//     return view('homepage');
-// });
 
 Auth::routes();
 
