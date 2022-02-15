@@ -7,8 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/887db6a8cd.js" crossorigin="anonymous" d></script>
-  <script src="{{ url('js/script.js') }}" defer></script>
+
+  <!-- <script src="https://kit.fontawesome.com/887db6a8cd.js" crossorigin="anonymous"></script> -->
+
+  <link rel="stylesheet" type="text/css" href="{{ url('css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url('css/owl.theme.default.min.css') }}">
+
   <title>Homepage</title>
 </head>
 
@@ -47,17 +51,20 @@
     <section class="py-5">
       <div class="container">
         <div class="row">
-          @foreach ($Movies as $movie)
-          <div class="col-5">
-            <div class="card">
-              <img src="{{asset('images/LoTR 1.jpg')}}" alt="Random images" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">{{ $movie -> title }}</h5>
-                <!-- <p class="card-text">{{ $movie -> description }}</p> -->
+          <h2>Top Movies</h2>
+          <div class="owl-carousel movies owl-theme">
+            @foreach ($Movies as $movie)
+            <div class="item">
+              <div class="card">
+                <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $movie -> title }}</h5>
+                  <p class="card-text">{{ $movie -> description }}</p>
+                </div>
               </div>
             </div>
+            @endforeach
           </div>
-          @endforeach
         </div>
       </div>
     </section>
@@ -77,7 +84,32 @@
 
   </footer>
 
+  <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+    $('.movies').owlCarousel({
+      loop: false,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 3,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: false
+        },
+        1000: {
+          items: 5,
+          nav: true,
+          loop: false
+        }
+      }
+    })
+  </script>
 </body>
 
 </html>
