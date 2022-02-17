@@ -12,36 +12,37 @@
 </head>
 
 <body>
-  <nav>
-    <div class="navbar">
-      <div class="wrapper nav-container">
-        <input class="checkbox" type="checkbox" name="" id="" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <div class="name-logo">
-          <h1>LMDB</h1>
-        </div>
-        <div class="logo">
-          <img src="{{ asset('images/LMDB_Logo.png') }}" alt="LMDB Logo" id="logo" />
-        </div>
-        <div class="menu-items">
-          <div class="search-box-desktop">
-            <input class="search-txt" type="text" placeholder=" Search!">
-            <img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="wrapper nav-container">
+          <input class="checkbox" type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
           </div>
-          <li><a href="#" class="nav-link">News</a></li>
-          <li><a href="#" class="nav-link">Browse Categorys</a></li>
-          <li><a href="#" class="nav-link">Top Rated</a></li>
-          <li><a href="#" class="nav-link">Coming Soon</a></li>
-          <li><a href="/login" class="nav-link">Signin/Register</a></li>
+          <div class="name-logo">
+            <h1>LMDB</h1>
+          </div>
+          <div class="logo">
+            <img src="{{ asset('images/LMDB_Logo.png') }}" alt="LMDB Logo" id="logo" />
+          </div>
+          <div class="menu-items">
+            <div class="search-box-desktop">
+              <input class="search-txt" type="text" placeholder=" Search!">
+              <img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+            </div>
+            <li><a href="#" class="nav-link">News</a></li>
+            <li><a href="#" class="nav-link">Browse Categorys</a></li>
+            <li><a href="#" class="nav-link">Top Rated</a></li>
+            <li><a href="#" class="nav-link">Coming Soon</a></li>
+            <li><a href="/login" class="nav-link">Signin/Register</a></li>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-
+    </nav>
+  </header>
   <main>
 
     <section class="intro py-5">
@@ -121,8 +122,6 @@
 
   </main>
 
-
-
   <footer class="footer">
     <figure>
       <a href="#"><img src="{{ asset('images/facebook.png') }}" alt="facebook logo"></a>
@@ -136,7 +135,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

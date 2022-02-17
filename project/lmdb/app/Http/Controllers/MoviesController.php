@@ -28,4 +28,11 @@ class MoviesController extends Controller
         $Movies = Movies::orderby('id', 'ASC')->take(3)->get();
         return view('homepage', compact('Movies'));
     }
+
+    //Gett all movies to show in genrepage.
+    public function genreMovies()
+    {
+        $movies = Movies::get();
+        return view('genre', ['movies' => $movies]);
+    }
 }

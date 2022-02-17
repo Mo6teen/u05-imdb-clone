@@ -35,15 +35,9 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 
-
-
-
-
-
-
-
-
-
-Route::get('test', function () {
-    return view('test');
+//  Genrepage routes
+Route::get('genre',  function () {
+    return view('genre');
 });
+
+Route::get('genre', [MoviesController::class, 'genreMovies']);
