@@ -20,7 +20,7 @@
 
         <!--Image section-->
         <section>
-            <img src="" alt="">
+            <img src="{{asset('resources/img/'.$movie->image)}}" alt="Image">
             <div>
                 <button>+ Watchlist</button>
             </div>
