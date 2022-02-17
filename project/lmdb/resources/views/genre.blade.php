@@ -1,3 +1,5 @@
+@include('header')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,35 +12,50 @@
 
 
   <script src="{{ url('js/script.js') }}" defer></script>
-  <title>Lobster Movie Database</title>
+  <title>Genre</title>
 </head>
 
 <body>
-
-@include('header')
-
   <main>
+
     <section>
-      <h1>Top moves</h1>
+      <h1>Genres</h1>              
     </section>
 
-    <section class="container">
-      <div class="row">
-        <div class="col-4">
-          @foreach ($movies as $movie)
-          <img src="{{ asset('images/LoTR 1.jpg') }}" alt="..." class="card-img-top">
+    <section>
+      <a href=""><h3>Drama</h3></a>
+    </section>
+    <section>
+
+    @foreach ($movies as $movie)
+<!--           <img src="{{ asset('images/LoTR 1.jpg') }}" alt="..." class="card-img-top"> -->
           <div class="card-body">
             <h5 class="card-title">Lord of the rings</h5>
             <p class="card-text">This movies is awsome!</p>
           </div>
           @endforeach
-        </div>
-      </div>
-    </section>
-  </main>
 
-  @include('footer')
-  
+    </section>
+
+    <section>
+      <a href=""><h3>Comedy</h3></a>
+    </section>
+
+    <section>
+      <a href=""><h3>Horror</h3></a>
+    </section>
+
+    <section>
+      <a href=""><h3>Fantasy</h3></a>
+    </section>
+
+    <section>
+      <a href=""><h2>Modern</h2></a>
+    </section>
+    
+  </main>
 </body>
 
 </html>
+
+@include('footer')
