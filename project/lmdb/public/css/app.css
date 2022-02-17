@@ -4,15 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: "Poppins", sans-serif;
 }
 
 /*************** Navbar styling ***************/
 
-.container {
+.wrapper {
     max-width: 1050px;
     width: 90%;
     margin: auto;
@@ -132,7 +129,6 @@ body {
 .navbar .menu-items {
     padding-top: 120px;
     background-color: rgba(254, 186, 107, 1);
-    /* box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.9); */
     height: 100vh;
     width: 100%;
     transform: translate(-150%);
@@ -142,7 +138,7 @@ body {
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
     text-align: center;
-    z-index: 1;
+    z-index: 3;
 }
 
 .navbar .menu-items li {
@@ -188,9 +184,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     margin-top: 10px;
-    bottom: 0;
+    /* bottom: 0; */
     width: 100%;
     height: 150px;
 }
@@ -205,3 +201,27 @@ body {
 /*************** footer styling ends ***************/
 
 /* Slider test */
+
+.card > img {
+    height: 150px;
+    width: 150px;
+}
+
+#btn {
+    background-color: #feba6b;
+    border-color: #feba6b;
+    color: #000;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* @media screen and (min-width: 1280) {
+    .menu-items {
+        margin-left: -300px;
+    }
+} */

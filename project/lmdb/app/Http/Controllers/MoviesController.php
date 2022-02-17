@@ -17,10 +17,16 @@ class MoviesController extends Controller
     }
 
     //Gett all movies to show in homepage.
-    public function introMovies()
+    // public function introMovies()
+    // {
+    //     $movies = Movies::get();
+    //     return view('homepage', ['movies' => $movies]);
+    // }
+
+    public function index()
     {
-        $movies = Movies::get();
-        return view('homepage', ['movies' => $movies]);
+        $Movies = Movies::orderby('id', 'ASC')->take(3)->get();
+        return view('homepage', compact('Movies'));
     }
 
     //Gett all movies to show in genrepage.

@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
-Route::get('/', [MoviesController::class, 'introMovies']);
+Route::get('/', [MoviesController::class, 'index']);
 
 Auth::routes();
 
@@ -35,8 +35,8 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 
-/* Genrepage routes */
-Route::get('genre',  function() {
+//  Genrepage routes
+Route::get('genre',  function () {
     return view('genre');
 });
 
