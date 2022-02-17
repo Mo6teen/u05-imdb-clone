@@ -33,3 +33,11 @@ Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name(
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+
+
+/* Genrepage routes */
+Route::get('genre',  function() {
+    return view('genre');
+});
+
+Route::get('genre', [MoviesController::class, 'genreMovies']);

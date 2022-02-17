@@ -22,4 +22,11 @@ class MoviesController extends Controller
         $movies = Movies::get();
         return view('homepage', ['movies' => $movies]);
     }
+
+    //Gett all movies to show in genrepage.
+    public function genreMovies()
+    {
+        $movies = Movies::get();
+        return view('genre', ['movies' => $movies]);
+    }
 }
