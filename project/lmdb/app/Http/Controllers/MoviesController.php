@@ -15,10 +15,9 @@ class MoviesController extends Controller
 
     public function showMovie($title) {
         if (Movies::where('title', $title)->exists()) {
-            /* return view('movie')->with('title', $title); */
             $movie = Movies::where('title', $title)->first();
 
             return view('movie', ['movie' => $movie]);
-        }
+        } 
     }
 }
