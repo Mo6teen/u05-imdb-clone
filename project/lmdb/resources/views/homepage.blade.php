@@ -31,7 +31,7 @@
           <div class="menu-items">
             <div class="search-box-desktop">
               <input class="search-txt" type="text" placeholder=" Search!">
-              <img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+              <a href="#"><img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box"></a>
             </div>
             <li><a href="#" class="nav-link">News</a></li>
             <li><a href="#" class="nav-link">Browse Categorys</a></li>
