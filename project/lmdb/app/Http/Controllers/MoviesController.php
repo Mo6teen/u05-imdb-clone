@@ -25,7 +25,7 @@ class MoviesController extends Controller
 
     public function index()
     {
-        $Movies = Movies::orderby('id', 'ASC')->take(8)->get();
+        $Movies = Movies::orderby('id', 'ASC')->take(3)->get();
         return view('homepage', compact('Movies'));
     }
 }

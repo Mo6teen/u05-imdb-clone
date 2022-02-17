@@ -5,55 +5,170 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Document</title>
+
+  <!-- <script src="https://kit.fontawesome.com/887db6a8cd.js" crossorigin="anonymous"></script> -->
+
+  <link rel="stylesheet" type="text/css" href="{{ url('css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url('css/owl.theme.default.min.css') }}">
+
+  <title>Homepage</title>
 </head>
 
 <body>
-
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{ asset('images/LoTR 1.jpg') }}" class="d-block w-100" alt="..." width="150px" height="200px">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+  <nav>
+    <div class="navbar">
+      <div class="wrapper nav-container">
+        <input class="checkbox" type="checkbox" name="" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{{ asset('images/LoTR 1.jpg') }}" class="d-block w-100" alt="..." class="img-thumbnail">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+        <div class="name-logo">
+          <h1>LMDB</h1>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{{ asset('images/LoTR 1.jpg') }}" class="d-block w-100" alt="..." class="img-thumbnail">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+        <div class="logo">
+          <img src="{{ asset('images/LMDB_Logo.png') }}" alt="LMDB Logo" id="logo" />
+        </div>
+        <div class="menu-items">
+          <div class="search-box-desktop">
+            <input class="search-txt" type="text" placeholder=" Search!">
+            <img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+          </div>
+          <li><a href="#" class="nav-link">News</a></li>
+          <li><a href="#" class="nav-link">Browse Categorys</a></li>
+          <li><a href="#" class="nav-link">Top Rated</a></li>
+          <li><a href="#" class="nav-link">Coming Soon</a></li>
+          <li><a href="/login" class="nav-link">Signin/Register</a></li>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  </nav>
+
+  <main>
+
+    <!-- Brows all categorys -->
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <h2>Brows all categorys</h2>
+          <div class="col-4">
+            Comedy
+          </div>
+          <div class="col-4">
+            Action
+          </div>
+          <div class="col-4">
+            Thriller
+          </div>
+          <div class="col-4">
+            Drama
+          </div>
+          <div class="col-4">
+            Fantasy
+          </div>
+          <div class="col-4">
+            Romance
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Top Rated movies -->
+
+    <section class="py-5" id="Tmovies-rated">
+      <div class="container">
+        <div class="row">
+          <h2>Top Movies</h2>
+          <div class="owl-carousel movies owl-theme">
+            @foreach ($Movies as $movie)
+            <div class="item">
+              <div class="card">
+                <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $movie -> title }}</h5>
+                  <p class="card-text">{{ $movie -> description }}</p>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming soon section -->
+
+    <section class="py-5 wrapper">
+      <div class="container">
+        <div class="row">
+          <h2>Coming Soon</h2>
+          <div class="owl-carousel movies owl-theme">
+            @foreach ($Movies as $movie)
+            <div class="item">
+              <div class="card">
+                <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $movie -> title }}</h5>
+                  <p class="card-text">{{ $movie -> description }}</p>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
 
 
+  <footer class="footer">
+    <figure>
+      <a href="#"><img src="{{ asset('images/facebook.png') }}" alt="facebook logo"></a>
+      <a href="#"><img src="{{ asset('images/instagram.png') }}" alt="instagram logo"></a>
+      <a href="#"><img src="{{ asset('images/youtube.png') }}" alt="youtube logo"></a>
+      <a href="#"><img src="{{ asset('images/twitter.png') }}" alt="twitter logo"></a>
+    </figure>
 
+    <p><span>&copy;</span> by The Hounting Lobsters</p>
+
+  </footer>
+
+  <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+    $('.movies').owlCarousel({
+      loop: false,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 3,
+          dots: false,
+          nav: false
+        },
+        600: {
+          items: 3,
+          dots: false,
+          nav: false
+        },
+        1000: {
+          items: 5,
+          dots: false,
+          nav: false,
+          loop: false
+        }
+      }
+    })
+  </script>
 </body>
 
 </html>

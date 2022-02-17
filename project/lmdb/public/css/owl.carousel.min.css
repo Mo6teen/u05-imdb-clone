@@ -111,10 +111,10 @@
     animation-fill-mode: both;
 }
 .owl-carousel .owl-animated-in {
-    z-index: 0;
+    z-index: -0;
 }
 .owl-carousel .owl-animated-out {
-    z-index: 1;
+    z-index: -1;
 }
 .owl-carousel .fadeOut {
     animation-name: fadeOut;
@@ -156,7 +156,7 @@
     margin-top: -40px;
     background: url(owl.video.play.png) no-repeat;
     cursor: pointer;
-    z-index: 1;
+    z-index: -1;
     -webkit-backface-visibility: hidden;
     transition: transform 0.1s ease;
 }
@@ -178,7 +178,7 @@
 }
 .owl-carousel .owl-video-frame {
     position: relative;
-    z-index: 1;
+    z-index: -1;
     height: 100%;
     width: 100%;
 }
