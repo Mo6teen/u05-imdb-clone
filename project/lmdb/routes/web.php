@@ -21,11 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/movies', [MoviesController::class, 'allMovies']);
-<<<<<<< HEAD
 Route::get('/movie/{title}', [MoviesController::class, 'showMovie']);
-=======
-Route::get('/', [MoviesController::class, 'index']);
->>>>>>> origin/main
 
 Auth::routes();
 
@@ -45,3 +41,7 @@ Route::get('genre',  function () {
 });
 
 Route::get('genre', [MoviesController::class, 'genreMovies']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

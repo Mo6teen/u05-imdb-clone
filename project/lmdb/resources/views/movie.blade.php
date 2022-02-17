@@ -4,51 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>LMDB - {{ $movie->title }}</title>
 </head>
-<body>
-    <header>
 
-    </header>
+<body>
+    @include('header')
 
     <main>
         <div>
-            <h1>{{ $movie->title }}</h1>
-            <p>{{ $movie->genre }}</p>
+            <h1 class="display-3">{{ $movie->title }}</h1>
+            <p class="btn btn-primary " id="btn">{{ $movie->genre }}</p>
             <p><!--Add rating--></p>
         </div>
 
-        <!--Image section-->
+        <!--Image and description section-->
         <section>
-            <img src="{{asset('resources/img/'.$movie->image)}}" alt="Image">
+            <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid w-25 p-3" alt="Image">
             <div>
-                <button>+ Watchlist</button>
+                <button type="button" class="btn btn-dark">+ Watchlist</button>
             </div>
-        </section>
-
-        <!--Description of item-->
-        <section>
-            <div>
-                <h2>Description</h2>
-                <p>{{ $movie->description }}</p>
+            <div class="card">
+                <h2 class="card-title display-6">Description</h2>
+                <p class="card-text fs-6">{{ $movie->description }}</p>
             </div>
         </section>
 
         <!--Section for cast list-->
         <section>
-            <div>
-                <h2>Cast</h2>
-                <p>{{ $movie->actors }}</p>
+            <div class="card">
+                <h2 class="card-title display-6">Cast</h2>
+                <p class="card-text fs-6">{{ $movie->actors }}</p>
             </div>
         </section>
 
         <!-- Section to write and read reviews -->
         <section>
-            <h2>Reviews</h2>
-            <!-- Add reviews form -->
+            <div class="card">
+                <h2 class="card-title display-6">Reviews</h2>
+                <!-- Add reviews form -->
+            </div>    
         </section>
     </main>
 
-    <footer></footer>
+    @include('footer')
 </body>
 </html>
