@@ -1,3 +1,5 @@
+@extends('dashboard')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
 
     <section>
         @foreach($movies as $movie) 
@@ -18,5 +21,18 @@
             </div>
         @endforeach
     </section>
+=======
+    
+    @foreach($movies as $movie) 
+    <div>
+        {{ $movie->title }}
+        {{ $movie->description }}
+        {{ $movie->genre }}
+        {{ $movie->actors }}
+    </div>
+    @endforeach
+    
+    @endsection
+>>>>>>> origin/main
 </body>
 </html>
