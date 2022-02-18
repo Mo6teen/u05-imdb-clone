@@ -6,6 +6,6 @@
         <a href="#"><img src="{{ asset('images/twitter.png') }}" alt="twitter logo"></a>
     </figure>
 
-    <p><span>&copy;</span> by The Hounting Lobsters</p>
+    <p><span>&copy;</span> by The Haunting Lobsters</p>
 
 </footer>
