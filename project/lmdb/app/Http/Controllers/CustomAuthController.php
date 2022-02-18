@@ -8,6 +8,8 @@ use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+
+
 class CustomAuthController extends Controller
 {
     public function index()
@@ -17,6 +19,7 @@ class CustomAuthController extends Controller
 
     public function customLogin(Request $request)
     {
+        //if (Auth::user()->role == 0) {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -24,9 +27,23 @@ class CustomAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('admindashboard')
                 ->withSuccess('Signed in');
         }
+    //}
+
+    //if (Auth::user()->role == 1) {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('userdashboard')
+                ->withSuccess('Signed in');
+        }
+    //}
 
         return redirect("login")->withSuccess('Login details are not valid');
     }
@@ -47,7 +64,7 @@ class CustomAuthController extends Controller
         $data = $request->all();
         $check = $this->create($data);
 
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("userdashboard")->withSuccess('You have signed-in');
     }
 
     public function create(array $data)
@@ -64,7 +81,12 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         if (Auth::check()) {
-            return view('dashboard');
+            if (Auth::user()->role == 0){
+                return view('admindashboard');
+            }
+            elseif (Auth::user()->role == 1){
+                return view('userdashboard');
+            }
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
