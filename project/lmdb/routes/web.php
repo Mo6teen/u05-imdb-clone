@@ -22,6 +22,8 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/', [MoviesController::class, 'index']);
+
 Route::get('/movies', [MoviesController::class, 'allMovies']);
 Route::get('/movie/{title}', [MoviesController::class, 'showMovie']);
 
