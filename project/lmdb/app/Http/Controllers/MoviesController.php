@@ -35,4 +35,12 @@ class MoviesController extends Controller
         $movies = Movies::get();
         return view('genre', ['movies' => $movies]);
     }
+
+    public function showMovie($title) {
+        if (Movies::where('title', $title)->exists()) {
+            $movie = Movies::where('title', $title)->first();
+
+            return view('movie', ['movie' => $movie]);
+        } 
+    }
 }
