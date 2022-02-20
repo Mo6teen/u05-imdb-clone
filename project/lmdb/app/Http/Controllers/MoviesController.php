@@ -36,11 +36,19 @@ class MoviesController extends Controller
         return view('genre', ['movies' => $movies]);
     }
 
-    public function showMovie($title) {
+    public function showMovie($title)
+    {
         if (Movies::where('title', $title)->exists()) {
             $movie = Movies::where('title', $title)->first();
 
             return view('movie', ['movie' => $movie]);
-        } 
+        }
+    }
+
+    // Get all the top 5 movies with the highest rating.
+    public function showTopMovies()
+    {
+        $movies = Movies::orderby('rating', 'ASC')->take(5)->get();
+        return view('top-rated', compact('Movies'));
     }
 }

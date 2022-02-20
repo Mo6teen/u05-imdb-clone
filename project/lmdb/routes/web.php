@@ -56,3 +56,8 @@ Route::get('genre', [MoviesController::class, 'genreMovies']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
+Route::get('/top-movies',  function () {
+    return view('top-movies');
+});
