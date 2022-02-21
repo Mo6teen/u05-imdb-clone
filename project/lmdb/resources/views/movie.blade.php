@@ -26,17 +26,9 @@
             <div>
                 <button type="button" class="btn btn-dark">+ Watchlist</button>
             </div>
-            <div class="card">
-                <h2 class="card-title display-6">Description</h2>
-                <p class="card-text fs-6">{{ $movie->description }}</p>
-            </div>
-        </section>
-
-        <!--Section for cast list-->
-        <section>
-            <div class="card">
-                <h2 class="card-title display-6">Cast</h2>
-                <p class="card-text fs-6">{{ $movie->actors }}</p>
+            <div>
+                <h2 class="display-6">Description</h2>
+                <p class="fs-6">{{ $movie->description }}</p>
             </div>
         </section>
 
