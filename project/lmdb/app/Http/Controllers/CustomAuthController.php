@@ -19,7 +19,6 @@ class CustomAuthController extends Controller
 
     public function customLogin(Request $request)
     {
-        //if (Auth::user()->role == 0) {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -30,9 +29,7 @@ class CustomAuthController extends Controller
             return redirect()->intended('admindashboard')
                 ->withSuccess('Signed in');
         }
-    //}
 
-    //if (Auth::user()->role == 1) {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -43,7 +40,6 @@ class CustomAuthController extends Controller
             return redirect()->intended('userdashboard')
                 ->withSuccess('Signed in');
         }
-    //}
 
         return redirect("login")->withSuccess('Login details are not valid');
     }
