@@ -15,7 +15,9 @@
   @include('header')
 
   <main>
-    <h1>Hello world!!</h1>
+    <section class="py-5">
+      <h1>Top Movies</h1>
+    </section>
   </main>
 
   @include('footer')
