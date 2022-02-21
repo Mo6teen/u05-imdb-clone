@@ -59,10 +59,6 @@ Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
 
-Auth::routes();
-Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
-Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
-
 // Login, registration, signout routes
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
@@ -75,3 +71,4 @@ Route::get('forgetPassword', [ForgotPasswordController::class, 'showForgetPasswo
 Route::post('forgetPassword', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 Route::get('resetPassword/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
