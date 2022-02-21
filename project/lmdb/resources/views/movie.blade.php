@@ -36,8 +36,29 @@
         <section>
             <div class="card">
                 <h2 class="card-title display-6">Reviews</h2>
-                <!-- Add reviews form -->
-            </div>    
+                <form method="post" action="{{url('reviews-form')}}">
+                    @csrf
+                    <input hidden name="movies_id" value="{{ $movie->id }}">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="title" name="name" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Review</label>
+                        <textarea name="review" class="form-control" required=""></textarea>
+                    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            
+            <div class="card-header text-center">  
+            @foreach($movie->reviews as $review)
+                {{ $review->name }}
+            </div>
+            <div class="card-body">
+                {{ $review->review }}
+            </div>
+                @endforeach
         </section>
     </main>
 
