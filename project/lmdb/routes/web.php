@@ -23,6 +23,7 @@ use App\Http\Controllers\ReviewsController;
 Route::get('/', function () {
     return view('homepage');
 });
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Movies routes
@@ -42,7 +43,6 @@ Route::get('/top-movies',  function () {
     return view('top-movies');
 });
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Review route
 Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store');
