@@ -61,4 +61,3 @@ Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 
 // Review route
 Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store');
-/* Route::get('/movie/{title}', [ReviewsController::class, 'show']); */

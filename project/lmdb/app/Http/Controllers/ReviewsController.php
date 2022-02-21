@@ -17,9 +17,4 @@ class ReviewsController extends Controller
         Reviews::create($input);
         return back();
     }
-
-    /* public function show() {
-        $reviews = Reviews::get();
-        return view('movie', ['reviews' => $reviews]);
-    }   */
 }
