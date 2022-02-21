@@ -28,12 +28,9 @@ Route::get('/movies', [MoviesController::class, 'allMovies']);
 Route::get('/movie/{title}', [MoviesController::class, 'showMovie']);
 
 Auth::routes();
+Route::get('admindashboard', [CustomAuthController::class, 'admindashboard'])->name('admin')->middleware('admin');
+Route::get('userdashboard', [CustomAuthController::class, 'userdashboard'])->name('user')->middleware('user');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('/admindashboard', [CustomAuthController::class, 'admindashboard'])->name('admin')->middleware('admin');
-Route::get('/userdashboard', [CustomAuthController::class, 'userdashboard'])->name('user')->middleware('user');
 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
@@ -42,8 +39,8 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
 Auth::routes();
-Route::get('/admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
-Route::get('/userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
+Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
+Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
 
 
 //  Genrepage routes
@@ -53,7 +50,6 @@ Route::get('genre',  function () {
 
 Route::get('genre', [MoviesController::class, 'genreMovies']);
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -61,3 +57,4 @@ Route::get('/top-movies',  function () {
     return view('top-movies');
 });
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

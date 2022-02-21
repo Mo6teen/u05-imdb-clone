@@ -25,7 +25,7 @@
                     <li><a href="/genre" class="nav-link">Browse Genres</a></li>
                     <li><a href="#" class="nav-link">Top Rated</a></li>
                     <li><a href="#" class="nav-link">Coming Soon</a></li>
-                    <li><a href="/login" class="nav-link">Signin/Register</a></li>
+                    <li><a href="/login" class="nav-link">Sign in/Register</a></li>
                 </div>
             </div>
         </div>
