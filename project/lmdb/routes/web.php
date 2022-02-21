@@ -59,4 +59,4 @@ Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Review-form route
-Route::post('review-form', [CommentController::class, 'store'])->name('review.store');
+Route::post('review-form', [ReviewsController::class, 'store'])->name('review.store');
