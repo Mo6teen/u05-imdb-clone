@@ -51,4 +51,15 @@ class MoviesController extends Controller
         $movies = Movies::orderby('rating', 'DESC')->take(6)->get();
         return view('top-movies', compact('movies'));
     }
+
+    // function for search movie
+
+    public function search(Request $request)
+    {
+        if ($request->isMethod('POST')) {
+            $title = $request->get('title');
+            $data = Movies::where('title', 'LIKES', '%' . $title . '%')->paginate(1);
+        }
+        return redirect('movie/' . $title);
+    }
 }

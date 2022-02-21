@@ -59,3 +59,5 @@ Route::get('/top-movies',  function () {
 });
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('search-movies', [MoviesController::class, 'search']);

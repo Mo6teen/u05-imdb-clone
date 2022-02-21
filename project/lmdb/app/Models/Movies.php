@@ -13,6 +13,7 @@ class Movies extends Model
         'title',
         'description',
         'genre',
+        'rating',
         'release_date',
         'image_path',
         'created_at',
