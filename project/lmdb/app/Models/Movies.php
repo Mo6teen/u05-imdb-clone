@@ -13,9 +13,14 @@ class Movies extends Model
         'title',
         'description',
         'genre',
+        'rating',
         'release_date',
         'image_path',
         'created_at',
         'updated_at',
     ];
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class);
+    }
 }

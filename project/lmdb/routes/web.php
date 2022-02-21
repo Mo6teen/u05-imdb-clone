@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,5 +59,6 @@ Route::get('/top-movies',  function () {
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Review-form route
-Route::post('review-form', [ReviewsController::class, 'store'])->name('review.store');
+// Review route
+Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store');
+/* Route::get('/movie/{title}', [ReviewsController::class, 'show']); */

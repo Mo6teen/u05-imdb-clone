@@ -10,11 +10,16 @@ class ReviewsController extends Controller
     public function store(Request $request) {
         $input = $request->all();
         $request->validate([
-            'movie_id' => 'required',
             'name' => 'required',
+            'movies_id' => 'required',
             'review'=>'required',
         ]);
         Reviews::create($input);
         return back();
     }
+
+    /* public function show() {
+        $reviews = Reviews::get();
+        return view('movie', ['reviews' => $reviews]);
+    }   */
 }
