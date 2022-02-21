@@ -25,7 +25,7 @@ class MoviesController extends Controller
 
     public function index()
     {
-        $Movies = Movies::orderby('id', 'ASC')->take(3)->get();
+        $Movies = Movies::orderby('rating', 'DESC')->take(3)->get();
         return view('homepage', compact('Movies'));
     }
 
@@ -48,7 +48,7 @@ class MoviesController extends Controller
     // Get all the top 5 movies with the highest rating.
     public function showTopMovies()
     {
-        $movies = Movies::orderby('rating', 'ASC')->take(5)->get();
-        return view('top-rated', compact('Movies'));
+        $movies = Movies::orderby('rating', 'DESC')->take(6)->get();
+        return view('top-movies', compact('movies'));
     }
 }
