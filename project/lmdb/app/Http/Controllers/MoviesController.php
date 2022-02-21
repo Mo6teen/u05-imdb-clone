@@ -58,7 +58,7 @@ class MoviesController extends Controller
     {
         if ($request->isMethod('POST')) {
             $title = $request->get('title');
-            $data = Movies::where('title', 'LIKES', '%' . $title . '%')->paginate(1);
+            $data = Movies::where('title', 'LIKE', '%' . $title . '%')->paginate(1);
         }
         return redirect('movie/' . $title);
     }
