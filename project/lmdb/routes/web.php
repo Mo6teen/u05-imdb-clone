@@ -23,6 +23,7 @@ use App\Http\Controllers\ReviewsController;
 Route::get('/', function () {
     return view('homepage');
 });
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Movies routes
@@ -42,7 +43,6 @@ Route::get('/top-movies',  function () {
     return view('top-movies');
 });
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Review routes
 Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store')->middleware('auth');
@@ -51,20 +51,11 @@ Route::get('/movie/delete/{id}', [ReviewsController::class, 'delete'])/* ->name(
 // Search route
 Route::post('search-movies', [MoviesController::class, 'search']);
 
-// Dashboard routes
+// Login, registration, signout routes
 Auth::routes();
 Route::get('admindashboard', [CustomAuthController::class, 'admindashboard'])->name('admin')->middleware('admin');
 Route::get('userdashboard', [CustomAuthController::class, 'userdashboard'])->name('user')->middleware('user');
 
-Auth::routes();
-Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
-Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
-
-Auth::routes();
-Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
-Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
-
-// Login, registration, signout routes
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
@@ -76,3 +67,8 @@ Route::get('forgetPassword', [ForgotPasswordController::class, 'showForgetPasswo
 Route::post('forgetPassword', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 Route::get('resetPassword/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+// Dashboard routes
+Auth::routes();
+Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
+Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
