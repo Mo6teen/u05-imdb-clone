@@ -28,7 +28,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Movies routes
 Route::get('/', [MovieController::class, 'index']);
-Route::get('/movies', [MovieController::class, 'allMovies']);
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
 
