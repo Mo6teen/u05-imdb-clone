@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg-sm navbar-expand mb-5" style="background-color: $orange-500;">
+    <nav class="navbar navbar-light navbar-expand-lg navbar-expand-sm mb-5" style="background-color: #feba6b;">
         <div class="container">
             <a class="navbar-brand mr-auto" href="/">Home</a>
             <div class="collapse navbar-collapse" id="navbarNav">
