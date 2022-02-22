@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('name');
             /* $table->integer('user_id'); */
-            $table->integer('movies_id')->unsigned();
+            $table->integer('movie_id')->unsigned();
             $table->text('review');
             $table->timestamps();
         });
