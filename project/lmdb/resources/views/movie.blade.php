@@ -13,30 +13,30 @@
 <body>
     @include('header')
 
-    <main>
-        <div>
-            <h1 class="display-3">{{ $movie->title }}</h1>
+    <main class="text-center m-3">
+        <div class="ms-3">
+            <h1 class="display-2">{{ $movie->title }}</h1>
             <p class="btn btn-primary " id="btn">{{ $movie->genre }}</p>
             <p><!--Add rating--></p>
         </div>
 
         <!--Image and description section-->
         <section>
-            <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid w-25 p-3" alt="Image">
-            <div>
-                <button type="button" class="btn btn-dark">+ Watchlist</button>
+            <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid mb-3" alt="Image">
+            <div class="text-start">
+                <button type="button" class="btn btn-dark mb-3">+ Watchlist</button>
             </div>
             <div>
-                <h2 class="display-6">Description</h2>
+                <h2 class="display-6 mb-2">Description</h2>
                 <p class="fs-6">{{ $movie->description }}</p>
             </div>
         </section>
 
         <!-- Section to write and read reviews -->
         <section>
-            <div class="card">
+            <div class="mb-3">
                 <h2 class="card-title display-6">Reviews</h2>
-                <form method="post" action="{{url('reviews-form')}}">
+                <form class="card p-2" method="post" action="{{url('reviews-form')}}">
                     @csrf
                     <input hidden name="movies_id" value="{{ $movie->id }}">
                     <div class="form-group">
@@ -47,18 +47,18 @@
                         <label>Review</label>
                         <textarea name="review" class="form-control" required=""></textarea>
                     </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-dark m-3">Submit</button>
                 </form>
             </div>
             
-            <div class="card-header text-center">  
             @foreach($movie->reviews as $review)
-                {{ $review->name }}
+            <div class="card-header text-start">  
+                <h3 class="h5">{{ $review->name }}</h3>
             </div>
-            <div class="card-body">
-                {{ $review->review }}
+            <div class="card-body text-start">
+                <p>{{ $review->review }}</p>
             </div>
-                @endforeach
+            @endforeach
         </section>
     </main>
 
