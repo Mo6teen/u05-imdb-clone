@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Movies extends Model
+class Movie extends Model
 {
     protected $table = 'movies';
     protected $fillable = [
@@ -21,6 +21,6 @@ class Movies extends Model
     ];
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Review::class);
     }
 }
