@@ -1,3 +1,6 @@
+@include('header')
+@extends('dashboard')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +14,9 @@
   <title>Homepage</title>
 </head>
 
+@section('content')
 <body>
-  <header>
+  <!--<header>
     <nav>
       <div class="navbar">
         <div class="wrapper nav-container">
@@ -32,7 +36,7 @@
             <form class="search-box-desktop" action="{{ url('search-movies') }}" method="POST">
               @csrf
               <!-- {{ csrf_field() }} -->
-              <input class="search-txt" type="text" name="title" placeholder=" Search!">
+              <!--<input class="search-txt" type="text" name="title" placeholder=" Search!">
               <input type="image" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
             </form>
             <li><a href="#" class="nav-link">News</a></li>
@@ -44,7 +48,7 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header>-->
   <main>
 
     <section class="intro py-5">
@@ -140,3 +144,4 @@
 </body>
 
 </html>
+@endsection
