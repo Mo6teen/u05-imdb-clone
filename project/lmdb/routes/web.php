@@ -44,8 +44,9 @@ Route::get('/top-movies',  function () {
 Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Review route
+// Review routes
 Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store')->middleware('auth');
+Route::get('/movie/delete/{id}', [ReviewsController::class, 'delete'])/* ->name('reviews.store')->middleware('auth') */;
 
 // Search route
 Route::post('search-movies', [MoviesController::class, 'search']);

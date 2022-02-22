@@ -17,4 +17,11 @@ class ReviewsController extends Controller
         Reviews::create($input);
         return back();
     }
+
+    public function delete($id) {
+        $data = Reviews::find($id);
+        $data->delete();
+
+        return back();    
+    }
 }
