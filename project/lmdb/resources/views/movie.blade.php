@@ -40,7 +40,7 @@
                 <h2 class="card-title display-6">Reviews</h2>
                 <form class="card p-2" method="post" action="{{url('reviews-form')}}">
                     @csrf
-                    <input hidden name="movies_id" value="{{ $movie->id }}">
+                    <input hidden name="movie_id" value="{{ $movie->id }}">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" id="title" name="name" class="form-control" required="">
@@ -52,6 +52,7 @@
                 <button type="submit" class="btn btn-outline-dark m-3">Submit</button>
                 </form>
             </div>
+            
             @foreach($movie->reviews as $review)
             <div class="card-header text-start">  
                 <h3 class="h5">{{ $review->name }}</h3>
