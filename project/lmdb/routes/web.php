@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,29 +27,29 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Movies routes
-Route::get('/', [MoviesController::class, 'index']);
-Route::get('/movies', [MoviesController::class, 'allMovies']);
-Route::get('/', [MoviesController::class, 'index']);
-Route::get('/movie/{title}', [MoviesController::class, 'showMovie']);
+Route::get('/', [MovieController::class, 'index']);
+Route::get('/movies', [MovieController::class, 'allMovies']);
+Route::get('/', [MovieController::class, 'index']);
+Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
 
 //  Genrepage routes
 Route::get('genre',  function () {
     return view('genre');
 });
-Route::get('genre', [MoviesController::class, 'genreMovies']);
+Route::get('genre', [MovieController::class, 'genreMovies']);
 
 // Ratings routes
 Route::get('/top-movies',  function () {
     return view('top-movies');
 });
-Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
+Route::get('/top-movies', [MovieController::class, 'showTopMovies']);
 
 // Review routes
-Route::post('reviews-form', [ReviewsController::class, 'store'])->name('reviews.store')->middleware('auth');
-Route::get('/movie/delete/{id}', [ReviewsController::class, 'delete'])/* ->name('reviews.store')->middleware('auth') */;
+Route::post('reviews-form', [ReviewController::class, 'store'])->name('reviews.store')->middleware('auth');
+Route::get('/movie/delete/{id}', [ReviewController::class, 'delete']);
 
 // Search route
-Route::post('search-movies', [MoviesController::class, 'search']);
+Route::post('search-movies', [MovieController::class, 'search']);
 
 // Login, registration, signout routes
 Auth::routes();
