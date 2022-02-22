@@ -66,7 +66,7 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 
 // Password routes
 Route::get('forgetPassword', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forgetPassword', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::post('forgetPassword', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('resetPassword/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
@@ -74,8 +74,3 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
-
-
-
-
-
