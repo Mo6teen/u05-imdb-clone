@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movies;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
-class MoviesController extends Controller
+class MovieController extends Controller
 {
     //CRUD
 
     //Gett all movies to show in /movies
     public function allMovies()
     {
-        $movies = Movies::get();
+        $movies = Movie::get();
         return view('movies', ['movies' => $movies]);
     }
 
@@ -25,21 +25,21 @@ class MoviesController extends Controller
 
     public function index()
     {
-        $Movies = Movies::orderby('rating', 'DESC')->take(3)->get();
+        $Movies = Movie::orderby('rating', 'DESC')->take(3)->get();
         return view('homepage', compact('Movies'));
     }
 
     //Gett all movies to show in genrepage.
     public function genreMovies()
     {
-        $movies = Movies::get();
+        $movies = Movie::get();
         return view('genre', ['movies' => $movies]);
     }
 
     public function showMovie($title)
     {
-        if (Movies::where('title', $title)->exists()) {
-            $movie = Movies::where('title', $title)->first();
+        if (Movie::where('title', $title)->exists()) {
+            $movie = Movie::where('title', $title)->first();
 
             return view('movie', ['movie' => $movie]);
         }
@@ -48,7 +48,7 @@ class MoviesController extends Controller
     // Get all the top 5 movies with the highest rating.
     public function showTopMovies()
     {
-        $movies = Movies::orderby('rating', 'DESC')->take(6)->get();
+        $movies = Movie::orderby('rating', 'DESC')->take(6)->get();
         return view('top-movies', compact('movies'));
     }
 
@@ -58,7 +58,7 @@ class MoviesController extends Controller
     {
         if ($request->isMethod('POST')) {
             $title = $request->get('title');
-            $data = Movies::where('title', 'LIKE', '%' . $title . '%')->paginate(1);
+            $data = Movie::where('title', 'LIKES', '%' . $title . '%')->paginate(1);
         }
         return redirect('movie/' . $title);
     }

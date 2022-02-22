@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reviews;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
-class ReviewsController extends Controller
+class ReviewController extends Controller
 {
     public function store(Request $request) {
         $input = $request->all();
@@ -14,7 +14,14 @@ class ReviewsController extends Controller
             'movies_id' => 'required',
             'review'=>'required',
         ]);
-        Reviews::create($input);
+        Review::create($input);
         return back();
+    }
+
+    public function delete($id) {
+        $data = Review::find($id);
+        $data->delete();
+
+        return back();    
     }
 }
