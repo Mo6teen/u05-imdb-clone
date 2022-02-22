@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
 
 /*
@@ -36,6 +37,8 @@ Route::get('genre',  function () {
     return view('genre');
 });
 Route::get('genre', [MovieController::class, 'genreMovies']);
+Route::get('genre/{genre}', [GenreController::class, 'showGenre']);
+Route::get('genres', [GenreController::class, 'getMovieGenre']);
 
 // Ratings routes
 Route::get('/top-movies',  function () {
@@ -71,3 +74,8 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
+
+
+
+
+
