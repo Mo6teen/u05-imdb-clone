@@ -36,7 +36,7 @@
               <input type="image" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
             </form>
             <li><a href="#" class="nav-link">News</a></li>
-            <li><a href="#" class="nav-link">Browse Categories</a></li>
+            <li><a href="/genres" class="nav-link">Browse Genres</a></li>
             <li><a href="#" class="nav-link">Top Rated</a></li>
             <li><a href="#" class="nav-link">Coming Soon</a></li>
             <li><a href="/login" class="nav-link">Sign in/Register</a></li>
@@ -59,24 +59,24 @@
     <section class="py-5">
       <div class="container">
         <div class="row text-center">
-          <h2>Brows all categorys</h2>
+          <a href="/genres"><h2 class="btn btn-primary " id="btn">Browse All Genres</h2></a>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Comedy</a>
+            <a href="/genre/comedy" class="btn btn-primary " id="btn">Comedy</a>
           </div>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Action</a>
+            <a href="/genre/action" class="btn btn-primary " id="btn">Action</a>
           </div>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Thriller</a>
+            <a href="/genre/thriller" class="btn btn-primary " id="btn">Thriller</a>
           </div>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Drama</a>
+            <a href="/genre/drama" class="btn btn-primary " id="btn">Drama</a>
           </div>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Fantasy</a>
+            <a href="/genre/fantasy" class="btn btn-primary " id="btn">Fantasy</a>
           </div>
           <div class="col-4 py-2">
-            <a href="#" class="btn btn-primary " id="btn">Romance</a>
+            <a href="/genre/romance" class="btn btn-primary " id="btn">Romance</a>
           </div>
         </div>
       </div>

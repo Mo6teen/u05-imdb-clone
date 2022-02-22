@@ -12,47 +12,36 @@
 
 
   <script src="{{ url('js/script.js') }}" defer></script>
-  <title>Genre</title>
+  <title>LMDB - {{ $genre[0]->genre }}</title>
 </head>
 
 <body>
   <main>
+  
+  <section class="py-5">
 
-    <section>
-      <h1>Genres</h1>              
-    </section>
+  <h1> {{ $genre[0]->genre }}</h1>
 
-    <section>
-      <a href=""><h3>Drama</h3></a>
-    </section>
-    <section>
+  <div class="container">
+      <div class="d-flex justify-content-between">
 
-    @foreach ($movies as $movie)
-<!--           <img src="{{ asset('images/LoTR 1.jpg') }}" alt="..." class="card-img-top"> -->
-          <div class="card-body">
-            <h5 class="card-title">Lord of the rings</h5>
-            <p class="card-text">This movies is awsome!</p>
-          </div>
-          @endforeach
+      </div>
+   <div class="row">
 
-    </section>
+    @foreach ($genre as $movie)
+    <div class="col-4">
+  
+      <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"><p>{{ $movie->title }}</p>
+      <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
 
-    <section>
-      <a href=""><h3>Comedy</h3></a>
-    </section>
+      <p>{{ $movie->description }}</p>
+      </div>
+      @endforeach
+        </div>
+        </div>
+    </div>
+  </section>
 
-    <section>
-      <a href=""><h3>Horror</h3></a>
-    </section>
-
-    <section>
-      <a href=""><h3>Fantasy</h3></a>
-    </section>
-
-    <section>
-      <a href=""><h2>Modern</h2></a>
-    </section>
-    
   </main>
 </body>
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\GenresController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +61,10 @@ Route::get('/top-movies', [MoviesController::class, 'showTopMovies']);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('search-movies', [MoviesController::class, 'search']);
+
+Route::get('genre/{genre}', [GenresController::class, 'showGenre']);
+
+Route::get('genres', [GenresController::class, 'getMovieGenre']);
+
+
+
