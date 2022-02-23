@@ -10,7 +10,7 @@
     <nav class="navbar navbar-light navbar-expand-lg navbar-expand-sm mb-5" style="background-color: #feba6b;">
         <div class="container">
             <a class="navbar-brand mr-auto" href="/">Home</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
                 <ul class="navbar-nav">
                     @guest
                     <li class="nav-item">
@@ -28,7 +28,7 @@
                     </li>
                     @endguest
                 </ul>
-            </div>
+            <!-- </div> -->
         </div>
     </nav>
     @yield('content')
