@@ -31,7 +31,7 @@
             </div>
             <div>
                 <h2 class="display-6 mb-2">Description</h2>
-                <p class="f2-6">{{ $movie-release_date }}</p>
+                <p class="f2-6">{{ $movie->release_date }}</p>
                 <p class="fs-6">{{ $movie->description }}</p>
             </div>
         </section>

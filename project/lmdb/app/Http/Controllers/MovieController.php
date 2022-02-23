@@ -58,18 +58,17 @@ class MovieController extends Controller
 
     public function createMovie(Request $request)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //     'description' => 'required:max:255',
-        //     'genre' => 'required',
-        //     'rating' => 'required|max:5',
-        //     'release_date' => 'required',
-        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-        // ]);
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required:max:255',
+            'genre' => 'required',
+            'rating' => 'required|max:5',
+            'release_date' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ]);
 
         $name = $request->file('image')->getClientOriginalName();
         $path = $request->file('image')->store('public/images');
-
 
         $movie = new Movie();
         $movie->title = $request->title;

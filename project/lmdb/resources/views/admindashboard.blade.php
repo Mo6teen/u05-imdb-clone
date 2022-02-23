@@ -77,7 +77,6 @@
                                 </div>
                                 <div class="form-group py-3">
                                     <label for="rating">Rating: 1-5</label>
-                                    <!-- <input type="text" id="rating" name="rating"> -->
                                     <input type="number" id="rating" name="rating" min="1" max="5">
                                 </div>
                                 <div class="form-group py-3">
