@@ -69,7 +69,7 @@
         <div class="row">
           @foreach ($Movies as $movie)
           <div class="col-4">
-            <a href="/movie/{{ $movie->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"></a>
+            <a href="/movie/{{ $movie->title }}"><img src="{{ asset('/storage/images/{{$movie->image_path}}')" alt="{{$movie->image_path}}" class="card-img-top"></a>
             <div style="border: solid 0px transparent;  z-index: 0;">
               <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>

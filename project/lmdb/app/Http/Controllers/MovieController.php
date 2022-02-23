@@ -16,13 +16,6 @@ class MovieController extends Controller
         return view('movies', ['movies' => $movies]);
     }
 
-    //Gett all movies to show in homepage.
-    // public function introMovies()
-    // {
-    //     $movies = Movies::get();
-    //     return view('homepage', ['movies' => $movies]);
-    // }
-
     public function index()
     {
         $Movies = Movie::orderby('rating', 'DESC')->take(3)->get();
@@ -65,14 +58,14 @@ class MovieController extends Controller
 
     public function createMovie(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required:max:255',
-            'genre' => 'required',
-            'rating' => 'required|max:5',
-            'release_date' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-        ]);
+        // $request->validate([
+        //     'title' => 'required',
+        //     'description' => 'required:max:255',
+        //     'genre' => 'required',
+        //     'rating' => 'required|max:5',
+        //     'release_date' => 'required',
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        // ]);
 
         $name = $request->file('image')->getClientOriginalName();
         $path = $request->file('image')->store('public/images');
@@ -82,11 +75,13 @@ class MovieController extends Controller
         $movie->title = $request->title;
         $movie->description = $request->description;
         $movie->genre = $request->genre;
+        $movie->rating = $request->rating;
         $movie->release_date = $request->release_date;
         $movie->image_name = $name;
         $movie->image_path = $path;
         $movie->save();
-        return redirect('/admindashboard')->with('status', 'Movie' . $movie . 'Has Been Created');
+
+        return redirect('/admindashboard')->with('status', 'Movie Has Been Created');
     }
 }
 
