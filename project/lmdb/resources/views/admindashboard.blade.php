@@ -10,7 +10,7 @@
 
 
   <script src="{{ url('js/script.js') }}" defer></script>
-  <title>Dashboard</title>
+  <title>LMDB - Dashboard</title>
 </head>
 @section('content')
 <main>
@@ -49,9 +49,26 @@
                 <div class="card-header">
                     <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                    </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Created</th>
+                                <th></th>
+                            </tr>
+                    @foreach($users as $user)  
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->role }}</td>
+                                <td>{{ $user->created_at }}</td>
+                                <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
+                            </tr>
+                    @endforeach
+                    </table>
+                </div>
             </div>
             <div class="card">
                 <div class="card-header">
