@@ -12,10 +12,10 @@
             <!-- <a class="navbar-brand mr-auto" href="/">Home</a> -->
             <!-- <div class="" id="navbarNav"> -->
             <ul class="navbar-nav d-flex flex-row">
-                @guest
                 <li class="nav-item">
                     <a class="nav-link" style="font-weight:bold; font-size:22px" href="/">Home</a>
                 </li>
+                @guest
                 <li class="nav-item px-5 py-1">
                     <a class="nav-link" href="{{ route('login') }}">Sign in</a>
                 </li>
@@ -23,10 +23,11 @@
                     <a class="nav-link" href="{{ route('register-user') }}">Register</a>
                 </li>
                 @else
-                <li class="nav-item">
+
+                <li class="nav-item px-5 py-1">
                     <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item py-1">
                     <a class="nav-link" href="{{ route('signout') }}">Sign out</a>
                 </li>
                 @endguest
