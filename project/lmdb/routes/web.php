@@ -30,7 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Movies routes
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
-Route::post('create-movie', [MovieController::class, 'createMovie']);
+
 
 //  Genrepage routes
 Route::get('genre',  function () {
@@ -73,4 +73,5 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 // Dashboard routes
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
+Route::post('save', [MovieController::class, 'createMovie']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');

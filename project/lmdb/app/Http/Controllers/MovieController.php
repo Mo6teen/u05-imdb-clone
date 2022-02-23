@@ -66,26 +66,53 @@ class MovieController extends Controller
     public function createMovie(Request $request)
     {
         $request->validate([
-            'title' => 'required|min:3',
-            'description' => 'required',
-            'release-date' => 'required|min:2022-02-23',
-            'rating' => 'required|min:1 max:5',
-            'image_path' => 'required'
+            'title' => 'required',
+            'description' => 'required:max:255',
+            'genre' => 'required',
+            'rating' => 'required|max:5',
+            'release_date' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
 
-        $input = $request->all();
-        if ($request->hasFile('image_path')) {
-            $destination_path = 'public/images/movie-thumbnail';
-            $image = $request->file('image_path');
-            $image_name = $image->getClientOriginalName();
-            $path = $request->file('image_path')->storeAs($destination_path, $image_name);
+        $name = $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->store('public/images');
 
-            $input['image_path'] = $image_name;
-        }
 
-        Movie::create($input);
-        session()->flash('message', $input['title'] . ' succesfully saved');
-
-        return redirect('/admindashboard');
+        $movie = new Movie();
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->genre = $request->genre;
+        $movie->release_date = $request->release_date;
+        $movie->image_name = $name;
+        $movie->image_path = $path;
+        $movie->save();
+        return redirect('/admindashboard')->with('status', 'Movie' . $movie . 'Has Been Created');
     }
 }
+
+
+
+
+// $request->validate([
+//     'title' => 'required|min:3',
+//     'description' => 'required',
+//     'release-date' => 'required',
+//     'rating' => 'required|max:5',
+//     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+// ]);
+
+// $input = $request->all();
+
+// if ($request->hasFile('image')) {
+//     $destination_path = 'public/images/thumbnail';
+//     $image = $request->file('image');
+//     $image_name = $image->getClientOriginalName();
+//     $path = $request->file('image')->storeAs($destination_path, $image_name);
+
+//     $input['image'] = $image_name;
+// }
+
+// Movie::create($input);
+// session()->flash('message', $input['title'] . ' succesfully saved');
+
+// return redirect('/admindashboard');
