@@ -61,17 +61,17 @@
     <section class="py-5">
       <div class="container">
         <div class="d-flex justify-content-between">
-          <a href="/top-movies">
+          <a href="/top-movies" class="link-dark">
             <h2>Top Movies</h2>
           </a>
-          <a href="/top-movies"><span>see more...</span></a>
+          <a href="/top-movies" class="link-dark"><span>see more...</span></a>
         </div>
         <div class="row">
           @foreach ($Movies as $movie)
           <div class="col-4">
             <a href="/movie/{{ $movie->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"></a>
             <div style="border: solid 0px transparent;  z-index: 0;">
-              <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">5</span>
+              <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
           </div>
           @endforeach

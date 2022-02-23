@@ -1,6 +1,6 @@
 <header>
     <nav>
-        <div class="navbar">
+        <div class="nav-bar">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
                 <div class="hamburger-lines">
@@ -22,11 +22,11 @@
                         <input class="search-txt" type="text" name="title" placeholder=" Search!">
                         <input type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
                     </form>
-                    <li><a href="#" class="nav-link">News</a></li>
-                    <li><a href="/genres" class="nav-link">Browse Genres</a></li>
-                    <li><a href="/top-movies" class="nav-link">Top Rated</a></li>
-                    <li><a href="#" class="nav-link">Coming Soon</a></li>
-                    <li><a href="/login" class="nav-link">Sign in/Register</a></li>
+                    <li><a href="#" class="nav-Link">News</a></li>
+                    <li><a href="/genres" class="nav-Link">Browse Genres</a></li>
+                    <li><a href="/top-movies" class="nav-Link">Top Rated</a></li>
+                    <li><a href="#" class="nav-Link">Coming Soon</a></li>
+                    <li><a href="/login" class="nav-Link">Sign in/Register</a></li>
                 </div>
             </div>
         </div>
