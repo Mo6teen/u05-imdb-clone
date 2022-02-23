@@ -50,7 +50,33 @@
                             <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
+                            <h5 class="card-title text-center">Create Movie</h5>
+                            <form action="{{ url('create-movie') }}" method="post">
+                                @csrf
+                                <div class="form-group py-2">
+                                    <label for="title-create">Movie Title</label><br>
+                                    <input type="text" name="title" id="title-crate" placeholder="Add title for the movie">
+                                </div>
+                                <div class="form-group py-3">
+                                    <label for="desc">Movie Description</label><br>
+                                    <textarea name="desc" id="desc" cols="50" rows="4"></textarea>
+                                </div>
+                                <div class="form-group py-3">
+                                    <label for="release-date">Release date</label><br>
+                                    <input type="date" id="release-date" name="release-date" value="2022-02-23" min="2022-01-01" max="2024-12-31">
+                                </div>
+                                <div class="form-group py-3">
+                                    <label for="rating">Rating: 1-5</label>
+                                    <input type="number" id="rating" name="rating" min="1" max="5">
+                                </div>
+                                <div class="form-group py-3">
+                                    <label for="picture">Add a movie thumbnail</label><br>
+                                    <input type="file" class="form-control-file" id="picture">
+                                </div>
+                                <div class="form-group py-3">
+                                    <input type="submit" name="submit" id="submit">
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="card">
