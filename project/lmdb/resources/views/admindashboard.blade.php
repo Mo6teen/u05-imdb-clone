@@ -51,15 +51,15 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">Create Movie</h5>
-                            <form action="{{ url('create-movie') }}" method="post">
+                            <form action="{{ url('create-movie') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group py-2">
                                     <label for="title-create">Movie Title</label><br>
                                     <input type="text" name="title" id="title-crate" placeholder="Add title for the movie">
                                 </div>
                                 <div class="form-group py-3">
-                                    <label for="desc">Movie Description</label><br>
-                                    <textarea name="desc" id="desc" cols="50" rows="4"></textarea>
+                                    <label for="description">Movie description</label><br>
+                                    <textarea name="description" id="description" cols="50" rows="4"></textarea>
                                 </div>
                                 <div class="form-group py-3">
                                     <label for="release-date">Release date</label><br>
@@ -70,8 +70,8 @@
                                     <input type="number" id="rating" name="rating" min="1" max="5">
                                 </div>
                                 <div class="form-group py-3">
-                                    <label for="picture">Add a movie thumbnail</label><br>
-                                    <input type="file" class="form-control-file" id="picture">
+                                    <label for="image_path">Add a movie thumbnail</label><br>
+                                    <input type="file" class="form-control-file" name="image_path" id="image_path">
                                 </div>
                                 <div class="form-group py-3">
                                     <input type="submit" name="submit" id="submit">
