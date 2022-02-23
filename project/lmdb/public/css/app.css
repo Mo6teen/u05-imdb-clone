@@ -44,10 +44,16 @@
 .navbar .nav-container li {
     list-style: none;
 }
+
+.search-box-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .search-button {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .search-txt {

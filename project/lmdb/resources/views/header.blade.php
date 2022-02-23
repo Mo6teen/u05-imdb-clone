@@ -20,7 +20,7 @@
                     <form class="search-box-desktop" action="{{ url('search-movies') }}" method="POST">
                         @csrf
                         <input class="search-txt" type="text" name="title" placeholder=" Search!">
-                        <input type="image" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+                        <input type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
                     </form>
                     <li><a href="#" class="nav-link">News</a></li>
                     <li><a href="/genre" class="nav-link">Browse Genres</a></li>
