@@ -57,14 +57,16 @@
             <div class="card-header text-start">  
                 <h3 class="h5">{{ $review->name }}</h3>
             </div>
-            <div class="card-body text-start">
-                <p>{{ $review->review }}</p>
-                <p class="fs-6 fw-light">{{ $review->created_at }}</p>
-                @auth
-                @if(Auth::user()->role == 0)
-                <a class="btn btn-outline-danger btn-sm" href={{ "delete/".$review->id }}>Delete review</a>
-                @endif
-                @endauth
+                <div class="card-body text-start">
+                    <p>{{ $review->review }}</p>
+                <div class="d-flex justify-content-between">
+                    <p class="fs-6 fw-light">{{ $review->created_at }}</p>
+                        @auth
+                        @if(Auth::user()->role == 0)
+                        <a class="btn btn-outline-danger btn-sm" href={{ "delete/".$review->id }}>Delete review</a>
+                        @endif
+                        @endauth
+                </div>
             </div>
             @endforeach
         </section>
