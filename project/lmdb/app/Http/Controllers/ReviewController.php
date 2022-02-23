@@ -11,7 +11,7 @@ class ReviewController extends Controller
         $input = $request->all();
         $request->validate([
             'name' => 'required',
-            'movies_id' => 'required',
+            'movie_id' => 'required',
             'review'=>'required',
         ]);
         Review::create($input);
