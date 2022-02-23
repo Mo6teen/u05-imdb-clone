@@ -38,7 +38,7 @@
         <section>
             <div class="mb-3">
                 <h2 class="card-title display-6">Reviews</h2>
-                <form class="card p-2" method="post" action="{{url('reviews-form')}}">
+                <form class="card p-2" method="post" autocomplete="off" action="{{url('reviews-form')}}">
                     @csrf
                     <input hidden name="movie_id" value="{{ $movie->id }}">
                     <div class="form-group">
