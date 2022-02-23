@@ -48,6 +48,7 @@ Route::get('/top-movies', [MovieController::class, 'showTopMovies']);
 // Review routes
 Route::post('reviews-form', [ReviewController::class, 'store'])->name('reviews.store')->middleware('auth');
 Route::get('/movie/delete/{id}', [ReviewController::class, 'delete']);
+Route::get('movie/', [UserController::class, 'show'])->name('user')->middleware('user');
 
 // Search route
 Route::post('search-movies', [MovieController::class, 'search']);

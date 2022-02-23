@@ -15,11 +15,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-@section('content')
-=======
   @section('content')
->>>>>>> 15bd522edf7484f03260bc1d04853cbd607d1ee6
   <main>
 
     <section class="intro py-5">

@@ -43,7 +43,11 @@
                     <input hidden name="movie_id" value="{{ $movie->id }}">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" id="title" name="name" class="form-control" required="">
+                        @auth
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="{{ Auth::user()->name }}" required="">
+                        @else
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="You are not signed in" required="">
+                        @endauth
                     </div>
                     <div class="form-group">
                         <label>Review</label>
@@ -57,15 +61,6 @@
             <div class="card-header text-start">  
                 <h3 class="h5">{{ $review->name }}</h3>
             </div>
-<<<<<<< HEAD
-            <div class="card-body text-start">
-                <p>{{ $review->review }}</p>
-                @auth
-                @if(Auth::user()->role == 0)
-                <a class="btn btn-outline-danger btn-sm" href={{ "delete/".$review->id }}>Delete review</a>
-                @endif
-                @endauth
-=======
                 <div class="card-body text-start">
                     <p>{{ $review->review }}</p>
                 <div class="d-flex justify-content-between">
@@ -76,7 +71,6 @@
                         @endif
                         @endauth
                 </div>
->>>>>>> 15bd522edf7484f03260bc1d04853cbd607d1ee6
             </div>
             @endforeach
         </section>

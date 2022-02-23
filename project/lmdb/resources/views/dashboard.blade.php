@@ -9,27 +9,6 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-lg navbar-expand-sm mb-5" style="background-color: #feba6b;">
         <div class="container">
-<<<<<<< HEAD
-            <a class="navbar-brand mr-auto" href="/">Home</a>
-            <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
-                <ul class="navbar-nav">
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sign in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register-user') }}">Register</a>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Sign out</a>
-                    </li>
-                    @endguest
-                </ul>
-=======
             <!-- <a class="navbar-brand mr-auto" href="/">Home</a> -->
             <!-- <div class="" id="navbarNav"> -->
             <ul class="navbar-nav d-flex flex-row">
@@ -53,7 +32,6 @@
                 </li>
                 @endguest
             </ul>
->>>>>>> 15bd522edf7484f03260bc1d04853cbd607d1ee6
             <!-- </div> -->
         </div>
     </nav>
