@@ -26,18 +26,11 @@ class CustomAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('admindashboard')
+            return redirect()->intended('userdashboard')
                 ->withSuccess('Signed in');
         }
-
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('userdashboard')
+        elseif (Auth::attempt($credentials)) {
+            return redirect()->intended('admindashboard')
                 ->withSuccess('Signed in');
         }
 
