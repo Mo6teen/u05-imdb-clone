@@ -15,7 +15,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 @section('content')
+=======
+  @section('content')
+>>>>>>> 15bd522edf7484f03260bc1d04853cbd607d1ee6
   <main>
 
     <section class="intro py-5">
@@ -30,7 +34,9 @@
     <section class="py-5">
       <div class="container">
         <div class="row text-center">
-          <a href="/genres"><h2 class="btn btn-primary " id="btn">Browse All Genres</h2></a>
+          <a href="/genres">
+            <h2 class="btn btn-primary " id="btn">Browse All Genres</h2>
+          </a>
           <div class="col-4 py-2">
             <a href="/genre/comedy" class="btn btn-primary " id="btn">Comedy</a>
           </div>
@@ -59,15 +65,17 @@
     <section class="py-5">
       <div class="container">
         <div class="d-flex justify-content-between">
-          <h2>Top Movies</h2>
-          <a href="/top-movies"><span>se more...</span></a>
+          <a href="/top-movies" class="link-dark">
+            <h2>Top Movies</h2>
+          </a>
+          <a href="/top-movies" class="link-dark"><span>see more...</span></a>
         </div>
         <div class="row">
           @foreach ($Movies as $movie)
           <div class="col-4">
-            <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+            <a href="/movie/{{ $movie->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"></a>
             <div style="border: solid 0px transparent;  z-index: 0;">
-              <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">5</span>
+              <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
           </div>
           @endforeach
@@ -81,7 +89,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
           <h2>Coming Soon</h2>
-          <a href="/top-movies"><span>se more...</span></a>
+          <a href="/top-movies"><span>see more...</span></a>
         </div>
         <div class="row">
           @foreach ($Movies as $movie)

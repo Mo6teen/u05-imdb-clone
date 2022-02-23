@@ -17,30 +17,31 @@
 
 <body>
   <main>
-  
-  <section class="py-5">
 
-  <h1> {{ $genre[0]->genre }}</h1>
+    <section class="py-5">
 
-  <div class="container">
-      <div class="d-flex justify-content-between">
+      <h1> {{ $genre[0]->genre }}</h1>
 
-      </div>
-   <div class="row">
+      <div class="container">
+        <div class="d-flex justify-content-between">
 
-    @foreach ($genre as $movie)
-    <div class="col-4">
-  
-      <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"><p>{{ $movie->title }}</p>
-      <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
-
-      <p>{{ $movie->description }}</p>
-      </div>
-      @endforeach
         </div>
+        <div class="row">
+
+          @foreach ($genre as $movie)
+          <div class="col-4">
+
+            <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+            <p>{{ $movie->title }}</p>
+            <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
+
+            <p>{{ $movie->description }}</p>
+          </div>
+          @endforeach
         </div>
-    </div>
-  </section>
+      </div>
+      </div>
+    </section>
 
   </main>
 </body>
