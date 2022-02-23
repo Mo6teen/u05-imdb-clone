@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class GenreController extends Controller
         return $genre;
 
     } */
-    public function getMovieGenre() 
+    public function getMovieGenre()
     {
         $genreThriller = Movie::select()->where('genre', 'thriller')->take(3)->orderby('id', 'DESC')->get();
         $genreFantasy = Movie::select()->where('genre', 'fantasy')->take(3)->orderby('id', 'DESC')->get();
@@ -20,14 +21,13 @@ class GenreController extends Controller
             'genreThriller' => $genreThriller,
             'genreDrama' => $genreDrama,
             'genreFantasy' => $genreFantasy
-        ]); 
+        ]);
     }
 
     public function showGenre($genre)
     {
-            $genre = Movie::where('genre', $genre)->get();
+        $genre = Movie::where('genre', $genre)->get();
 
-            return view('genre', ['genre' => $genre]); 
+        return view('genre', ['genre' => $genre]);
     }
-    
 };

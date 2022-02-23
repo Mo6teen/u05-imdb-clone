@@ -44,10 +44,16 @@
 .navbar .nav-container li {
     list-style: none;
 }
+
+.search-box-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .search-button {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .search-txt {
@@ -139,7 +145,7 @@
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
     text-align: center;
-    z-index: 3;
+    z-index: 1;
 }
 
 .navbar .menu-items li {
