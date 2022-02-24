@@ -1,6 +1,5 @@
-@include('header')
-@extends('dashboard')
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +9,15 @@
   <script src="{{ url('js/script.js') }}" defer></script>
   <title>LMDB - Edit user</title>
 </head>
+@extends('dashboard')
+@include('header')
+<body>
 @section('content')
-
 <main>
     <div class="container">
      <div class="card-header">
          <h2>Edit user role
-            <a href="{{ url('admindashboard') }}" class="btn btn-danger float-end">BACK</a>
+            <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a>
         </h2>
     </div>
 
@@ -27,22 +28,25 @@
             <input hidden name="id" value="{{ $user->id }}">
             <div class="form-group mb-3">
                 <label for="name">Name</label>
-                <input type="text" name="name" value="{{ $user->name }}" class="form-control">
+                <input type="text" name="name" value="{{ $user->name }}" class="form-control" readonly="readonly">
             </div>
             <div class="form-group mb-3">
                 <label for="email">Email</label>
-                <input type="text" name="email" value="{{ $user->email }}" class="form-control">
+                <input type="text" name="email" value="{{ $user->email }}" class="form-control" readonly="readonly">
             </div>
             <div class="form-group mb-3">
                 <label for="role">Role</label>
-                <input type="text" name="role" value="{{ $user->role }}" class="form-control">
+                <select name="role" value="{{ $user->role }}" class="form-select">
+                    <option value="0" {{ $user->role == '0' ? 'selected':'' }}>0</option>
+                    <option value="1" {{ $user->role == '1' ? 'selected':'' }}>1</option>
+                </select>
             </div>
             <div class="form-group mb-3">
                 <label for="created_at">Created</label>
-                <input type="text" name="created_at" value="{{ $user->created_at }}" class="form-control">
+                <input type="text" name="created_at" value="{{ $user->created_at }}" class="form-control" readonly="readonly">
             </div> 
             <div class="form-group mb-3">
-                <button type="submit" class="btn btn-priimary">Update</button>
+                <button type="submit" class="btn btn-outline-warning">Update</button>
             </div>
         </form>
         
@@ -51,3 +55,5 @@
 </main>
 @include('footer')
 @endsection
+</body>
+</html>

@@ -30,6 +30,6 @@ class AdminController extends Controller
         $user->created_at = $request->input('created_at');
         $user->role = $request->input('role');
         $user->update();
-        return redirect('/admindashboard')->with('status', 'User has been updated!');
+        return redirect('/admindashboard')->with('status', 'The user has been updated!');
     }
 }
