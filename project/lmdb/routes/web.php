@@ -74,4 +74,6 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('admindashboard', [AdminController::class, 'show']);
+Route::get('edit-user/{id}', [AdminController::class, 'edit']);
+Route::put('update-user/{id}', [AdminController::class, 'update']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');

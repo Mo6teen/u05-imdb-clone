@@ -50,7 +50,9 @@
                     <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
                     </div>
                 <div class="card-body">
+                    @csrf
                     <table class="table table-striped table-hover">
+                        <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -59,15 +61,18 @@
                                 <th></th>
                                 <th></th>
                             </tr>
-                    @foreach($users as $user)  
+                        </thead>
+                    @foreach($users as $user)
+                        <tbody>  
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->created_at }}</td>
-                                <td><a class="btn btn-outline-warning btn-sm" href={{ "update/".$user->id }}>Update user</a></td>
+                                <td><a class="btn btn-outline-warning btn-sm" href={{ "edit-user/".$user->id }}>Update user</a></td>
                                 <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
                             </tr>
+                        </tbody>
                     @endforeach
                     </table>
                 </div>
