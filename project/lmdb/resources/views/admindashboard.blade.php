@@ -1,6 +1,7 @@
 @include('header')
 @extends('dashboard')
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-<<<<<<< HEAD
-    <script src="{{ url('js/script.js') }}" defer></script>
-    <title>Dashboard</title>
-=======
   <script src="{{ url('js/script.js') }}" defer></script>
   <title>LMDB - Dashboard</title>
->>>>>>> main
 </head>
+<body>
 @section('content')
 <main>
     <div class="container">
@@ -32,25 +29,6 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-<<<<<<< HEAD
-                        @endif
-                        <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
-                        <h5 class="card-subtitle">You are signed in as admin</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">Here you can:</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handleusers">Handle users</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handlemovies">Handle movies</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handlereviews">Handle reviews</a>
-                            </li>
-                        </ul>
-=======
                     @endif
                     <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
                     <h5 class="card-subtitle">You are signed in as admin</h5>
@@ -101,23 +79,10 @@
                     </table>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
->>>>>>> main
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
-                            <h5 class="card-title text-center">Create Movie</h5>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
+                        <h5 class="card-title text-center">Create Movie</h5>
                             <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group py-2">
@@ -167,3 +132,4 @@
 </main>
 @include('footer')
 @endsection
+</body>

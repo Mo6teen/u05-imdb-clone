@@ -1,3 +1,5 @@
+@extends('dashboard')
+@include('header')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +11,7 @@
   <script src="{{ url('js/script.js') }}" defer></script>
   <title>LMDB - Edit user</title>
 </head>
-@extends('dashboard')
-@include('header')
+
 <body>
 @section('content')
 <main>
