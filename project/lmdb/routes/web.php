@@ -9,7 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\WatchlistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +73,8 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
+
+// Watchlist Routes
+Route::get('/movie/add-to-watchlist/{id}', [WatchlistController::class, 'addToWatchlist'])->middleware('auth');
+Route::get('userdashboard', [WatchlistController::class, 'seeWatchlist']);
+

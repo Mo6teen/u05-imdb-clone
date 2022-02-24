@@ -26,7 +26,11 @@
             <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid mb-3" alt="Image">
             <div class="d-flex justify-content-between mb-3">
                 <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
-                <button type="button" class="btn btn-dark btn-sm ">+ Watchlist</button>
+                <button class="btn btn-dark btn-sm ">
+                    @if (Auth::user()->role == 1)
+                    <a href="{{ url('/movie/add-to-watchlist/' . $movie->id) }}">+ Watchlist</a>
+                    @endif
+                </button>
             </div>
             <div>
                 <h2 class="display-6 mb-2">Description</h2>

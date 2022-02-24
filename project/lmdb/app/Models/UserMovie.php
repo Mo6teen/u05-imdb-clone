@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Watchlist extends Model
+class UserMovie extends Pivot
 {
-    protected $table = 'watchlists';
+    protected $table = 'user_movies';
     protected $fillable = [
         'user_id',
         'movie_id',
     ];
 
+    //public $timestamps = false;
 }

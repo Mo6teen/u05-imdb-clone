@@ -48,9 +48,20 @@
                         <div class="card-header">
                             <h2 id="handlewatchlist" style="color: #fd7e14;">Your watchlist</h2>
                         </div>
+                        @foreach($watchlist->$movies as $movie)
+                        <ul>
+                            <li>
+                               {{ $movie->title }}
+                            </li>
+                        </ul>
+                        @endforeach
+    }
                         <div class="card-body">
                             <h5 class="card-title"></h5>
                         </div>
+                        <ul> 
+                           
+                        </ul>
                     </div>
                     <div class="card">
                         <div class="card-header">
