@@ -90,6 +90,16 @@ class MovieController extends Controller
     }
 }
 
+// public function search(Request $request)
+// {
+//     if ($request->isMethod('POST')) {
+//         $title = $request->get('title');
+//         $data = Movie::where('title', 'LIKES', '%' . $title . '%')->paginate(5);
+//     }
+//     return redirect('movie/' . $title);
+// }
+
+
 
 // $request->validate([
 //     'title' => 'required',

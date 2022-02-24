@@ -9,13 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-<<<<<<< HEAD
     <script src="{{ url('js/script.js') }}" defer></script>
-    <title>Dashboard</title>
-=======
-  <script src="{{ url('js/script.js') }}" defer></script>
-  <title>LMDB - Dashboard</title>
->>>>>>> main
+    <title>LMDB - Dashboard</title>
 </head>
 @section('content')
 <main>
@@ -32,7 +27,6 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-<<<<<<< HEAD
                         @endif
                         <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
                         <h5 class="card-subtitle">You are signed in as admin</h5>
@@ -50,115 +44,96 @@
                                 <a class="link-dark" href="#handlereviews">Handle reviews</a>
                             </li>
                         </ul>
-=======
-                    @endif
-                    <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
-                    <h5 class="card-subtitle">You are signed in as admin</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Here you can:</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a class="link-dark" href="#handleusers">Handle users</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="link-dark" href="#handlemovies">Handle movies</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="link-dark" href="#handlereviews">Handle reviews</a>
-                        </li>
-                    </ul>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
-                    </div>
-                <div class="card-body">
-                    <table class="table table-striped table-hover">
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Created</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                    @foreach($users as $user)  
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->role }}</td>
-                                <td>{{ $user->created_at }}</td>
-                                <td><a class="btn btn-outline-warning btn-sm" href={{ "update/".$user->id }}>Update user</a></td>
-                                <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
-                            </tr>
-                    @endforeach
-                    </table>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
->>>>>>> main
                     </div>
                     <div class="card">
                         <div class="card-header">
                             <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
+                            <table class="table table-striped table-hover">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Created</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                @foreach($users as $user)
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->role }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    <td><a class="btn btn-outline-warning btn-sm" href={{ "update/".$user->id }}>Update user</a></td>
+                                    <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
+                                </tr>
+                                @endforeach
+                            </table>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-header">
                             <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
-                            <h5 class="card-title text-center">Create Movie</h5>
-                            <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group py-2">
-                                    <label for="title-create">Movie Title</label><br>
-                                    <input type="text" name="title" id="title-crate" placeholder="Add title for the movie">
-                                </div>
-                                <div class="form-group py-3">
-                                    <label for="description">Movie description</label><br>
-                                    <textarea name="description" id="description" cols="50" rows="4"></textarea>
-                                </div>
-                                <div class="form-group py-3">
-                                    <label for="genre">genre</label><br>
-                                    <input type="text" id="genre" name="genre">
-                                </div>
-                                <div class="form-group py-3">
-                                    <label for="release_date">Release date</label><br>
-                                    <input type="date" id="release_date" name="release_date" value="2022-02-23" min="2022-01-01" max="2024-12-31">
-                                </div>
-                                <div class="form-group py-3">
-                                    <label for="rating">Rating: 1-5</label>
-                                    <input type="number" id="rating" name="rating" min="1" max="5">
-                                </div>
-                                <div class="form-group py-3">
-                                    <label for="image">Add a movie thumbnail</label><br>
-                                    <input type="file" class="form-control-file" name="image" id="image">
-                                </div>
-                                <div class="form-group py-3">
-                                    <input type="submit" name="submit" id="submit">
-                                </div>
-                            </form>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handlereviews" style="color: #fd7e14;">Handle reviews</h2>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
+                                <h5 class="card-title text-center">Create Movie</h5>
+                                <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group py-2">
+                                        <label for="title-create">Movie Title</label><br>
+                                        <input type="text" name="title" id="title-crate" placeholder="Add title for the movie">
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <label for="description">Movie description</label><br>
+                                        <textarea name="description" id="description" cols="50" rows="4"></textarea>
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <label for="genre">genre</label><br>
+                                        <input type="text" id="genre" name="genre">
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <label for="release_date">Release date</label><br>
+                                        <input type="date" id="release_date" name="release_date" value="2022-02-23" min="2022-01-01" max="2024-12-31">
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <label for="rating">Rating: 1-5</label>
+                                        <input type="number" id="rating" name="rating" min="1" max="5">
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <label for="image">Add a movie thumbnail</label><br>
+                                        <input type="file" class="form-control-file" name="image" id="image">
+                                    </div>
+                                    <div class="form-group py-3">
+                                        <input type="submit" name="submit" id="submit">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 id="handlereviews" style="color: #fd7e14;">Handle reviews</h2>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 </main>
 @include('footer')
 @endsection
