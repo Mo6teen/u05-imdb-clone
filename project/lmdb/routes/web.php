@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Movies routes
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
+
 
 //  Genrepage routes
 Route::get('genre',  function () {
@@ -76,4 +78,6 @@ Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->
 Route::get('admindashboard', [AdminController::class, 'show'])->name('admin')->middleware('admin');
 Route::get('edit-user/{id}', [AdminController::class, 'edit'])->name('admin')->middleware('admin');
 Route::put('update-user/{id}', [AdminController::class, 'update'])->name('admin')->middleware('admin');
+Route::post('save', [MovieController::class, 'createMovie']);
+Route::get('admindashboard', [AdminController::class, 'show']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
