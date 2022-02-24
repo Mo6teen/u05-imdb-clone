@@ -57,6 +57,7 @@
                                 <th>Role</th>
                                 <th>Created</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                     @foreach($users as $user)  
                             <tr>
@@ -64,6 +65,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->created_at }}</td>
+                                <td><a class="btn btn-outline-warning btn-sm" href={{ "update/".$user->id }}>Update user</a></td>
                                 <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
                             </tr>
                     @endforeach

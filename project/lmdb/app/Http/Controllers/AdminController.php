@@ -14,7 +14,7 @@ class AdminController extends Controller
     }
 
     public function show() {
-        $users = User::get();
+        $users = User::all()->sortBy('name');
         return view('admindashboard', ['users' => $users]);
     }
 }
