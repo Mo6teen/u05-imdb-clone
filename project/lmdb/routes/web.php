@@ -78,6 +78,7 @@ Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->
 Route::get('admindashboard', [AdminController::class, 'show'])->name('admin')->middleware('admin');
 Route::get('edit-user/{id}', [AdminController::class, 'edit'])->name('admin')->middleware('admin');
 Route::put('update-user/{id}', [AdminController::class, 'update'])->name('admin')->middleware('admin');
+Route::get('/admindashboard/delete/{id}', [AdminController::class, 'delete'])->name('admin')->middleware('admin');
 Route::post('save', [MovieController::class, 'createMovie']);
 Route::get('admindashboard', [AdminController::class, 'show']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');

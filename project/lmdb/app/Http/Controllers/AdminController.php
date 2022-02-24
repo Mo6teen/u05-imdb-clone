@@ -32,4 +32,11 @@ class AdminController extends Controller
         $user->update();
         return redirect('/admindashboard')->with('status', 'The user has been updated!');
     }
+
+    public function delete($id) {
+        $data = User::find($id);
+        $data->delete();
+
+        return back();    
+    }
 }

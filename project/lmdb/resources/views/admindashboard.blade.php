@@ -72,7 +72,7 @@
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->created_at }}</td>
                                 <td><a class="btn btn-outline-warning btn-sm" href={{ "edit-user/".$user->id }}>Update user</a></td>
-                                <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
+                                <td><a class="btn btn-outline-danger btn-sm" href={{ "admindashboard/delete/".$user->id }}>Delete user</a></td>
                             </tr>
                         @endforeach
                         </tbody>
