@@ -9,8 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+<<<<<<< HEAD
     <script src="{{ url('js/script.js') }}" defer></script>
     <title>Dashboard</title>
+=======
+  <script src="{{ url('js/script.js') }}" defer></script>
+  <title>LMDB - Dashboard</title>
+>>>>>>> main
 </head>
 @section('content')
 <main>
@@ -27,6 +32,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
+<<<<<<< HEAD
                         @endif
                         <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
                         <h5 class="card-subtitle">You are signed in as admin</h5>
@@ -44,6 +50,56 @@
                                 <a class="link-dark" href="#handlereviews">Handle reviews</a>
                             </li>
                         </ul>
+=======
+                    @endif
+                    <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
+                    <h5 class="card-subtitle">You are signed in as admin</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Here you can:</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a class="link-dark" href="#handleusers">Handle users</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="link-dark" href="#handlemovies">Handle movies</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="link-dark" href="#handlereviews">Handle reviews</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
+                    </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Created</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                    @foreach($users as $user)  
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->role }}</td>
+                                <td>{{ $user->created_at }}</td>
+                                <td><a class="btn btn-outline-warning btn-sm" href={{ "update/".$user->id }}>Update user</a></td>
+                                <td><a class="btn btn-outline-danger btn-sm" href={{ "delete/".$user->id }}>Delete user</a></td>
+                            </tr>
+                    @endforeach
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
+>>>>>>> main
                     </div>
                     <div class="card">
                         <div class="card-header">

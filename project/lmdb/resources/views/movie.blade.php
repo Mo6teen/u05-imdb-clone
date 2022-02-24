@@ -45,7 +45,11 @@
                     <input hidden name="movie_id" value="{{ $movie->id }}">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" id="title" name="name" class="form-control" required="">
+                        @auth
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="{{ Auth::user()->name }}" required="">
+                        @else
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="You are not signed in" required="">
+                        @endauth
                     </div>
                     <div class="form-group">
                         <label>Review</label>
