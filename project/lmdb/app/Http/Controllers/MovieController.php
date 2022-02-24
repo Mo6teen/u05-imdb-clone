@@ -67,8 +67,7 @@ class MovieController extends Controller
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
 
-        $name = $request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->store('public/images');
+
 
         $movie = new Movie();
         $movie->title = $request->title;
@@ -76,8 +75,15 @@ class MovieController extends Controller
         $movie->genre = $request->genre;
         $movie->rating = $request->rating;
         $movie->release_date = $request->release_date;
-        $movie->image_name = $name;
-        $movie->image_path = $path;
+
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('public/Image'), $filename);
+            $movie['image'] = $filename;
+        } else {
+            return redirect('/admindashboard')->with('status', 'Please add a image');
+        }
         $movie->save();
 
         return redirect('/admindashboard')->with('status', 'Movie Has Been Created');
@@ -85,7 +91,29 @@ class MovieController extends Controller
 }
 
 
+// $request->validate([
+//     'title' => 'required',
+//     'description' => 'required:max:255',
+//     'genre' => 'required',
+//     'rating' => 'required|max:5',
+//     'release_date' => 'required',
+//     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+// ]);
 
+// $name = $request->file('image')->getClientOriginalName();
+// $path = $request->file('image')->store('public/images');
+
+// $movie = new Movie();
+// $movie->title = $request->title;
+// $movie->description = $request->description;
+// $movie->genre = $request->genre;
+// $movie->rating = $request->rating;
+// $movie->release_date = $request->release_date;
+// $movie->image_name = $name;
+// $movie->image_path = $path;
+// $movie->save();
+
+// return redirect('/admindashboard')->with('status', 'Movie Has Been Created');
 
 // $request->validate([
 //     'title' => 'required|min:3',
