@@ -59,7 +59,7 @@ class MovieController extends Controller
     public function createMovie(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:movies',
             'description' => 'required:max:255',
             'genre' => 'required',
             'rating' => 'required|max:5',
