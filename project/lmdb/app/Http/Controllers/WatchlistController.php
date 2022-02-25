@@ -6,23 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
 use App\Models\UserMovie;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class WatchlistController extends Controller
 {
-    public function addToWatchlist($movieId){
-        UserMovie::create([
-            'user_id' => Auth::user()->id,
-            'movie_id' => $movieId, 
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        $request->validate([
+            'user_id' => 'required',
+            'movie_id' => 'required'
         ]);
-        return redirect()->back();
+
+        Watchlist::create($input);
+        return back();
     }
 
-    public function seeWatchlist(){
-        $userid = Auth::user()->id;
-        $movie = Movie::find($userid);
-        $watchlist = DB::table('user_movies', $movie)->where('user_id', $userid)->get();
-        return view('userdashboard', $userid, $movie, $watchlist);
+    public function show()
+    {
+        $id = Auth::user()->id;
+        $watchlists = Watchlist::where('user_id', $id)->get();
+        return view('watchlist', [
+            'watchlists' => $watchlists
+        ]);
     }
 }

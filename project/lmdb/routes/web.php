@@ -85,6 +85,5 @@ Route::get('admindashboard', [AdminController::class, 'show']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
 
 // Watchlist Routes
-Route::get('/movie/add-to-watchlist/{id}', [WatchlistController::class, 'addToWatchlist'])->middleware('auth');
-Route::get('userdashboard', [WatchlistController::class, 'seeWatchlist']);
-
+Route::get('watchlist', [WatchlistController::class, 'show']);
+Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
