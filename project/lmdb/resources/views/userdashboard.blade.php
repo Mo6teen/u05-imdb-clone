@@ -48,20 +48,36 @@
                         <div class="card-header">
                             <h2 id="handlewatchlist" style="color: #fd7e14;">Your watchlist</h2>
                         </div>
-                        @foreach($watchlist->$movies as $movie)
-                        <ul>
-                            <li>
-                               {{ $movie->title }}
-                            </li>
-                        </ul>
+                        <div class="card-body text-center">
+                        @csrf
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Movie title</th>
+                                    <th>Genre</th>
+                                    <th>Rating</th>
+                                    <th>Release date</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($watchlists as $watchlist)
+                                <tr>
+                                    <td>
+                                        <a href="{{ url('movie/' . $watchlist->movie->title)}}">
+                                            <h5 class="font-bold text-lg"> {{ $watchlist->movie->title }}</h5>
+                                        </a>
+                                    </td>
+                                    <td> {{ $watchlist->movie->genre }}</td>
+                                    <td> {{ $watchlist->movie->rating }}</td>
+                                    <td> {{ $watchlist->movie->release_date }}</td>
+                                    <td></td>
+                                </tr>
+                           </div>
                         @endforeach
-    }
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
-                        <ul> 
-                           
-                        </ul>
+                            </tbody>
+                        </table>
+                            </div>
                     </div>
                     <div class="card">
                         <div class="card-header">

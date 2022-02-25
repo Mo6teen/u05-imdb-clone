@@ -28,7 +28,7 @@ class WatchlistController extends Controller
     {
         $id = Auth::user()->id;
         $watchlists = Watchlist::where('user_id', $id)->get();
-        return view('watchlist', [
+        return view('userdashboard', [
             'watchlists' => $watchlists
         ]);
     }
