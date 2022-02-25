@@ -48,9 +48,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Movie::class, 'watchlist', 'user_id', 'movie_id');
     }*/
 
-    public function movies()
+    public function watchlists()
     {
-        return $this->belongsToMany(Movie::class);
+        return $this->hasMany(Watchlist::class);
     }
 }
 
