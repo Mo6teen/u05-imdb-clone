@@ -32,4 +32,10 @@ class WatchlistController extends Controller
             'watchlists' => $watchlists
         ]);
     }
+    public function delete($id) {
+        $data = Watchlist::find($id);
+        $data->delete();
+
+        return back();    
+    }
 }

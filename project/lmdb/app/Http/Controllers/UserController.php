@@ -13,7 +13,4 @@ class UserController extends Controller
         return view('userdashboard');
     }
 
-    public function show() {
-        return view('movie');
-    }
 }

@@ -65,13 +65,16 @@
                                 <tr>
                                     <td>
                                         <a href="{{ url('movie/' . $watchlist->movie->title)}}">
-                                            <h5 class="font-bold text-lg"> {{ $watchlist->movie->title }}</h5>
+                                            {{ $watchlist->movie->title }}
                                         </a>
                                     </td>
                                     <td> {{ $watchlist->movie->genre }}</td>
                                     <td> {{ $watchlist->movie->rating }}</td>
                                     <td> {{ $watchlist->movie->release_date }}</td>
-                                    <td></td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" 
+                                        href="{{ url('userdashboard/delete/' . $watchlist->id) }}">Delete</a>
+                                    </td>
                                 </tr>
                            </div>
                         @endforeach
