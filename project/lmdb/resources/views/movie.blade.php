@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,6 +35,7 @@
             </div>
             <div>
                 <h2 class="display-6 mb-2">Description</h2>
+                <p class="f2-6">{{ $movie->release_date }}</p>
                 <p class="fs-6">{{ $movie->description }}</p>
             </div>
         </section>
@@ -47,29 +49,33 @@
                     <input hidden name="movie_id" value="{{ $movie->id }}">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" id="title" name="name" class="form-control" required="">
+                        @auth
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="{{ Auth::user()->name }}" required="">
+                        @else
+                        <input type="text" id="title" name="name" class="form-control" readonly="readonly" value="You are not signed in" required="">
+                        @endauth
                     </div>
                     <div class="form-group">
                         <label>Review</label>
                         <textarea name="review" class="form-control" placeholder="Write your review" required=""></textarea>
                     </div>
-                <button type="submit" class="btn btn-outline-dark m-3">Submit</button>
+                    <button type="submit" class="btn btn-outline-dark m-3">Submit</button>
                 </form>
             </div>
-            
+
             @foreach($movie->reviews as $review)
-            <div class="card-header text-start">  
+            <div class="card-header text-start">
                 <h3 class="h5">{{ $review->name }}</h3>
             </div>
-                <div class="card-body text-start">
-                    <p>{{ $review->review }}</p>
+            <div class="card-body text-start">
+                <p>{{ $review->review }}</p>
                 <div class="d-flex justify-content-between">
                     <p class="fs-6 fw-light">{{ $review->created_at }}</p>
-                        @auth
-                        @if(Auth::user()->role == 0)
-                        <a class="btn btn-outline-danger btn-sm" href={{ "delete/".$review->id }}>Delete review</a>
-                        @endif
-                        @endauth
+                    @auth
+                    @if(Auth::user()->role == 0)
+                    <a class="btn btn-outline-danger btn-sm" href={{ "delete/".$review->id }}>Delete review</a>
+                    @endif
+                    @endauth
                 </div>
             </div>
             @endforeach
@@ -79,4 +85,5 @@
     @include('footer')
 
 </body>
+
 </html>

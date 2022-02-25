@@ -10,6 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WatchlistController;
+use Illuminate\Support\Facades\Artisan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
 
+
 //  Genrepage routes
 Route::get('genre',  function () {
     return view('genre');
@@ -48,6 +51,7 @@ Route::get('/top-movies', [MovieController::class, 'showTopMovies']);
 // Review routes
 Route::post('reviews-form', [ReviewController::class, 'store'])->name('reviews.store')->middleware('auth');
 Route::get('/movie/delete/{id}', [ReviewController::class, 'delete']);
+Route::get('movie/', [UserController::class, 'show'])->name('user')->middleware('user');
 
 // Search route
 Route::post('search-movies', [MovieController::class, 'search']);
@@ -72,6 +76,12 @@ Route::post('resetPassword', [ForgotPasswordController::class, 'submitResetPassw
 // Dashboard routes
 Auth::routes();
 Route::get('admindashboard', [AdminController::class, 'index'])->name('admin')->middleware('admin');
+Route::get('admindashboard', [AdminController::class, 'show'])->name('admin')->middleware('admin');
+Route::get('edit-user/{id}', [AdminController::class, 'edit'])->name('admin')->middleware('admin');
+Route::put('update-user/{id}', [AdminController::class, 'update'])->name('admin')->middleware('admin');
+Route::get('/admindashboard/delete/{id}', [AdminController::class, 'delete'])->name('admin')->middleware('admin');
+Route::post('save', [MovieController::class, 'createMovie']);
+Route::get('admindashboard', [AdminController::class, 'show']);
 Route::get('userdashboard', [UserController::class, 'index'])->name('user')->middleware('user');
 
 // Watchlist Routes
