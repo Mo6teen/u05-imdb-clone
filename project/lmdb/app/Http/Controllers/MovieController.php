@@ -82,11 +82,11 @@ class MovieController extends Controller
             $file->move(public_path('public/Image'), $filename);
             $movie['image'] = $filename;
         } else {
-            return redirect('/admindashboard/createmovie')->with('status', 'Please add a image');
+            return redirect('createmovie')->with('status', 'Please add a image');
         }
         $movie->save();
 
-        return redirect('/admindashboard/createmovie')->with('status', 'Movie Has Been Created');
+        return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
 }
 
