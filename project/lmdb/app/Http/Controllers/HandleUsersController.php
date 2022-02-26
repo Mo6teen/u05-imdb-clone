@@ -10,7 +10,7 @@ class HandleUsersController extends Controller
 {   
     public function show() {
         $users = User::all()->sortBy('name');
-        return view('admindashboard', ['users' => $users]);
+        return view('handleusers', ['users' => $users]);
     }
 
     public function edit($id) {
@@ -25,7 +25,7 @@ class HandleUsersController extends Controller
         $user->created_at = $request->input('created_at');
         $user->role = $request->input('role');
         $user->update();
-        return redirect('admindashboard')->with('status', 'The user has been updated!');
+        return redirect('handle-users')->with('status', 'The user has been updated!');
     }
 
     public function delete($id) {

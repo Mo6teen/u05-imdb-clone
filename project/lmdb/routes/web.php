@@ -83,17 +83,22 @@ Route::get('userdashboard', [UserController::class, 'index'])->name('user')->mid
 
 // Dashboard routes
 Auth::routes();
-Route::get('admindashboard', [HandleUsersController::class, 'show'])->middleware('auth');
+Route::get('handle-users', [HandleUsersController::class, 'show'])->name('handle-users')->middleware('auth');
 Route::get('edit-user/{id}', [HandleUsersController::class, 'edit'])->middleware('auth');
 Route::put('update-user/{id}', [HandleUsersController::class, 'update'])->middleware('auth');
-Route::get('admindashboard/delete/{id}', [HandleUsersController::class, 'delete'])->middleware('auth');
+Route::get('handleusers/delete/{id}', [HandleUsersController::class, 'delete'])->middleware('auth');
+Route::get('createmovie', function (){
+    if (Auth::user()->role == 0 ){
+        return view('createmovie');
+    }
+});
 Route::post('save', [MovieController::class, 'createMovie'])->middleware('auth');
 
 // Watchlist Routes
 Auth::routes();
-Route::get('userdashboard', [WatchlistController::class, 'show'])->name('watchlist.watch')->middleware('auth');
+Route::get('mywatchlist', [WatchlistController::class, 'show'])->name('watchlist.watch')->middleware('auth');
 Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
-Route::get('userdashboard/delete/{id}', [WatchlistController::class, 'delete'])->name('watchlist.delete')->middleware('auth');
+Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->name('watchlist.delete')->middleware('auth');
 
 
 
