@@ -34,69 +34,15 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a class="link-dark" href="#handlewatchlist">Handle your watchlist</a>
+                                <a class="link-dark" href="/mywatchlist">Handle your watchlist</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="link-dark" href="#handleotherlists">Handle other lists</a>
+                                <a class="link-dark" href="/myotherlists">Handle other lists</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="link-dark" href="#manageusersettings">Manage your settings</a>
+                                <a class="link-dark" href="usersettings">Manage your settings</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handlewatchlist" style="color: #fd7e14;">Your watchlist</h2>
-                        </div>
-                        <div class="card-body text-center">
-                        @csrf
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Movie title</th>
-                                    <th>Genre</th>
-                                    <th>Rating</th>
-                                    <th>Release date</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($watchlists as $watchlist)
-                                <tr>
-                                    <td>
-                                        <a href="{{ url('movie/' . $watchlist->movie->title)}}">
-                                            {{ $watchlist->movie->title }}
-                                        </a>
-                                    </td>
-                                    <td> {{ $watchlist->movie->genre }}</td>
-                                    <td> {{ $watchlist->movie->rating }}</td>
-                                    <td> {{ $watchlist->movie->release_date }}</td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm" 
-                                        href="{{ url('userdashboard/delete/' . $watchlist->id) }}">Delete</a>
-                                    </td>
-                                </tr>
-                           </div>
-                        @endforeach
-                            </tbody>
-                        </table>
-                            </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handleotherlists" style="color: #fd7e14;">Other lists</h2>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="manageusersettings" style="color: #fd7e14;">Manage your settings</h2>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
                     </div>
                 </div>
             </div>
