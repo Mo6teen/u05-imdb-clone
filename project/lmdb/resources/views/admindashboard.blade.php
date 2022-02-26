@@ -47,17 +47,6 @@
                         </li>
                     </ul>
             </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 id="handlereviews" style="color: #fd7e14;">Handle reviews</h2>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
                     </div>
                 </div>
             </div>

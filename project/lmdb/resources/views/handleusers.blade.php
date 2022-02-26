@@ -22,7 +22,7 @@
 
 <div class="card">
                 <div class="card-header">
-                    <h2 id="handleusers" style="color: #fd7e14;">Handle users</h2>
+                    <h2 id="handleusers" style="color: #fd7e14;">Handle users <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                     </div>
                 <div class="card-body">
                     @csrf

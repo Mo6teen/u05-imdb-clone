@@ -28,10 +28,14 @@ class WatchlistController extends Controller
     {
         $id = Auth::user()->id;
         $watchlists = Watchlist::where('user_id', $id)->get();
+        if (Auth::user()->role == 1){
         return view('mywatchlist', [
             'watchlists' => $watchlists
         ]);
+        }
+        else return back();
     }
+    
     public function delete($id) {
         $data = Watchlist::find($id);
         $data->delete();

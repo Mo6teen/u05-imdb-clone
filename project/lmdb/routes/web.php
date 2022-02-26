@@ -100,9 +100,8 @@ Route::get('mywatchlist', [WatchlistController::class, 'show'])->name('watchlist
 Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
 Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->name('watchlist.delete')->middleware('auth');
 
-// Other Lists Routes
+// Other Lists Routes (otherlists.blade.php)
 
-// User Settings Routes
-
+// User Settings Routes (usersettings.blade.php)
 
 
