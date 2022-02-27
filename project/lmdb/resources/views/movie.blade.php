@@ -1,4 +1,5 @@
 @include('header')
+@extends('dashboard')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@
 </head>
 
 <body>
-
+@section('content')
 
     <main class="container text-center">
         <div class="m-2">
@@ -90,7 +91,6 @@
     </main>
 
     @include('footer')
-
+    @endsection
 </body>
-
 </html>

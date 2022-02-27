@@ -1,4 +1,5 @@
 @include('header')
+@extends('dashboard')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+@section('content')
   <main>
 
   <section class="py-5">
@@ -80,7 +82,8 @@
   </section>
     
   </main>
+  @include('footer')
+  @endsection
 </body>
 </html>
 
-@include('footer')

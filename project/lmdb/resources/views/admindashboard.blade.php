@@ -45,3 +45,4 @@
 @include('footer')
 @endsection
 </body>
+</html>

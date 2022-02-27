@@ -31,3 +31,5 @@
 </main>
 @include('footer')
 @endsection
+</body>
+</html>
