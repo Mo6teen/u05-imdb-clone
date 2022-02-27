@@ -1,4 +1,5 @@
 @include('header')
+@extends('dashboard')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@
 </head>
 
 <body>
-
+@section('content')
 
     <main class="container text-center">
         <div class="m-2">
@@ -27,7 +28,18 @@
             <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid mb-3" alt="Image">
             <div class="d-flex justify-content-between mb-3">
                 <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
-                <button type="button" class="btn btn-dark btn-sm ">+ Watchlist</button>
+                <div class="card-body">
+                    <form method="post" action="{{url('store-form')}}">
+                        @csrf
+                        <input hidden name="movie_id" value="{{ $movie->id }}">
+                        @auth
+                        <input hidden name="user_id" value="{{ Auth::user()->id }}">
+                        @endauth
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">+ Watchlist</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div>
                 <h2 class="display-6 mb-2">Description</h2>
@@ -79,7 +91,6 @@
     </main>
 
     @include('footer')
-
+    @endsection
 </body>
-
 </html>

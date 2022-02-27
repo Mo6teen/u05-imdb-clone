@@ -1,6 +1,7 @@
 @include('header')
 @extends('dashboard')
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+<<<<<<< HEAD
     <script src="{{ url('js/script.js') }}" defer></script>
     <title>LMDB - Dashboard</title>
+=======
+  <script src="{{ url('js/script.js') }}" defer></script>
+  <title>LMDB - Dashboard</title>
+>>>>>>> 4bcc992ee6d5590b4d1ede3e172173727512f268
 </head>
+<body>
 @section('content')
 <main>
     <div class="container">
@@ -21,6 +28,7 @@
                     <div class="card-header">
                         <h1 style="color: #fd7e14;">Hi {{ Auth::user()->name }}</h1>
                     </div>
+<<<<<<< HEAD
 
                     <div class="card-body">
                         @if (session('status'))
@@ -131,9 +139,27 @@
                                 <h5 class="card-title"></h5>
                             </div>
                         </div>
+=======
+                    <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
+                    <h5 class="card-subtitle">You are signed in as admin</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Here you can:</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item h5">
+                            <a class="link-dark" href="{{ route('handle-users') }}">Handle users</a>
+                        </li>
+                        <li class="list-group-item h5">
+                            <a class="link-dark" href="/createmovie">Handle movies</a>
+                        </li>
+                    </ul>
+                    </div>
+>>>>>>> 4bcc992ee6d5590b4d1ede3e172173727512f268
                     </div>
                 </div>
             </div>
 </main>
 @include('footer')
 @endsection
+</body>
+</html>
