@@ -9,7 +9,8 @@
                     <span class="line line3"></span>
                 </div>
                 <div class="name-logo">
-                    <h1>LMDB</h1>
+                    <!-- inline styling works for link getting link big size, can change if we found something better -->
+                    <h1><a class="link-dark text-decoration-none" style="font-size: 2.5rem;" href="/">LMDB</a></h1>
                 </div>
                 <a href="/">
                     <div class="logo">

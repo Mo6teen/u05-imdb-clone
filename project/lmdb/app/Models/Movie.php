@@ -25,4 +25,13 @@ class Movie extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+   /* public function watchlist()
+    {
+        return $this->hasOne(Watchlist::class);
+    }*/
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

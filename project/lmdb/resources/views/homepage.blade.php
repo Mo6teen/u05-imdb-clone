@@ -102,20 +102,8 @@
 
   </main>
 
-  <footer class="footer">
-    <figure>
-      <a href="#"><img src="{{ asset('images/facebook.png') }}" alt="facebook logo"></a>
-      <a href="#"><img src="{{ asset('images/instagram.png') }}" alt="instagram logo"></a>
-      <a href="#"><img src="{{ asset('images/youtube.png') }}" alt="youtube logo"></a>
-      <a href="#"><img src="{{ asset('images/twitter.png') }}" alt="twitter logo"></a>
-    </figure>
-
-    <p><span>&copy;</span> by The Hounting Lobsters</p>
-
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  @include('footer')
+  @endsection
 </body>
-
 </html>
-@endsection
