@@ -22,6 +22,12 @@
                     <div class="card-header">
                         <h2 id="handlemovies" style="color: #fd7e14;">Handle movies <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                         <h5 class="card-title text-center">Create Movie</h5>
+                        <div class="card-body">
+                            @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                            </div>
+                            @endif
                             <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group py-2">

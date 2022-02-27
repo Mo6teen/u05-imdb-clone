@@ -20,11 +20,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
 
-<div class="card">
+            <div class="card">
                 <div class="card-header">
                     <h2 id="handleusers" style="color: #fd7e14;">Handle users <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                     </div>
-                <div class="card-body">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+                    <div class="card-body">
                     @csrf
                     <table class="table table-striped table-hover">
                         <thead>

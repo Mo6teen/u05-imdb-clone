@@ -23,30 +23,20 @@
                     <div class="card-header">
                         <h1 style="color: #fd7e14;">Hi {{ Auth::user()->name }}</h1>
                     </div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
                     <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
                     <h5 class="card-subtitle">You are signed in as admin</h5>
                     <div class="card-body">
                         <h5 class="card-title">Here you can:</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                        <li class="list-group-item h5">
                             <a class="link-dark" href="{{ route('handle-users') }}">Handle users</a>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item h5">
                             <a class="link-dark" href="/createmovie">Handle movies</a>
                         </li>
-                        <li class="list-group-item">
-                            <a class="link-dark" href="/handlereviews">Handle reviews</a>
-                        </li>
                     </ul>
-            </div>
+                    </div>
                     </div>
                 </div>
             </div>

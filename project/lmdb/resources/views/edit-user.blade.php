@@ -21,7 +21,6 @@
             <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a>
         </h2>
     </div>
-
     <div class="card-body">
         <form action="{{ url('update-user/'.$user->id) }}" method="POST">
             @csrf

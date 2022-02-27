@@ -33,13 +33,13 @@
                             <h5 class="card-title">Here you can:</h5>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
+                            <li class="list-group-item h5">
                                 <a class="link-dark" href="/mywatchlist">Handle your watchlist</a>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item h5">
                                 <a class="link-dark" href="/myotherlists">Handle other lists</a>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item h5">
                                 <a class="link-dark" href="usersettings">Manage your settings</a>
                             </li>
                         </ul>

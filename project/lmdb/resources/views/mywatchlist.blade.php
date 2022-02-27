@@ -55,14 +55,6 @@
                     </table>
                          </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                          <h2 id="handleotherlists" style="color: #fd7e14;">Other lists</h2>
-                    </div>
-                    <div class="card-body">
-                         <h5 class="card-title"></h5>
-                    </div>
-                </div>     
             </div>
         </div>
 </main>
