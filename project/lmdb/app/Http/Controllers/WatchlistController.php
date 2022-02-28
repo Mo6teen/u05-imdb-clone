@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Watchlist;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Movie;
+use App\Models\UserMovie;
+use App\Models\Watchlist;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class WatchlistController extends Controller
 {
@@ -24,8 +28,18 @@ class WatchlistController extends Controller
     {
         $id = Auth::user()->id;
         $watchlists = Watchlist::where('user_id', $id)->get();
-        return view('watchlist', [
+        if (Auth::user()->role == 1){
+        return view('mywatchlist', [
             'watchlists' => $watchlists
         ]);
+        }
+        else return back();
+    }
+    
+    public function delete($id) {
+        $data = Watchlist::find($id);
+        $data->delete();
+
+        return back();    
     }
 }
