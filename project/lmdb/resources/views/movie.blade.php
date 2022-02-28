@@ -25,7 +25,7 @@
 
         <!--Image and description section-->
         <section>
-            <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid mb-3" alt="Image">
+            <img src="{{asset('public/Image/'.$movie->image)}}" class="img-fluid mb-3" alt="Image">
             <div class="d-flex justify-content-between mb-3">
                 <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
                 <div class="card-body">

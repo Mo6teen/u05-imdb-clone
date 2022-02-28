@@ -44,10 +44,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /*public function watchlist(){
-        return $this->belongsToMany(Movie::class, 'watchlist', 'user_id', 'movie_id');
-    }*/
-
     public function watchlists()
     {
         return $this->hasMany(Watchlist::class);
