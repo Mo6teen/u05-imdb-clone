@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -31,6 +32,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Movies routes
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
+
+// Watchlist test
+Route::get('watchlist', [WatchlistController::class, 'show']);
+Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
 
 
 //  Genrepage routes

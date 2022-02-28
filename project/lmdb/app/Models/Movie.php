@@ -14,15 +14,18 @@ class Movie extends Model
         'description',
         'genre',
         'rating',
-        'release_date',
-        'image_name',
-        'image_path',
-        'created_at',
-        'updated_at',
+        'release_date'
+        /* 'image_name',
+        'image_path', */
     ];
 
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function watchlists()
+    {
+        return $this->hasMany(Watchlist::class);
     }
 }

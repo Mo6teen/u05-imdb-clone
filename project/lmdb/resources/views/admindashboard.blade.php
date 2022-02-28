@@ -9,13 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-<<<<<<< HEAD
-    <script src="{{ url('js/script.js') }}" defer></script>
-    <title>Dashboard</title>
-=======
   <script src="{{ url('js/script.js') }}" defer></script>
   <title>LMDB - Dashboard</title>
->>>>>>> main
 </head>
 @section('content')
 <main>
@@ -32,25 +27,6 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-<<<<<<< HEAD
-                        @endif
-                        <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
-                        <h5 class="card-subtitle">You are signed in as admin</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">Here you can:</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handleusers">Handle users</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handlemovies">Handle movies</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="link-dark" href="#handlereviews">Handle reviews</a>
-                            </li>
-                        </ul>
-=======
                     @endif
                     <h4 class="card-title dashboard-title">Welcome to your dashboard</h4>
                     <h5 class="card-subtitle">You are signed in as admin</h5>
@@ -99,7 +75,6 @@
             <div class="card">
                 <div class="card-header">
                     <h2 id="handlemovies" style="color: #fd7e14;">Handle movies</h2>
->>>>>>> main
                     </div>
                     <div class="card">
                         <div class="card-header">
