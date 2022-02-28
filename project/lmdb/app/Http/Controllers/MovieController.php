@@ -49,17 +49,10 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-
         $title = $_GET['title'];
         $movies = Movie::where('title', 'LIKE', '%' . $title . '%')->get();
 
         return view('search', compact('movies'));
-
-        // if ($request->isMethod('POST')) {
-        //     $title = $request->get('title');
-        //     $data = Movie::where('title', 'LIKES', '%' . $title . '%')->orderBy('title', 'DESC')->paginate(5);
-        // }
-        // return view('search', compact('data'));
     }
 
     public function createMovie(Request $request)
@@ -95,10 +88,3 @@ class MovieController extends Controller
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
 }
-
-
-// if ($request->isMethod('POST')) {
-//     $title = $request->get('title');
-//     $data = Movie::where('title', 'LIKES', '%' . $title . '%')->orderBy('title', 'DESC')->paginate(5);
-// }
-// return redirect('movie/' . $title);

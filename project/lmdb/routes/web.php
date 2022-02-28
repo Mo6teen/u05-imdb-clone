@@ -56,11 +56,8 @@ Route::get('movie/', [ReviewController::class, 'show']);
 
 
 // Search route
-// Route::get('search', function () {
-//     return view('search');
-// });
 Route::get('search', [MovieController::class, 'search']);
-// Route::post('search', [MovieController::class, 'search']);
+
 
 // Login, registration, signout routes
 Auth::routes();
