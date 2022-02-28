@@ -21,7 +21,7 @@
                 
                 <div class="card">
                     <div class="card-header">
-                          <h2 id="handleotherlists" style="color: #fd7e14;">My settings</h2>
+                          <h2 id="handleotherlists" style="color: #fd7e14;">Update email<a href="{{ url('usersettings') }}" class="btn btn-dark float-end">BACK</a></h2>
                     </div>
                     <div class="card-body">
                          <h5 class="card-title"></h5>
@@ -35,7 +35,7 @@
                                 <input type="text" name="email" value="{{ $user->email }}" class="form-control" readonly="readonly">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="email">Email</label>
+                                <label for="email">New email</label>
                                 <input type="text" name="email" value="" class="form-control">
                             </div>
                      
