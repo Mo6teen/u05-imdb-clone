@@ -54,6 +54,7 @@
             </div>
             
             @foreach($movie->reviews as $review)
+            @if($review->approved == 1)
             <div class="card-header text-start">  
                 <h3 class="h5">{{ $review->name }}</h3>
             </div>
@@ -68,6 +69,7 @@
                         @endauth
                 </div>
             </div>
+            @endif
             @endforeach
         </section>
     </main>
