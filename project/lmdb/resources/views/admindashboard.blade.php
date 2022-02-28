@@ -30,7 +30,10 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item h5">
-                            <a class="link-dark" href="{{ route('handle-users') }}">Handle users</a>
+                            <a class="link-dark" href="/handleusers">Handle users</a>
+                        </li>
+                        <li class="list-group-item h5">
+                            <a class="link-dark" href="/handlereviews">Handle reviews</a>
                         </li>
                         <li class="list-group-item h5">
                             <a class="link-dark" href="/createmovie">Handle movies</a>

@@ -82,10 +82,12 @@ Route::get('userdashboard', [UserController::class, 'index'])->name('user')->mid
 
 // Dashboard routes
 Auth::routes();
-Route::get('handle-users', [AdminController::class, 'show'])->name('handle-users')->middleware('auth');
+Route::get('handleusers', [AdminController::class, 'show'])->name('handle-users')->middleware('auth');
 Route::get('edit-user/{id}', [AdminController::class, 'edit'])->middleware('auth');
-Route::put('update-user/{id}', [AdminController::class, 'update'])->middleware('auth');
+Route::put('edit-user/{id}', [AdminController::class, 'update'])->middleware('auth');
 Route::get('handleusers/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
+Route::get('handlereviews', [AdminController::class, 'indexReview'])->middleware('auth');
+Route::put('handlereviews/{id}', [AdminController::class, 'approveReview'])->middleware('auth');
 Route::get('createmovie', function (){
     if (Auth::user()->role == 0 ){
         return view('createmovie');
