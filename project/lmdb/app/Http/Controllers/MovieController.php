@@ -49,6 +49,10 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
+        $request->validate([
+            'title' => 'required'
+        ]);
+
         $title = $_GET['title'];
         $movies = Movie::where('title', 'LIKE', '%' . $title . '%')->get();
 
