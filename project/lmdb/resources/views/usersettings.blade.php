@@ -20,10 +20,12 @@
                 
                 <div class="card">
                     <div class="card-header">
-                          <h2 id="handleotherlists" style="color: #fd7e14;">Other lists</h2>
+                          <h2 id="handleotherlists" style="color: #fd7e14;">My settings</h2>
                     </div>
                     <div class="card-body">
                          <h5 class="card-title"></h5>
+                         <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-email/') }}">Update email</a>
+                         <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-password/') }}">Change password</a>
                     </div>
                 </div>     
             </div>

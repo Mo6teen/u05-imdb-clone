@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserSettingsController;
 use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -102,5 +103,12 @@ Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->n
 // Other Lists Routes (otherlists.blade.php)
 
 // User Settings Routes (usersettings.blade.php)
+Route::get('usersettings', [UserSettingsController::class, 'show']);
+Route::get('edit-email', [UserSettingsController::class, 'editEmail']);
+Route::put('update-email', [UserSettingsController::class, 'updateEmail']);
+Route::get('edit-password', [UserSettingsController::class, 'editPassword']);
+Route::put('update-password', [UserSettingsController::class, 'updatePassword']);
+
+
 
 
