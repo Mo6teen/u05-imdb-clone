@@ -56,6 +56,9 @@ Route::get('movie/', [ReviewController::class, 'show']);
 
 
 // Search route
+Route::get('search', function () {
+    return view('search');
+});
 Route::post('search-movies', [MovieController::class, 'search']);
 
 // Login, registration, signout routes
@@ -86,8 +89,8 @@ Route::get('handle-users', [AdminController::class, 'show'])->name('handle-users
 Route::get('edit-user/{id}', [AdminController::class, 'edit'])->middleware('auth');
 Route::put('update-user/{id}', [AdminController::class, 'update'])->middleware('auth');
 Route::get('handleusers/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
-Route::get('createmovie', function (){
-    if (Auth::user()->role == 0 ){
+Route::get('createmovie', function () {
+    if (Auth::user()->role == 0) {
         return view('createmovie');
     }
 });
@@ -102,5 +105,3 @@ Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->n
 // Other Lists Routes (otherlists.blade.php)
 
 // User Settings Routes (usersettings.blade.php)
-
-
