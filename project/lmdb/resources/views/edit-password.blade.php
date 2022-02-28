@@ -61,7 +61,7 @@
                                 @enderror
                             </div> 
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-outline-warning">Update</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </form>
                    </div>     

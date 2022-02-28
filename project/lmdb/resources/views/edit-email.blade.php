@@ -23,6 +23,11 @@
                     <div class="card-header">
                           <h2 id="handleotherlists" style="color: #fd7e14;">Update email<a href="{{ url('usersettings') }}" class="btn btn-dark float-end">BACK</a></h2>
                     </div>
+                    @if (session('status'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                     <div class="card-body">
                          <h5 class="card-title"></h5>
                     </div>
@@ -36,7 +41,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="email">New email</label>
-                                <input type="text" name="email" value="" class="form-control">
+                                <input type="text" name="email" value="" class="form-control" required>
                             </div>
                      
                             <div class="form-group mb-3">
@@ -44,7 +49,7 @@
                                 <input type="text" name="confirm_new_email" value="" class="form-control">
                             </div> 
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-outline-warning">Update</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </form>
                    </div>     

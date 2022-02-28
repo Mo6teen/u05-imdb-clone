@@ -27,10 +27,24 @@
                           <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                           @endif
                     </div>
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                     <div class="card-body">
                          <h5 class="card-title"></h5>
-                         <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-email/') }}">Update email</a>
-                         <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-password/') }}">Change password</a>
+                         <ul class="list-group list-group-flush">
+                             <li class="list-group-item h5">
+                                 <h5>Change your registered email</h5>
+                                 <a class="btn btn-dark btn-sm" href="{{ url('edit-email/') }}">Update email</a>
+                             </li>
+                             <li class="list-group-item h5">
+                                 <h5>Change your password</h5>
+                                 <a class="btn btn-dark btn-sm" href="{{ url('edit-password/') }}">Change password</a>
+                            </li>
+                         </ul>
+                    
                     </div>
                 </div>     
             </div>

@@ -19,7 +19,7 @@ public function show()
 
 public function editEmail() {
     $user = Auth::user();
-    if (auth::user()->role == 1){
+    if (Auth::user()){
     return view('edit-email', compact('user'));
     }
     else return back();
@@ -34,15 +34,14 @@ public function updateEmail(Request $request) {
     $user->email = $request->email;
     $user->email_verified_at = null;
     $user->save();
-    if (Auth::user()->role == 1){
+    if (Auth::user()){
     return redirect('usersettings')->with('status', 'Your email has been updated!');
-    } 
-    else return back();
+    } else return back();
 }
 
 public function editPassword() {
     $user = Auth::user();
-    if (Auth::user()->role == 1){
+    if (Auth::user()){
     return view('edit-password', compact('user'));
     }
     else return back();
@@ -60,11 +59,11 @@ public function updatePassword(Request $request) {
 	]);
 
     if (!Hash::check($request->current_password, $userPassword)) {
-        return back()->withErrors(['current_password'=>'Password do not match current password']);
+        return back()->withErrors(['current_password'=>'Password does not match current password']);
     }
     $user->password = Hash::make($request->password);
     $user->save();
-    if (Auth::user()->role == 1){
+    if (Auth::user()){
         return redirect('usersettings')->with('status', 'Your password has been updated!');
     } else return back();
 }

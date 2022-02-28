@@ -19,7 +19,12 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2 id="handlewatchlist" style="color: #fd7e14;">Your watchlist <a href="{{ url('userdashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
+                        <h2 id="handlewatchlist" style="color: #fd7e14;">Your watchlist 
+                          @if(Auth::user()->role == 1)
+                          <a href="{{ url('userdashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
+                          @elseif(Auth::user()->role == 0)
+                          <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
+                          @endif
                     </div>
                     <div class="card-body text-center">
                     @csrf
