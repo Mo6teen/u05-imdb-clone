@@ -62,9 +62,9 @@
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-outline-success mb-3">Approve</button>
-                                <button type="submit" class="btn btn-outline-danger mb-3">Delete</button>
-                            </div>
                         </form>
+                                <a class="btn btn-outline-danger mb-3" href="{{ url ('handlereviews/delete/' . $review->id) }}">Delete</a>
+                            </div>
                         @endif
                         @endforeach
                     </div> 

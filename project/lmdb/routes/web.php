@@ -49,7 +49,7 @@ Route::get('/top-movies',  function () {
 Route::get('/top-movies', [MovieController::class, 'showTopMovies']);
 
 
-// Review routes
+// Reviews on moviepage routes
 Route::post('reviews-form', [ReviewController::class, 'store'])->name('reviews.store')->middleware('auth');
 Route::get('/movie/delete/{id}', [ReviewController::class, 'delete']);
 Route::get('movie/', [ReviewController::class, 'show']);
@@ -88,6 +88,7 @@ Route::put('edit-user/{id}', [AdminController::class, 'update'])->middleware('au
 Route::get('handleusers/delete/{id}', [AdminController::class, 'delete'])->middleware('auth');
 Route::get('handlereviews', [AdminController::class, 'indexReview'])->middleware('auth');
 Route::put('handlereviews/{id}', [AdminController::class, 'approveReview'])->middleware('auth');
+Route::get('/handlereviews/delete/{id}', [AdminController::class, 'deleteReview'])->middleware('auth');
 Route::get('createmovie', function (){
     if (Auth::user()->role == 0 ){
         return view('createmovie');

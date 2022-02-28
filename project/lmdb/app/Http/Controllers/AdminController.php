@@ -52,7 +52,10 @@ class AdminController extends Controller
 
     public function indexReview() {
         $reviews = Review::get();
+        if (auth::user()->role == 0){
         return view('handlereviews', ['reviews' => $reviews]);
+        } 
+        else return back();
     }
 
     public function approveReview($id) {
@@ -62,6 +65,15 @@ class AdminController extends Controller
         if (auth::user()->role == 0){
         return redirect('handlereviews')->with('status', 'The review has been approved!');
         } 
+        else return back();
+    }
+
+    public function deleteReview($id) {
+        $data = Review::find($id);
+        $data->delete();
+        if (auth::user()->role == 0){
+        return redirect('handlereviews');    
+        }
         else return back();
     }
 }
