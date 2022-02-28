@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Models\Review;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -36,7 +38,7 @@ class AdminController extends Controller
         $user->role = $request->input('role');
         $user->update();
         if (auth::user()->role == 0){
-        return redirect('handle-users')->with('status', 'The user has been updated!');
+        return redirect('handleusers')->with('status', 'The user has been updated!');
         } 
         else return back();
     }
@@ -46,5 +48,32 @@ class AdminController extends Controller
         $data->delete();
 
         return back();    
+    }
+
+    public function indexReview() {
+        $reviews = Review::get();
+        if (auth::user()->role == 0){
+        return view('handlereviews', ['reviews' => $reviews]);
+        } 
+        else return back();
+    }
+
+    public function approveReview($id) {
+        $review = Review::find($id);
+        $review->approved = 1;
+        $review->update();
+        if (auth::user()->role == 0){
+        return redirect('handlereviews')->with('status', 'The review has been approved!');
+        } 
+        else return back();
+    }
+
+    public function deleteReview($id) {
+        $data = Review::find($id);
+        $data->delete();
+        if (auth::user()->role == 0){
+        return redirect('handlereviews');    
+        }
+        else return back();
     }
 }
