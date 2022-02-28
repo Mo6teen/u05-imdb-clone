@@ -1,6 +1,6 @@
 <header>
     <nav>
-        <div class="navbar">
+        <div class="nav-bar">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
                 <div class="hamburger-lines">
@@ -9,7 +9,8 @@
                     <span class="line line3"></span>
                 </div>
                 <div class="name-logo">
-                    <h1>LMDB</h1>
+                    <!-- inline styling works for link getting link big size, can change if we found something better -->
+                    <h1><a class="link-dark text-decoration-none" style="font-size: 2.5rem;" href="/">LMDB</a></h1>
                 </div>
                 <a href="/">
                     <div class="logo">
@@ -17,15 +18,16 @@
                     </div>
                 </a>
                 <div class="menu-items">
-                    <div class="search-box-desktop">
-                        <input class="search-txt" type="text" placeholder=" Search!">
-                        <img class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
-                    </div>
-                    <li><a href="#" class="nav-link">News</a></li>
-                    <li><a href="/genre" class="nav-link">Browse Genres</a></li>
-                    <li><a href="#" class="nav-link">Top Rated</a></li>
-                    <li><a href="#" class="nav-link">Coming Soon</a></li>
-                    <li><a href="/login" class="nav-link">Sign in/Register</a></li>
+                    <form class="search-box-desktop" action="{{ url('search-movies') }}" method="POST">
+                        @csrf
+                        <input class="search-txt" type="text" name="title" placeholder=" Search!">
+                        <input type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+                    </form>
+                    <li><a href="#" class="nav-Link">News</a></li>
+                    <li><a href="/genres" class="nav-Link">Browse Genres</a></li>
+                    <li><a href="/top-movies" class="nav-Link">Top Rated</a></li>
+                    <li><a href="#" class="nav-Link">Coming Soon</a></li>
+                    <li><a href="/login" class="nav-Link">Sign in/Register</a></li>
                 </div>
             </div>
         </div>

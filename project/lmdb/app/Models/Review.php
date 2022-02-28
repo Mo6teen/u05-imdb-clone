@@ -10,4 +10,3 @@ class Review extends Model
     protected $table = 'reviews';
     protected $fillable = ['name', 'movie_id', 'review'];
 }
-

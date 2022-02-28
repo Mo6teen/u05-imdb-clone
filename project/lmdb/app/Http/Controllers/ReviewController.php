@@ -18,6 +18,10 @@ class ReviewController extends Controller
         return back();
     }
 
+    public function show() {
+        return view('movie');
+    }
+
     public function delete($id) {
         $data = Review::find($id);
         $data->delete();
