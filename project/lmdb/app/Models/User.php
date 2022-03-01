@@ -48,5 +48,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Watchlist::class);
     }
+
+    public function customlist()
+    {
+        return $this->hasMany(Customlist::class);
+    }
 }
 
