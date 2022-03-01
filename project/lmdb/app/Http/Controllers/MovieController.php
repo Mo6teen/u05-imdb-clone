@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-    //CRUD
 
     //Gett all movies to show in /movies
     public function allMovies()
@@ -19,7 +18,16 @@ class MovieController extends Controller
     public function index()
     {
         $Movies = Movie::orderby('rating', 'DESC')->take(3)->get();
-        return view('homepage', compact('Movies'));
+        $moviesDate = Movie::orderby('release_date', 'ASC')->take(3)->get();
+
+        // If statement that only shows movies coming in the future and 
+        // not staying in coming soon if date has passed. 
+
+        // if ($moviesDate->release_date) {
+        // }
+
+        return view('homepage', ['moviesDate' => $moviesDate, 'Movies' => $Movies]);
+   
     }
 
     //Gett all movies to show in genrepage.

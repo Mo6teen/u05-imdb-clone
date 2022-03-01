@@ -4,13 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="{{ url('js/script.js') }}" defer></script>
+<@include('meta')
   <title>LMDB - Genres</title>
 </head>
 
@@ -30,11 +24,15 @@
    <div class="row">
 
     @foreach ($genreThriller as $thriller)
-    <div class="col-4">
-      <a href="/movie/{{ $thriller->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"><p>{{ $thriller->title }}</p></a>
-      
-      <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $thriller->rating }}</span>
-      </div>
+    <div class="card col-4">
+            <a href="/movie/{{ $thriller->title }}">
+              <img src="{{ url('/public/Image/' .$thriller->image) }}" alt="{{ $thriller->image }}" class="card-img-top">
+            </a>
+            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+              <h3 class="card-title">{{$thriller->title}}</h3>
+              <span class="card-text" style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $thriller->rating }}</span><br>
+            </div>
+          </div>
       @endforeach
         </div>
         </div>
@@ -50,11 +48,15 @@
    <div class="row">
 
     @foreach ($genreDrama as $drama)
-    <div class="col-4">
-      <a href="/movie/{{ $drama->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"><p>{{ $drama->title }}</p></a>
-      
-      <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $drama->rating }}</span>
-      </div>
+    <div class="card col-4">
+            <a href="/movie/{{ $drama->title }}">
+              <img src="{{ url('/public/Image/' .$drama->image) }}" alt="{{ $drama->image }}" class="card-img-top">
+            </a>
+            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+              <h3 class="card-title">{{$drama->title}}</h3>
+              <span class="card-text" style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $drama->rating }}</span><br>
+            </div>
+          </div>
       @endforeach
         </div>
         </div>
@@ -70,11 +72,15 @@
    <div class="row">
 
     @foreach ($genreFantasy as $fantasy)
-    <div class="col-4">
-      <a href="/movie/{{ $fantasy->title }}"><img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top"><p>{{ $fantasy->title }}</p></a>
-      
-      <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $fantasy->rating }}</span>
-      </div>
+    <div class="card col-4">
+            <a href="/movie/{{ $fantasy->title }}">
+              <img src="{{ url('/public/Image/' .$fantasy->image) }}" alt="{{ $fantasy->image }}" class="card-img-top">
+            </a>
+            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+              <h3 class="card-title">{{$fantasy->title}}</h3>
+              <span class="card-text" style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $fantasy->rating }}</span><br>
+            </div>
+          </div>
       @endforeach
         </div>
         </div>

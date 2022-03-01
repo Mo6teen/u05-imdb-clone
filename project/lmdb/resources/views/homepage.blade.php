@@ -4,13 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+@include('meta')
   <title>Homepage</title>
 </head>
 
@@ -91,9 +85,16 @@
           <a href="/top-movies"><span>see more...</span></a>
         </div>
         <div class="row">
-          @foreach ($Movies as $movie)
-          <div class="col-4">
-            <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
+          @foreach ($moviesDate as $date)
+          <div class="card col-4">
+            <a href="/movie/{{ $movie->title }}">
+              <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top">
+            </a>
+            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+              <h3 class="card-title">{{$date->title}}</h3>
+              <h5 class="card-title">Release Date:</h5>
+              <p class="card-title">{{$date->release_date}}</p>
+            </div>
           </div>
           @endforeach
         </div>
@@ -101,8 +102,6 @@
     </section>
 
   </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   @include('footer')
   @endsection
 </body>
