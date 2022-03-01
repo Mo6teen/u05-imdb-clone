@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->string('name');
             $table->integer('movie_id')->unsigned();
             $table->text('review');
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }

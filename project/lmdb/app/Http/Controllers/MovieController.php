@@ -49,11 +49,14 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->isMethod('POST')) {
-            $title = $request->get('title');
-            $data = Movie::where('title', 'LIKES', '%' . $title . '%')->paginate(5);
-        }
-        return redirect('movie/' . $title);
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        $title = $_GET['title'];
+        $movies = Movie::where('title', 'LIKE', '%' . $title . '%')->get();
+
+        return view('search', compact('movies'));
     }
 
     public function createMovie(Request $request)
@@ -89,52 +92,3 @@ class MovieController extends Controller
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
 }
-
-
-// $request->validate([
-//     'title' => 'required',
-//     'description' => 'required:max:255',
-//     'genre' => 'required',
-//     'rating' => 'required|max:5',
-//     'release_date' => 'required',
-//     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-// ]);
-
-// $name = $request->file('image')->getClientOriginalName();
-// $path = $request->file('image')->store('public/images');
-
-// $movie = new Movie();
-// $movie->title = $request->title;
-// $movie->description = $request->description;
-// $movie->genre = $request->genre;
-// $movie->rating = $request->rating;
-// $movie->release_date = $request->release_date;
-// $movie->image_name = $name;
-// $movie->image_path = $path;
-// $movie->save();
-
-// return redirect('/admindashboard')->with('status', 'Movie Has Been Created');
-
-// $request->validate([
-//     'title' => 'required|min:3',
-//     'description' => 'required',
-//     'release-date' => 'required',
-//     'rating' => 'required|max:5',
-//     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-// ]);
-
-// $input = $request->all();
-
-// if ($request->hasFile('image')) {
-//     $destination_path = 'public/images/thumbnail';
-//     $image = $request->file('image');
-//     $image_name = $image->getClientOriginalName();
-//     $path = $request->file('image')->storeAs($destination_path, $image_name);
-
-//     $input['image'] = $image_name;
-// }
-
-// Movie::create($input);
-// session()->flash('message', $input['title'] . ' succesfully saved');
-
-// return redirect('/admindashboard');

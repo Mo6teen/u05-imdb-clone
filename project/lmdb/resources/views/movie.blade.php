@@ -25,7 +25,7 @@
 
         <!--Image and description section-->
         <section>
-            <img src="{{asset('images/'.$movie->image_path)}}" class="img-fluid mb-3" alt="Image">
+            <img src="{{asset('public/Image/'.$movie->image)}}" class="img-fluid mb-3" alt="Image">
             <div class="d-flex justify-content-between mb-3">
                 <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
                 <div class="card-body">
@@ -72,7 +72,8 @@
             </div>
 
             @foreach($movie->reviews as $review)
-            <div class="card-header text-start">
+            @if($review->approved == 1)
+            <div class="card-header text-start">  
                 <h3 class="h5">{{ $review->name }}</h3>
             </div>
             <div class="card-body text-start">
@@ -86,6 +87,7 @@
                     @endauth
                 </div>
             </div>
+            @endif
             @endforeach
         </section>
     </main>
