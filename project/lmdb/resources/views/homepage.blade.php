@@ -5,7 +5,7 @@
 <html lang="en">
 
 @include('meta')
-  <title>Homepage</title>
+<title>Homepage</title>
 </head>
 
 <body>
@@ -25,25 +25,25 @@
       <div class="container">
         <div class="row text-center">
           <a href="/genres">
-            <h2 class="btn btn-primary " id="btn">Browse All Genres</h2>
+            <h2 class="btn btn-primary btnN">Browse All Genres</h2>
           </a>
           <div class="col-4 py-2">
-            <a href="/genre/comedy" class="btn btn-primary " id="btn">Comedy</a>
+            <a href="/genre/comedy" class="btn btn-primary btnN">Comedy</a>
           </div>
           <div class="col-4 py-2">
-            <a href="/genre/action" class="btn btn-primary " id="btn">Action</a>
+            <a href="/genre/action" class="btn btn-primary btnN">Action</a>
           </div>
           <div class="col-4 py-2">
-            <a href="/genre/thriller" class="btn btn-primary " id="btn">Thriller</a>
+            <a href="/genre/thriller" class="btn btn-primary btnN">Thriller</a>
           </div>
           <div class="col-4 py-2">
-            <a href="/genre/drama" class="btn btn-primary " id="btn">Drama</a>
+            <a href="/genre/drama" class="btn btn-primary btnN">Drama</a>
           </div>
           <div class="col-4 py-2">
-            <a href="/genre/fantasy" class="btn btn-primary " id="btn">Fantasy</a>
+            <a href="/genre/fantasy" class="btn btn-primary btnN">Fantasy</a>
           </div>
           <div class="col-4 py-2">
-            <a href="/genre/romance" class="btn btn-primary " id="btn">Romance</a>
+            <a href="/genre/romance" class="btn btn-primary btnN">Romance</a>
           </div>
         </div>
       </div>
@@ -91,8 +91,8 @@
               <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top">
             </a>
             <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
-              <h3 class="card-title">{{$date->title}}</h3>
-              <h5 class="card-title">Release Date:</h5>
+              <p class="card-title">{{$date->title}}</p>
+              <p class="card-title">Release Date:</p>
               <p class="card-title">{{$date->release_date}}</p>
             </div>
           </div>
@@ -105,4 +105,5 @@
   @include('footer')
   @endsection
 </body>
+
 </html>

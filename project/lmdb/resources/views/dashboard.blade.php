@@ -13,22 +13,22 @@
             <!-- <div class="" id="navbarNav"> -->
             <ul class="navbar-nav d-flex flex-row">
                 <li class="nav-item">
-                    <a class="nav-link" style="font-weight:bold; font-size:22px" href="/">Home</a>
+                    <a class="link-dark text-decoration-none" style="font-weight:bold; font-size:22px" href="/">Home</a>
                 </li>
                 @guest
                 <li class="nav-item px-5 py-1">
-                    <a class="nav-link" href="{{ route('login') }}">Sign in</a>
+                    <a class="link-dark text-decoration-none" href="{{ route('login') }}">Sign in</a>
                 </li>
                 <li class="nav-item py-1">
-                    <a class="nav-link" href="{{ route('register-user') }}">Register</a>
+                    <a class="link-dark text-decoration-none" href="{{ route('register-user') }}">Register</a>
                 </li>
                 @else
 
                 <li class="nav-item px-5 py-1">
-                    <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
+                    <a class="link-dark text-decoration-none" href="{{ route('login') }}">Dashboard</a>
                 </li>
                 <li class="nav-item py-1">
-                    <a class="nav-link" href="{{ route('signout') }}">Sign out</a>
+                    <a class="link-dark text-decoration-none" href="{{ route('signout') }}">Sign out</a>
                 </li>
                 @endguest
             </ul>
