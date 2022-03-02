@@ -108,6 +108,8 @@ Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->n
 // Custom Lists Routes (customlists.blade.php)
 Route::get('customlists', [CustomlistController::class, 'index']);
 Route::post('lists-form', [CustomlistController::class, 'store']);
+Route::get('customlist/{list_name}', [CustomlistController::class, 'show']);
+Route::put('customlist/{id}', [CustomlistController::class, 'edit']);
 
 // User Settings Routes (usersettings.blade.php)
 Route::get('usersettings', [UserSettingsController::class, 'show']);

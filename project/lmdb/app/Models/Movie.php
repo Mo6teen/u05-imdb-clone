@@ -35,8 +35,8 @@ class Movie extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function customlist()
+    public function listentry()
     {
-        return $this->hasMany(Customlist::class);
-    }
+        return $this->hasMany(Listentry::class);
+    } 
 }

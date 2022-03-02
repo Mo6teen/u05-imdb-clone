@@ -29,8 +29,14 @@
                     <label for="list_name">Name your list:</label>
                     <input type="text" name="list_name">
                     <button type="submit" name="submit">Create List</button>
-                    
                     </form>
+
+                    @foreach($customLists as $list)
+
+                    <a href="{{ url('customlist/' . $list->list_name)}}">{{ $list->list_name }}
+                    </a>
+                    @endforeach
+
                 </div>     
             </div>
         </div>

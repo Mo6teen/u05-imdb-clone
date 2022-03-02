@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomlistsTable extends Migration
+class CreateListentriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCustomlistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customlists', function (Blueprint $table) {
+        Schema::create('listentries', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
-            $table->text('list_name');
+            $table->integer('customlist_id');
+            $table->integer('movie_id');     
             $table->timestamps();
             
         });
@@ -29,6 +29,6 @@ class CreateCustomlistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customlists');
+        Schema::dropIfExists('listentries');
     }
 }

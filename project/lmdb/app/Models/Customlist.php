@@ -13,8 +13,7 @@ class Customlist extends Model
     protected $fillable = [
 
         'user_id',
-        'list_name',
-        'movie_id',
+        'list_name'
     ];
 
     public function user() 
@@ -22,12 +21,10 @@ class Customlist extends Model
         return $this->belongsTo(User::class);
 
     }
-
-    public function movie()
-    {
-        return $this->belongsTo(Movie::class);
-
-    }
     
+    public function listentry()
+    {
+        return $this->hasMany(Listentry::class);
+    } 
 }
 
