@@ -13,24 +13,22 @@ class CustomlistController extends Controller
 {
     // Gets user id and shows users existing lists.
 
-    public function index() 
+    public function index()
     {
 
         $id = Auth::user()->id;
         $customLists = Customlist::where('user_id', $id)->get();
 
-        if (Auth::user()){
-        return view('customlists', [
-            'customLists' => $customLists
-        ]);
-        }
-        else return back();
-
+        if (Auth::user()) {
+            return view('customlists', [
+                'customLists' => $customLists
+            ]);
+        } else return back();
     }
 
     //Creates new list. 
 
-    public function storeList(Request $request) 
+    public function storeList(Request $request)
     {
 
         $input = $request->all();
@@ -47,40 +45,48 @@ class CustomlistController extends Controller
 
     public function updateList(Request $request, $id)
     {
-            $customList = Customlist::find($id);
-            $customList->list_name = $request->input('list_name');
-            $customList->update();
+        $customList = Customlist::find($id);
+        $customList->list_name = $request->input('list_name');
+        $customList->update();
 
-            return back()->with('status', 'List has been updated!');
+        return back()->with('status', 'List has been updated!');
     }
 
-    public function addList(Request $request, $id)
+    public function addList(Request $request)
     {
-        if ($request->input('movie_id')) {
+        $request->validate([
+            'movie_id' => 'required',
+            'customlist_id' => 'required'
+        ]);
 
-            $movie = $request->input('movie_id');
-            $movieId = Movie::where('title', $movie)->get('id'); 
-        
+        $addMovie = new Listentry();
+        $addMovie->customlist_id = $request->customlist_id;
+
+        if ($request->movie_id) {
+            $movieTitle = $request->movie_id;
+            $movie = Movie::where('title', $movieTitle)->value('id');
+            $addMovie->movie_id = $movie;
+        } else {
+            return back()->with('status', 'There is no movie called');
         }
 
-        if (Listentry::where('customlist_id', $id)->exists())
-        {
+        $addMovie->save();
 
-        }        
+        return back()->with('status', 'Movie has been added!');
     }
 
     // Reads from list.
 
-    public function show() 
-    { 
-        // $id = Auth::user()->id;
-        // $customLists = Customlist::where('user_id', $id)->get();
-        // if (Auth::user()){
-        // return view('customlist', [
-        //     'customLists' => $customLists
-        // ]);
-        // }
-        // else return back(); 
+    public function show()
+    {
+        $id = Auth::user()->id;
+        $customLists = Customlist::where('user_id', $id)->get();
+        if (Auth::user()) {
+            return view('customlist', [
+                'customLists' => $customLists
+            ]);
+        } else {
+            return back();
+        }
     }
 }
-
