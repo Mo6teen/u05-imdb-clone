@@ -54,10 +54,6 @@ class CustomlistController extends Controller
 
     public function addList(Request $request)
     {
-        $request->validate([
-            'movie_id' => 'required',
-            'customlist_id' => 'required'
-        ]);
 
         $addMovie = new Listentry();
         $addMovie->customlist_id = $request->customlist_id;
@@ -66,24 +62,33 @@ class CustomlistController extends Controller
             $movieTitle = $request->movie_id;
             $movie = Movie::where('title', $movieTitle)->value('id');
             $addMovie->movie_id = $movie;
-        } else {
-            return back()->with('status', 'There is no movie called');
+
+            if (!$movie) {
+                return back()->with('status', 'This movie does not exist');
+            }
         }
 
         $addMovie->save();
-
-        return back()->with('status', 'Movie has been added!');
+        if (Auth::user()) {
+            return back()->with('status', 'Movie has been added to your list!');
+        }
     }
 
     // Reads from list.
 
-    public function show()
+    public function show($list_name)
     {
         $id = Auth::user()->id;
-        $customLists = Customlist::where('user_id', $id)->get();
+        $customList = Customlist::where('list_name', $list_name)->first();
+
+        $mid = Customlist::where('list_name', $list_name)->value('id');
+        $Movies = Listentry::select()->where('customlist_id', $mid)->get();
+
         if (Auth::user()) {
             return view('customlist', [
-                'customLists' => $customLists
+                'Movies' => $Movies,
+                'customList' => $customList,
+
             ]);
         } else {
             return back();

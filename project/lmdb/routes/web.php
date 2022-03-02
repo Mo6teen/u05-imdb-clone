@@ -110,7 +110,8 @@ Route::get('customlists', [CustomlistController::class, 'index']);
 Route::post('lists-form', [CustomlistController::class, 'storeList']);
 Route::get('customlist/{list_name}', [CustomlistController::class, 'show']);
 // Route::put('customlist/{id}', [CustomlistController::class, 'updateList']);
-Route::post('customlist/{id}', [CustomlistController::class,'addList']);
+Route::post('customlist/{id}', [CustomlistController::class, 'addList']);
+// Route::get('customlist/{list_name}', [CustomlistController::class, 'showListmovies']);
 
 // User Settings Routes (usersettings.blade.php)
 Route::get('usersettings', [UserSettingsController::class, 'show']);
