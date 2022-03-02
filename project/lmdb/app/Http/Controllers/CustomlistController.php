@@ -94,4 +94,12 @@ class CustomlistController extends Controller
             return back();
         }
     }
+
+    public function delete($id)
+    {
+        $data = Listentry::find($id);
+        $data->delete();
+
+        return back();
+    }
 }
