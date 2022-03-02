@@ -2,7 +2,7 @@
 @extends('dashboard')
 
 @include('meta')
-    <title>Dashboard</title>
+<title>Dashboard</title>
 </head>
 @section('content')
 <main>
@@ -29,7 +29,7 @@
                                 <a class="link-dark" href="/mywatchlist">Handle your watchlist</a>
                             </li>
                             <li class="list-group-item h5">
-                                <a class="link-dark" href="/cusomlists">Handle other lists</a>
+                                <a class="link-dark" href="/customlists">Handle other lists</a>
                             </li>
                             <li class="list-group-item h5">
                                 <a class="link-dark" href="usersettings">Manage your settings</a>
@@ -43,4 +43,5 @@
 @include('footer')
 @endsection
 </body>
+
 </html>
