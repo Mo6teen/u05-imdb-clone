@@ -15,11 +15,10 @@ class CustomlistController extends Controller
 
     public function index()
     {
-
-        $id = Auth::user()->id;
-        $customLists = Customlist::where('user_id', $id)->get();
-
         if (Auth::user()) {
+            $id = Auth::user()->id;
+            $customLists = Customlist::where('user_id', $id)->get();
+
             return view('customlists', [
                 'customLists' => $customLists
             ]);
@@ -71,6 +70,8 @@ class CustomlistController extends Controller
         $addMovie->save();
         if (Auth::user()) {
             return back()->with('status', 'Movie has been added to your list!');
+        } else {
+            return back();
         }
     }
 
@@ -78,7 +79,6 @@ class CustomlistController extends Controller
 
     public function show($list_name)
     {
-        $id = Auth::user()->id;
         $customList = Customlist::where('list_name', $list_name)->first();
 
         $mid = Customlist::where('list_name', $list_name)->value('id');
