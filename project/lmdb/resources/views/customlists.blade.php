@@ -20,8 +20,23 @@
                           @endif</h2>
                     </div>
                     <div class="card-body">
-                         <h5 class="card-title"></h5>
+                         <h5 class="card-title"></h5> 
                     </div>
+
+                    <form action="{{url('lists-form')}}" method="POST">
+                    @csrf
+                    <input hidden name="user_id" value="{{ Auth::user()->id }}">
+                    <label for="list_name">Name your list:</label>
+                    <input type="text" name="list_name">
+                    <button type="submit" name="submit">Create List</button>
+                    </form>
+
+                    @foreach($customLists as $list)
+
+                    <a href="{{ url('customlist/' . $list->list_name)}}">{{ $list->list_name }}
+                    </a>
+                    @endforeach
+
                 </div>     
             </div>
         </div>

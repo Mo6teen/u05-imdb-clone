@@ -8,7 +8,6 @@
   <title>Top-Rated</title>
 </head>
 
-<body>
 @section('content')
   <main>
     <section class="py-5">

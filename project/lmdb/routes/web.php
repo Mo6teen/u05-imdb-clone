@@ -11,6 +11,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserSettingsController;
 use App\Http\Controllers\WatchlistController;
+use App\Http\Controllers\CustomlistController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -104,7 +105,11 @@ Route::get('mywatchlist', [WatchlistController::class, 'show'])->name('watchlist
 Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
 Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->name('watchlist.delete')->middleware('auth');
 
-// Other Lists Routes (otherlists.blade.php)
+// Custom Lists Routes (customlists.blade.php)
+Route::get('customlists', [CustomlistController::class, 'index']);
+Route::post('lists-form', [CustomlistController::class, 'store']);
+Route::get('customlist/{list_name}', [CustomlistController::class, 'show']);
+Route::put('customlist/{id}', [CustomlistController::class, 'edit']);
 
 // User Settings Routes (usersettings.blade.php)
 Route::get('usersettings', [UserSettingsController::class, 'show']);

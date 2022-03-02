@@ -8,8 +8,7 @@
   <title>LMDB - Dashboard</title>
 </head>
 
-<body>
-  @section('content')
+@section('content')
   <main>
     <section class="py-5">
       <div class="container">
