@@ -19,7 +19,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/thriller">
+          <a href="/genre/thriller" class="link-dark text-decoration-none">
             <h2>Thriller</h2>
           </a>
         </div>
@@ -45,7 +45,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/drama">
+          <a href="/genre/drama" class="link-dark text-decoration-none">
             <h2>Drama</h2>
           </a>
         </div>
@@ -71,7 +71,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/fantasy">
+          <a href="/genre/fantasy" class="link-dark text-decoration-none">
             <h2>Fantasy</h2>
           </a>
         </div>
@@ -97,7 +97,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/drama">
+          <a href="/genre/drama" class="link-dark text-decoration-none">
             <h2>Comedy</h2>
           </a>
         </div>
@@ -123,7 +123,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/drama">
+          <a href="/genre/drama" class="link-dark text-decoration-none">
             <h2>Action</h2>
           </a>
         </div>
@@ -149,7 +149,7 @@
       <div class="container">
         <div class="d-flex justify-content-between">
 
-          <a href="/genre/drama">
+          <a href="/genre/drama" class="link-dark text-decoration-none">
             <h2>Romance</h2>
           </a>
         </div>
