@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
-<title>LMDB - </title>
+<title>LMDB - Customlist</title>
 </head>
 
 @section('content')

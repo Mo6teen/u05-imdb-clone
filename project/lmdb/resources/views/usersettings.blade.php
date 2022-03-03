@@ -1,8 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
+<<<<<<< HEAD
     <title>My settings</title>
+=======
+    <title>LMDB - Dashboard</title>
+>>>>>>> origin/main
 </head>
 @section('content')
 <main>

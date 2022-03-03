@@ -1,7 +1,8 @@
-                        
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
     <title>Edit email</title>
 </head>
