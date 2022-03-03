@@ -19,6 +19,8 @@
                         <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                         @endif</h2>
                     </div>
+
+            <!-- Create a new personal list -->        
                     <form action="{{url('lists-form')}}" method="POST">
                         @csrf
                         <div class="row m-2">
@@ -35,6 +37,7 @@
                         </div>
                     </form>
 
+            <!-- Display personal lists -->
                     <ul class="list-inline">
                     @foreach($customLists as $list)
                         <li class="list-inline-item ms-3 mb-2">
