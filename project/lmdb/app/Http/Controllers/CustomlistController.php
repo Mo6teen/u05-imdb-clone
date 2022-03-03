@@ -63,7 +63,7 @@ class CustomlistController extends Controller
             $addMovie->movie_id = $movie;
 
             if (!$movie) {
-                return back()->with('status', 'This movie does not exist');
+                return back()->with('error', 'This movie does not exist');
             }
         }
 

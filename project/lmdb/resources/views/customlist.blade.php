@@ -25,6 +25,11 @@
                             {{ session('status') }}
                         </div>
                         @endif
+                        @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                        @endif
                         <form action="{{ url('customlist/'.$customList->id) }}" method="POST">
                             @csrf
                             <input hidden name="customlist_id" value="{{ $customList->id }}">
