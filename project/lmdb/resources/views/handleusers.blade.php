@@ -40,7 +40,11 @@
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->role }}</td>
+                                @if ($user->role == 0)
+                                <td>Admin</td>
+                                @elseif ($user->role == 1)
+                                <td>Regular user</td>
+                                @endif
                                 <td>{{ $user->created_at }}</td>
                                 <td><a class="btn btn-outline-warning btn-sm" href="{{ url('edit-user/' . $user->id) }}">Update user</a></td>
                                 <td><a class="btn btn-outline-danger btn-sm" href="{{ url ('admindashboard/delete/' . $user->id) }}">Delete user</a></td>
