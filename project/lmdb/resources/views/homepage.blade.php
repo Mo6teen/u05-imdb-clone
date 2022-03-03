@@ -12,8 +12,13 @@
   @section('content')
   <main>
 
-    <section class="intro py-2">
+    <section class="container d-flex justify-content-center align-items-center flex-column py-2">
       <h1 style="text-align:center;">Welcome to LMDB</h1>
+
+      <figure>
+        <img src="{{ asset('images/biglogo.png') }}" alt="LMDB Logo" class="align-center img-fluid img-thumbnail" width="400" height="400">
+      </figure>
+
     </section>
 
     <!-- Browse all categories -->
