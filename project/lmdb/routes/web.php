@@ -119,3 +119,7 @@ Route::get('edit-email', [UserSettingsController::class, 'editEmail'])->middlewa
 Route::put('update-email', [UserSettingsController::class, 'updateEmail'])->middleware('auth');
 Route::get('edit-password', [UserSettingsController::class, 'editPassword'])->middleware('auth');
 Route::put('update-password', [UserSettingsController::class, 'updatePassword'])->middleware('auth');
+
+Route::get('/test',  function () {
+    return view('test');
+});
