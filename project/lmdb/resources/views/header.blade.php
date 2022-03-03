@@ -17,12 +17,11 @@
                     <li>
                         <a href="/genres" class="nav-link">Brows All Genres</a>
                     </li>
-                    <li>
+                    <li style="margin-left: 2rem;">
                         <form class="d-flex" action="{{ url('search') }}" method="get">
                             <input type="search" class="form-control me-2" name="title" placeholder="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <!-- <a href="/search" class="nav-link">Search</a> -->
                     </li>
                 </ul>
             </div>
