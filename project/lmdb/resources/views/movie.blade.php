@@ -71,6 +71,11 @@
             </div>
 
         <!-- Displaying reviews that has been approved by an admin -->
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
             @foreach($movie->reviews as $review)
             @if($review->approved == 1)
             <div class="card-header text-start">  
