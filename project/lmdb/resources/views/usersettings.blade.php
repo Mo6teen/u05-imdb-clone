@@ -1,16 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 @include('header')
 @extends('dashboard')
 @include('meta')
-    <title>LMDB - Dashboard</title>
+    <title>LMDB - My settings</title>
 </head>
 @section('content')
 <main>
-    <div class="container">
+    <div class="container"> 
         <div class="row justify-content-center">
             <div class="col-md-8">
-                
                 <div class="card">
                     <div class="card-header">
                           <h2 id="handleotherlists" style="color: #fd7e14;">My settings 
@@ -37,7 +37,6 @@
                                  <a class="btn btn-dark btn-sm" href="{{ url('edit-password/') }}">Change password</a>
                             </li>
                          </ul>
-                    
                     </div>
                 </div>     
             </div>

@@ -9,13 +9,13 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav text-end">
                     <li>
-                        <a href="/top-movies" class="nav-link">Top Movies</a>
+                        <a href="top-movies" class="nav-link">Top Movies</a>
                     </li>
                     <li>
                         <a href="/coming-soon" class="nav-link">Coming Soon</a>
                     </li>
                     <li>
-                        <a href="/genres" class="nav-link">Brows All Genres</a>
+                        <a href="genres" class="nav-link">Browse All Genres</a>
                     </li>
                     <li style="margin-left: 2rem;">
                         <form class="d-flex" action="{{ url('search') }}" method="get">
