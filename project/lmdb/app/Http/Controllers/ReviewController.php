@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ReviewController extends Controller
 {
@@ -15,7 +16,7 @@ class ReviewController extends Controller
             'review'=>'required',
         ]);
         Review::create($input);
-        return back();
+        return redirect()->back()->with('message', 'Your review is awaiting approval. It will be visible once it has been approved.');
     }
 
     public function show() {

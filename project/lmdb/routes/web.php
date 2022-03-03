@@ -35,6 +35,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
 
+// Watchlist test
+Route::get('watchlist', [WatchlistController::class, 'show']);
+Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlists.store')->middleware('auth');
+
 
 //  Genrepage routes
 Route::get('genre',  function () {
