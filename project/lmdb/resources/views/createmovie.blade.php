@@ -11,50 +11,59 @@
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8"><div class="card">
+            <div class="col-md-8">
+
+                <div class="card">
                     <div class="card-header">
-                        <h2 id="handlemovies" style="color: #fd7e14;">Handle movies <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
-                        <h5 class="card-title text-center">Create Movie</h5>
-                        <div class="card-body">
-                            @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                            </div>
-                            @endif
+                        <h2 id="handlemovies" style="color: #fd7e14;">Handle movies 
+                            <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Create Movie</h3>
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                        </div>
+                        @endif
+
+                    <!-- Form to add a new movie in the database -->    
                             <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group py-2">
-                                    <label for="title-create">Movie Title</label><br>
-                                    <input type="text" name="title" id="title-crate" placeholder="Add title for the movie">
+                                <div class="py-2">
+                                    <label for="title-create" class="form-label">Movie Title:</label>
+                                    <input type="text" name="title" class="form-control" id="title-crate" placeholder="Add title for the movie">
                                 </div>
-                                <div class="form-group py-3">
-                                    <label for="description">Movie description</label><br>
-                                    <textarea name="description" id="description" cols="50" rows="4"></textarea>
+                                <div class="py-3">
+                                    <label for="description" class="form-label">Movie description:</label>
+                                    <textarea name="description" class="form-control" id="description" cols="50" rows="4"></textarea>
                                 </div>
-                                <div class="form-group py-3">
-                                    <label for="genre">genre</label><br>
-                                    <input type="text" id="genre" name="genre">
+                                <div class="py-3">
+                                    <label for="genre" class="form-label">Genre:</label>
+                                    <input type="text" class="form-control" id="genre" name="genre">
                                 </div>
-                                <div class="form-group py-3">
-                                    <label for="release_date">Release date</label><br>
-                                    <input type="date" id="release_date" name="release_date" value="2022-02-23" min="2022-01-01" max="2024-12-31">
+                                <div class="py-3">
+                                    <label for="release_date" class="form-label">Release date:</label>
+                                    <input type="date" id="release_date" class="form-control" name="release_date" min="" max="2024-12-31">
                                 </div>
-                                <div class="form-group py-3">
-                                    <label for="rating">Rating: 1-5</label>
-                                    <input type="number" id="rating" name="rating" min="1" max="5">
+                                <div class="py-3">
+                                    <label for="rating" class="form-label">Rating: 1-5</label>
+                                    <select name="rating" class="form-select" id="rating">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
-                                <div class="form-group py-3">
-                                    <label for="image">Add a movie thumbnail</label><br>
+                                <div class="py-3">
+                                    <label for="image" class="col-sm-2 col-form-label">Add a movie thumbnail</label>
                                     <input type="file" class="form-control-file" name="image" id="image">
                                 </div>
-                                <div class="form-group py-3">
-                                    <input type="submit" name="submit" id="submit">
+                                <div class="py-3">
+                                    <input type="submit" name="submit" class="btn btn-outline-success" id="submit">
                                 </div>
                             </form>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                        </div>
                     </div>
                 </div>
             </div>
