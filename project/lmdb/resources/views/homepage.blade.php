@@ -17,7 +17,7 @@
       </figure>
     </section>
 
-  <!-- Browse genres -->
+    <!-- Browse genres -->
     <section class="pb-5">
       <div class="container">
         <div class="row text-center">
@@ -47,38 +47,38 @@
     </section>
 
 
-  <!-- Top Rated movies -->
-  <section class="container mt-5">
-    <div class="d-flex justify-content-between">
-      <a href="/top-movies" class="link-dark text-decoration-none">
-        <h2>Top Movies</h2>
-      </a>
-      <a href="/top-movies" class="link-dark"><span>see more...</span></a>
-    </div>
-    <div class="d-flex justify-content-evenly">
-      <div class="row">
-        @foreach ($Movies as $movie)
-        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+    <!-- Top Rated movies -->
+    <section class="container mt-5">
+      <div class="d-flex justify-content-between">
+        <a href="/top-movies" class="link-dark text-decoration-none">
+          <h2>Top Movies</h2>
+        </a>
+        <a href="/top-movies" class="link-dark"><span>see more...</span></a>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <div class="row">
+          @foreach ($Movies as $movie)
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <div class="card p-1 m-2" style="width: 18rem;">
               <a href="/movie/{{ $movie->title }}">
                 <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top pb-1">
-              </a>       
+              </a>
               <h3 class="card-title">{{$movie->title}}</h3>
               <span style="display: inline;">
-              <img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
+                <img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
           </div>
           @endforeach
-        </div> 
-      </div>  
+        </div>
+      </div>
     </section>
 
     <!-- Coming soon section -->
     <section class="container mt-5">
       <div class="d-flex justify-content-between">
-          <h2>Coming Soon</h2>
-          <a href="#" class="link-dark"><span>see more...</span></a>
-        </div>
+        <h2>Coming Soon</h2>
+        <a href="#" class="link-dark"><span>see more...</span></a>
+      </div>
       <div class="d-flex justify-content-evenly">
         <div class="row">
           @foreach ($moviesDate as $date)
@@ -87,11 +87,11 @@
               <a href="/movie/{{ $movie->title }}">
                 <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top">
               </a>
-            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
-              <p class="card-title">{{$date->title}}</p>
-              <p class="card-title">Release Date:</p>
-              <p class="card-title">{{$date->release_date}}</p>
-            </div>
+              <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+                <p class="card-title">{{$date->title}}</p>
+                <p class="card-title">Release Date:</p>
+                <p class="card-title">{{$date->release_date}}</p>
+              </div>
             </div>
           </div>
           @endforeach
@@ -100,7 +100,7 @@
     </section>
 
 
-    
+
 
   </main>
   @include('footer')
