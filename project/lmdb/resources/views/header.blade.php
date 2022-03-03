@@ -15,10 +15,10 @@
                         <a href="#" class="nav-link">Coming Soon</a>
                     </li>
                     <li>
-                        <a href="genres" class="nav-link">Brows All Genres</a>
+                        <a href="genres" class="nav-link">Browse All Genres</a>
                     </li>
                     <li>
-                        <a href="search" class="nav-link">Search</a>
+                        <a href="#" class="nav-link">Search</a>
                     </li>
                 </ul>
             </div>
