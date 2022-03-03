@@ -8,18 +8,13 @@
 @section('content')
 <main>
 
-    <h1></h1>
-
     @if (session('status'))
     <div class="alert alert-success" role="alert">
         {{ session('status') }}
     </div>
     @endif
 
-
-
-
-
+    <!-- Form to add a new movie to a list -->
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -39,7 +34,8 @@
                                 <button type="submit" class="btn btn-outline-warning">Add</button>
                             </div>
                         </form>
-
+                    </div>
+                    <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -65,10 +61,10 @@
                                         <a class="btn btn-danger btn-sm" href="{{ url('customlist/delete/' . $movie->id) }}">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    @endforeach
-                    </tbody>
-                    </table>
                 </div>
             </div>
         </div>
