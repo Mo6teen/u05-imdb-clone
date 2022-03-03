@@ -12,14 +12,11 @@
   @section('content')
   <main>
 
-    <section class="intro py-5">
+    <section class="intro py-2">
       <h1 style="text-align:center;">Welcome to LMDB</h1>
-      <div class="py-3">
-        <a href="#" class="btn btn-primary" id="btn" style="text-align: center;"> Top News </a>
-      </div>
     </section>
 
-    <!-- Brows all categorys -->
+    <!-- Browse all categories -->
 
     <section class="py-5">
       <div class="container">
