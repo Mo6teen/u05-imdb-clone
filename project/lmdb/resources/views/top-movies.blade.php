@@ -1,9 +1,6 @@
 @include('header')
 @extends('dashboard')
 
-<!DOCTYPE html>
-<html lang="en">
-
 @include('meta')
   <title>LMDB - Top Rated Movies</title>
 </head>
@@ -11,10 +8,10 @@
 @section('content')
   <main>
     <section class="py-5">
-  <div class="container">
+    <div class="container">
       <div class="d-flex justify-content-between">
   
-   <h1>Top Rated Movies</h1>
+   <h2 class="h1">Top Rated Movies</h2>
    </div>
    <div class="row">
 
@@ -32,7 +29,7 @@
         </div>
         </div>
     </div>
-  </section>
+    </section>
   </main>
   @include('footer')
   @endsection
