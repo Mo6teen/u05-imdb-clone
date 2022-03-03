@@ -25,8 +25,8 @@
                     </form>
                     <ul>
                         <li><a href="/genres" class="nav-Link">Browse Genres</a></li>
-                        <li><a href="/top-movies" class="nav-Link">Top Rated</a></li>
-                        <li><a href="/login" class="nav-Link">Sign in/Register</a></li>
+                        <li><a href="/top-movies" class="nav-Link">Top Movies</a></li>
+                        <li><a href="/login" class="nav-Link">Sign in/ Register</a></li>
                     </ul>
                 </div>
             </div>

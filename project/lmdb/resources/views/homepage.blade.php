@@ -52,7 +52,7 @@
     <section class="py-5">
       <div class="container">
         <div class="d-flex justify-content-between">
-          <a href="/top-movies" class="link-dark">
+          <a href="/top-movies" class="link-dark text-decoration-none">
             <h2>Top Movies</h2>
           </a>
           <a href="/top-movies" class="link-dark"><span>see more...</span></a>
