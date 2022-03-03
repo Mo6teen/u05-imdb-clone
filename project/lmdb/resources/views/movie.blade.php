@@ -13,7 +13,7 @@
     <main class="container text-center">
         <div class="m-2">
             <h1 class="display-2">{{ $movie->title }}</h1>
-            <a href="/genre/{{ $movie->genre }}" class="btn btn-primary btn-sm" id="btn">{{ $movie->genre }}</a>
+            <a href="/genre/{{ $movie->genre }}" class="btn btn-dark" id="btn">{{ $movie->genre }}</a>
         </div>
 
         <!--Image and description section-->
@@ -31,7 +31,7 @@
                         <input hidden name="user_id" value="{{ Auth::user()->id }}">
                         @endauth
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">+ Watchlist</button>
+                            <button type="submit" class="btn btn-dark">+ Watchlist</button>
                         </div>
                     </form>  
                 </div>

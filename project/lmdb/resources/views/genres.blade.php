@@ -18,7 +18,7 @@
   <!-- Display thriller movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/thriller"><h2>Thriller</h2></a>
+      <a class="btn btn-dark" href="/genre/thriller"><h2>Thriller</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
@@ -42,7 +42,7 @@
   <!-- Display drama movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/drama"><h2>Drama</h2></a>
+      <a class="btn btn-dark" href="/genre/drama"><h2>Drama</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
@@ -66,7 +66,7 @@
   <!-- Display fantasy movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/fantasy"><h2>Fantasy</h2></a>
+      <a class="btn btn-dark" href="/genre/fantasy"><h2>Fantasy</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
@@ -89,7 +89,7 @@
   <!-- Display comedy movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/comedy"><h2>Comedy</h2></a>
+      <a class="btn btn-dark" href="/genre/comedy"><h2>Comedy</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
@@ -112,7 +112,7 @@
   <!-- Display action movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/action"><h2>Action</h2></a>
+      <a class="btn btn-dark" href="/genre/action"><h2>Action</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
@@ -135,7 +135,7 @@
   <!-- Display romance movies -->
   <section class="container m-3">
     <div class="d-flex justify-content-center">
-      <a class="text-decoration-none link-dark" href="/genre/romance"><h2>Romance</h2></a>
+      <a class="btn btn-dark" href="/genre/romance"><h2>Romance</h2></a>
     </div>
     <div class="d-flex justify-content-evenly">
       <div class="row">
