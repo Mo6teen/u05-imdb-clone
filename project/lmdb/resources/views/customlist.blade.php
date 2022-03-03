@@ -2,12 +2,11 @@
 @extends('dashboard')
 
 @include('meta')
-<title>LMDB - </title>
+<title>LMDB - {{ $customList->list_name }}</title>
 </head>
 
 @section('content')
 <main>
-
     @if (session('status'))
     <div class="alert alert-success" role="alert">
         {{ session('status') }}
@@ -49,17 +48,11 @@
                             <tbody>
                                 @foreach($Movies as $movie)
                                 <tr>
-                                    <td>
-                                        <a href="{{ url('movie/' . $movie->movie->title)}}">
-                                            {{ $movie->movie->title }}
-                                        </a>
-                                    </td>
+                                    <td><a href="{{ url('movie/' . $movie->movie->title)}}">{{ $movie->movie->title }}</a></td>
                                     <td> {{ $movie->movie->genre }}</td>
                                     <td> {{ $movie->movie->rating }}</td>
                                     <td> {{ $movie->movie->release_date }}</td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm" href="{{ url('customlist/delete/' . $movie->id) }}">Delete</a>
-                                    </td>
+                                    <td><a class="btn btn-danger btn-sm" href="{{ url('customlist/delete/' . $movie->id) }}">Delete</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

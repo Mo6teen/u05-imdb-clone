@@ -57,7 +57,7 @@
                                     </select>
                                 </div>
                                 <div class="py-3">
-                                    <label for="image" class="form-label mb-2">Add a movie thumbnail</label>
+                                    <label for="image" class="col-sm-2 col-form-label">Add a movie thumbnail</label>
                                     <input type="file" class="form-control-file" name="image" id="image">
                                 </div>
                                 <div class="py-3">

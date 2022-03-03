@@ -2,7 +2,7 @@
 @extends('dashboard')
 
 @include('meta')
-<title>Dashboard</title>
+<title>LMDB - Other lists</title>
 </head>
 @section('content')
 <main>
@@ -21,22 +21,31 @@
                     </div>
                     <form action="{{url('lists-form')}}" method="POST">
                         @csrf
-                        <div class="form-group py-3 d-flex justify-content-center align-items-center">
+                        <div class="row m-2">
                             <input hidden name="user_id" value="{{ Auth::user()->id }}">
-                            <label for="list_name" class="mx-3">Name your list:</label>
-                            <input type="text" name="list_name">
-                            <button type="submit" name="submit" class="btn btn-outline-warning btn-sm mx-3">Create List</button>
+                            <div class="row">
+                            <label for="list_name" class="col-sm-2 col-form-label">Name your list:</label>
+                            <div class="col-sm-10 p-2">
+                            <input type="text" name="list_name" class="form-control">
+                            </div>
+                            </div>
+                            <div class="col-auto p-2">
+                            <button type="submit" name="submit" class="btn btn-outline-warning btn-sm">Create List</button>
+                            </div>
                         </div>
                     </form>
 
+                    <ul class="list-inline">
                     @foreach($customLists as $list)
-                    <div class="d-flex justify-content-center">
-                        <h3><a href="{{ url('customlist/' . $list->list_name)}}" class="link-warning">{{ $list->list_name }}</a></h3>
-                    </div>
+                        <li class="list-inline-item ms-3 mb-2">
+                            <a href="{{ url('customlist/' . $list->list_name)}}" class="link-warning">{{ $list->list_name }}</a>
+                        </li>
                     @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 </main>
 @include('footer')
 @endsection
