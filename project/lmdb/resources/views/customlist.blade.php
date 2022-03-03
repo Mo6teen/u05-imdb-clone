@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
 <title>LMDB - {{ $customList->list_name }}</title>
 </head>
@@ -24,6 +26,11 @@
                         </h2>
                     </div>
                     <div class="card-body text-center">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                         <form action="{{ url('customlist/'.$customList->id) }}" method="POST">
                             @csrf
                             <input hidden name="customlist_id" value="{{ $customList->id }}">

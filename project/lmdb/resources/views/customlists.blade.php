@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
 <title>LMDB - Other lists</title>
 </head>

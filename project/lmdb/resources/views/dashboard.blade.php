@@ -8,7 +8,7 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg navbar-expand-sm mb-5" style="background-color: #feba6b;">
-        <div class="container">
+        <div class="container-fluid">
             <!-- <a class="navbar-brand mr-auto" href="/">Home</a> -->
             <!-- <div class="" id="navbarNav"> -->
             <ul class="navbar-nav d-flex flex-row">
