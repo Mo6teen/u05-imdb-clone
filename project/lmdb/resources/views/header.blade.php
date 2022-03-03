@@ -1,5 +1,4 @@
 <header>
-
     <div class="container-fluid" style="background-color: #feba6b;">
         <nav class="navbar navbar-expand-md navbar-light">
             <a href="#" class="navbar-brand"><img src="{{asset('images/LMDB_Logo.png')}}" alt="LMDB logo" width="30" height="28" class="d-line-block align-top">
