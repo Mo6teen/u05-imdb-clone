@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
 
-    //Gett all movies to show in /movies
+    //Get all movies to show in /movies
     public function allMovies()
     {
         $movies = Movie::get();
@@ -30,7 +30,7 @@ class MovieController extends Controller
    
     }
 
-    //Gett all movies to show in genrepage.
+    //Get all movies to show in genrepage.
     public function genreMovies()
     {
         $movies = Movie::get();
