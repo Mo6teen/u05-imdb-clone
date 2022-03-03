@@ -5,11 +5,11 @@
 <html lang="en">
 
 @include('meta')
-  <title>LMDB - {{ $genre[0]->genre }}</title>
+<title>LMDB - {{ $genre[0]->genre }}</title>
 </head>
 
 <body>
-@section('content')
+  @section('content')
   <main>
 
     <section class="container">
@@ -40,5 +40,5 @@
   @include('footer')
   @endsection
 </body>
-</html>
 
+</html>

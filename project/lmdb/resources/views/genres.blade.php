@@ -5,11 +5,11 @@
 <html lang="en">
 
 @include('meta')
-  <title>LMDB - Genres</title>
+<title>LMDB - Genres</title>
 </head>
 
 <body>
-@section('content')
+  @section('content')
   <main>
 
   
@@ -163,5 +163,5 @@
   @include('footer')
   @endsection
 </body>
-</html>
 
+</html>
