@@ -12,7 +12,6 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserSettingsController;
 use App\Http\Controllers\WatchlistController;
 use App\Http\Controllers\CustomlistController;
-use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +27,6 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('/', function () {
     return view('homepage');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Movies routes
 Route::get('/', [MovieController::class, 'index']);
@@ -106,15 +103,15 @@ Route::post('store-form', [WatchlistController::class, 'store'])->name('watchlis
 Route::get('mywatchlist/delete/{id}', [WatchlistController::class, 'delete'])->name('watchlist.delete')->middleware('auth');
 
 // Custom Lists Routes (customlists.blade.php)
-Route::get('customlists', [CustomlistController::class, 'index']);
-Route::post('lists-form', [CustomlistController::class, 'storeList']);
-Route::get('customlist/{list_name}', [CustomlistController::class, 'show']);
-Route::post('customlist/{id}', [CustomlistController::class, 'addList']);
-Route::get('customlist/delete/{id}', [CustomlistController::class, 'delete']);
+Route::get('customlists', [CustomlistController::class, 'index'])->middleware('auth');
+Route::post('lists-form', [CustomlistController::class, 'storeList'])->middleware('auth');
+Route::get('customlist/{list_name}', [CustomlistController::class, 'show'])->middleware('auth');
+Route::post('customlist/{id}', [CustomlistController::class, 'addList'])->middleware('auth');
+Route::get('customlist/delete/{id}', [CustomlistController::class, 'delete'])->middleware('auth');
 
 // User Settings Routes (usersettings.blade.php)
-Route::get('usersettings', [UserSettingsController::class, 'show']);
-Route::get('edit-email', [UserSettingsController::class, 'editEmail']);
-Route::put('update-email', [UserSettingsController::class, 'updateEmail']);
-Route::get('edit-password', [UserSettingsController::class, 'editPassword']);
-Route::put('update-password', [UserSettingsController::class, 'updatePassword']);
+Route::get('usersettings', [UserSettingsController::class, 'show'])->middleware('auth');
+Route::get('edit-email', [UserSettingsController::class, 'editEmail'])->middleware('auth');
+Route::put('update-email', [UserSettingsController::class, 'updateEmail'])->middleware('auth');
+Route::get('edit-password', [UserSettingsController::class, 'editPassword'])->middleware('auth');
+Route::put('update-password', [UserSettingsController::class, 'updatePassword'])->middleware('auth');

@@ -67,20 +67,6 @@ class CustomAuthController extends Controller
         ]);
     }
 
-    public function dashboard()
-    {
-        if (Auth::check()) {
-            if (Auth::user()->role == 0){
-                return view('admindashboard');
-            }
-            elseif (Auth::user()->role == 1){
-                return view('userdashboard');
-            }
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
-
     public function signOut()
     {
         Session::flush();
