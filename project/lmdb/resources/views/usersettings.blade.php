@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 @include('header')
 @extends('dashboard')
+
 @include('meta')
-<<<<<<< HEAD
-    <title>My settings</title>
-=======
-    <title>LMDB - Dashboard</title>
->>>>>>> origin/main
+    <title>LMDB - My settings</title>
 </head>
 @section('content')
 <main>
-    <div class="container">
+    <div class="container"> 
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
