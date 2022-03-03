@@ -24,6 +24,7 @@
                 </div>
 
                 <!-- Table to display users -->
+                <section class="table-responsive">
                     <div class="card-body">
                         <table class="table table-striped table-hover">
                             <thead>
@@ -54,6 +55,7 @@
                             </tbody>
                         </table>
                     </div>
+                </section>
                 </div>
             </div>
         </div> 
