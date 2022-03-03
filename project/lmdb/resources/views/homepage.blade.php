@@ -59,11 +59,11 @@
         <div class="row">
           @foreach ($Movies as $movie)
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2" style="width: 18rem;">
+            <div class="card p-1 m-2" style="width:350px">
               <a href="/movie/{{ $movie->title }}">
-                <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top pb-1">
+                <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top" style="height: 450px;">
               </a>
-              <h3 class="card-title">{{$movie->title}}</h3>
+              <p class="card-title">{{$movie->title}}</p>
               <span style="display: inline;">
                 <img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
@@ -83,9 +83,9 @@
         <div class="row">
           @foreach ($moviesDate as $date)
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2" style="width: 18rem;">
+            <div class="card p-1 m-2" style="width:350px">
               <a href="/movie/{{ $movie->title }}">
-                <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top">
+                <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top" style="height: 450px;">
               </a>
               <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
                 <p class="card-title">{{$date->title}}</p>
