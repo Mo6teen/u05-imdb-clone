@@ -8,7 +8,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                <ul class="navbar-nav ms-auto text-end">
+                <ul class="navbar-nav text-end">
                     <li>
                         <a href="#" class="nav-link">Top Movies</a>
                     </li>
