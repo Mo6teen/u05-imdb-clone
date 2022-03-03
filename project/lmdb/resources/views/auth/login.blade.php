@@ -1,16 +1,10 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-  <script src="{{ url('js/script.js') }}" defer></script>
-  <title>Log in</title>
+@include('meta')
+  <title>LMDB - Log in</title>
 </head>
 
 @section('content')
@@ -19,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <h3 class="card-header text-center">Login</h3>
+                    <p class="card-header text-center">Login</p>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login.custom') }}">
                             @csrf
@@ -61,4 +55,5 @@
         </div>
     </div>
 </main>
+@include('footer')
 @endsection

@@ -1,23 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
 @include('meta')
-<title>LMDB - </title>
+<title>LMDB - Customlist</title>
 </head>
 
 @section('content')
 <main>
 
     <h1></h1>
-
-    @if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-    </div>
-    @endif
-
-
-
 
 
     <div class="container py-5">
@@ -30,6 +23,11 @@
                         </h2>
                     </div>
                     <div class="card-body text-center">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                         <form action="{{ url('customlist/'.$customList->id) }}" method="POST">
                             @csrf
                             <input hidden name="customlist_id" value="{{ $customList->id }}">

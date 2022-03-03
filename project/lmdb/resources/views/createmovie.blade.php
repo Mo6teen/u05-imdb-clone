@@ -1,8 +1,8 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-<!DOCTYPE html>
-<html lang="en">
-
 @include('meta')
   <title>Create movie</title>
 </head>

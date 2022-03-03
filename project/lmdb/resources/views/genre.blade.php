@@ -1,20 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
-<!DOCTYPE html>
-<html lang="en">
-
 @include('meta')
-  <title>LMDB - {{ $genre[0]->genre }}</title>
+<title>LMDB - {{ $genre[0]->genre }}</title>
 </head>
 
 <body>
-@section('content')
+  @section('content')
   <main>
 
     <section class="py-5">
 
-      <h1> {{ $genre[0]->genre }}</h1>
+      <h2> {{ $genre[0]->genre }}</h2>
 
       <div class="container">
         <div class="d-flex justify-content-between">
@@ -41,5 +40,5 @@
   @include('footer')
   @endsection
 </body>
-</html>
 
+</html>

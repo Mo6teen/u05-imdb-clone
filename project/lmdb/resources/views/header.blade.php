@@ -1,35 +1,28 @@
 <header>
-    <nav>
-        <div class="nav-bar">
-            <div class="container nav-container">
-                <input class="checkbox" type="checkbox" name="" id="" />
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>
-                <div class="name-logo">
-                    <!-- inline styling works for link getting link big size, can change if we found something better -->
-                    <h1><a class="link-dark text-decoration-none" style="font-size: 2.5rem;" href="/">LMDB</a></h1>
-                </div>
-                <a href="/">
-                    <div class="logo">
-                        <img src="{{ asset('images/LMDB_Logo.png') }}" alt="LMDB Logo" id="logo" />
-                    </div>
-                </a>
-                <div class="menu-items">
-                    <form class="search-box-desktop" action="{{ url('search') }}" method="get">
-                        @csrf
-                        <input class="search-txt" type="text" name="title" placeholder=" Search!">
-                        <input type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
-                    </form>
-                    <ul>
-                        <li><a href="/genres" class="nav-Link">Browse Genres</a></li>
-                        <li><a href="/top-movies" class="nav-Link">Top Rated</a></li>
-                        <li><a href="/login" class="nav-Link">Sign in/Register</a></li>
-                    </ul>
-                </div>
+    <div class="container-fluid" style="background-color: #feba6b;">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a href="#" class="navbar-brand"><img src="{{asset('images/LMDB_Logo.png')}}" alt="LMDB logo" width="30" height="28" class="d-line-block align-top">
+                LMDB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav text-end">
+                    <li>
+                        <a href="#" class="nav-link">Top Movies</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Coming Soon</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Brows All Genres</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link">Search</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </header>

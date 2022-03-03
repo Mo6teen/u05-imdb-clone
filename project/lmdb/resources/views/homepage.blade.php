@@ -1,9 +1,8 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-
-<!DOCTYPE html>
-<html lang="en">
-
 @include('meta')
 <title>Homepage</title>
 </head>
@@ -12,8 +11,13 @@
   @section('content')
   <main>
 
-    <section class="intro py-2">
+    <section class="container d-flex justify-content-center align-items-center flex-column py-2">
       <h1 style="text-align:center;">Welcome to LMDB</h1>
+
+      <figure>
+        <img src="{{ asset('images/biglogo.png') }}" alt="LMDB Logo" class="align-center img-fluid img-thumbnail" width="400" height="400">
+      </figure>
+
     </section>
 
     <!-- Browse all categories -->
@@ -52,7 +56,7 @@
     <section class="py-5">
       <div class="container">
         <div class="d-flex justify-content-between">
-          <a href="/top-movies" class="link-dark">
+          <a href="/top-movies" class="link-dark text-decoration-none">
             <h2>Top Movies</h2>
           </a>
           <a href="/top-movies" class="link-dark"><span>see more...</span></a>

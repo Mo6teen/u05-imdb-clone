@@ -1,8 +1,8 @@
+<!DOCTYPE html>
+
+<html lang="en">
 @include('header')
 @extends('dashboard')
-<!DOCTYPE html>
-<html lang="en">
-
 @include('meta')
   <title>LMDB - Dashboard</title>
 </head>
@@ -20,37 +20,44 @@
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
-                    </div>
                     @endif
-                    <div class="card-body">
-                    @csrf
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Created</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($users as $user)   
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->role }}</td>
-                                <td>{{ $user->created_at }}</td>
-                                <td><a class="btn btn-outline-warning btn-sm" href="{{ url('edit-user/' . $user->id) }}">Update user</a></td>
-                                <td><a class="btn btn-outline-danger btn-sm" href="{{ url ('admindashboard/delete/' . $user->id) }}">Delete user</a></td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
                 </div>
-            </div> 
-        </div>
+
+                <!-- Table to display users -->
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Created</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($users as $user)   
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    @if ($user->role == 0)
+                                    <td>Admin</td>
+                                    @elseif ($user->role == 1)
+                                    <td>Regular user</td>
+                                    @endif
+                                    <td>{{ $user->created_at }}</td>
+                                    <td><a class="btn btn-outline-warning btn-sm" href="{{ url('edit-user/' . $user->id) }}">Update user</a></td>
+                                    <td><a class="btn btn-outline-danger btn-sm" href="{{ url ('admindashboard/delete/' . $user->id) }}">Delete user</a></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
 </main>
 @include('footer')
 @endsection
