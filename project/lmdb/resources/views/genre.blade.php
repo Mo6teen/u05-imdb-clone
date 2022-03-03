@@ -11,31 +11,30 @@
   @section('content')
   <main>
 
-    <section class="py-5">
+    <section class="container">
+      <div class="pb-3 text-center">
+        <h2 class="display-1"> {{ $genre[0]->genre }}</h2>
+      </div>
 
-      <h2> {{ $genre[0]->genre }}</h2>
-
-      <div class="container">
-        <div class="d-flex justify-content-between">
-
-        </div>
+      <!-- Display movies in genre -->
+      <div class="d-flex justify-content-evenly">
         <div class="row">
-
           @foreach ($genre as $movie)
-          <div class="card col-4">
-            <a href="/movie/{{ $movie->title }}">
-              <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top">
-            </a>
-            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="card p-1 m-2" style="width: 18rem;">
+              <a href="/movie/{{ $movie->title }}">
+                <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top pb-1">
+              </a>       
               <h3 class="card-title">{{$movie->title}}</h3>
-              <span class="card-text" style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span><br>
+              <span style="display: inline;">
+              <img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
           </div>
           @endforeach
-        </div>
-      </div>
-      </div>
+        </div> 
+      </div>  
     </section>
+
   </main>
   @include('footer')
   @endsection
