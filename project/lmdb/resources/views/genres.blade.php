@@ -9,10 +9,8 @@
 
 <body>
   @section('content')
-  <main>
+  <main class="container">
 
-  
-  <section class="container">
     <div class="pb-3 text-center">
       <h2 class="display-1">Genres</h2>
     </div>
@@ -157,7 +155,6 @@
     </div>
   </section>
 
-  </section>
   </main>
   @include('footer')
   @endsection

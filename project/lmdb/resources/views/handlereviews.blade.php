@@ -22,6 +22,8 @@
                         {{ session('status') }}
                     </div>
                     @endif
+
+                <!-- Form to read and approve/delete reviews written by users -->
                     <div class="card-body">
                         @foreach($reviews as $review)
                         @if($review->approved == 0)   
