@@ -4,15 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-  <script src="{{ url('js/script.js') }}" defer></script>
+@include('meta')
   <title>LMDB - {{ $genre[0]->genre }}</title>
 </head>
 
@@ -31,13 +23,14 @@
         <div class="row">
 
           @foreach ($genre as $movie)
-          <div class="col-4">
-
-            <img src="{{asset('images/LoTR 2.jpg')}}" alt="Random images" class="card-img-top">
-            <p>{{ $movie->title }}</p>
-            <span style="display: inline;"><img src="{{asset ('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
-
-            <p>{{ $movie->description }}</p>
+          <div class="card col-4">
+            <a href="/movie/{{ $movie->title }}">
+              <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top">
+            </a>
+            <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
+              <h3 class="card-title">{{$movie->title}}</h3>
+              <span class="card-text" style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span><br>
+            </div>
           </div>
           @endforeach
         </div>

@@ -32,4 +32,9 @@ class Movie extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function listentry()
+    {
+        return $this->hasMany(Listentry::class);
+    } 
 }
