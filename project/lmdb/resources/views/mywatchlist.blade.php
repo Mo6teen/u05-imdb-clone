@@ -4,7 +4,7 @@
 @include('header')
 @extends('dashboard')
 @include('meta')
-<title>Dashboard</title>
+<title>LMDB - Watchlist</title>
 </head>
 @section('content')
 
@@ -23,8 +23,8 @@
                             <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a></h2>
                             @endif
                         </div>
+                        <section class="table-responsive">
                         <div class="card-body text-center">
-                            @csrf
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
@@ -50,11 +50,11 @@
                                             <a class="btn btn-danger btn-sm" href="{{ url('mywatchlist/delete/' . $watchlist->id) }}">Delete</a>
                                         </td>
                                     </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        @endforeach
-                        </tbody>
-                        </table>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
