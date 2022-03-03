@@ -1,8 +1,8 @@
-@extends('dashboard')
-@include('header')
 <!DOCTYPE html>
+
 <html lang="en">
-    
+@include('header')
+@extends('dashboard')
 @include('meta')
   <title>LMDB - Edit user</title>
 </head>
