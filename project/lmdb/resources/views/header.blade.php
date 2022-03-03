@@ -12,13 +12,16 @@
                         <a href="top-movies" class="nav-link">Top Movies</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link">Coming Soon</a>
+                        <a href="/coming-soon" class="nav-link">Coming Soon</a>
                     </li>
                     <li>
                         <a href="genres" class="nav-link">Browse All Genres</a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link">Search</a>
+                    <li style="margin-left: 2rem;">
+                        <form class="d-flex" action="{{ url('search') }}" method="get">
+                            <input type="search" class="form-control me-2" name="title" placeholder="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                     </li>
                 </ul>
             </div>

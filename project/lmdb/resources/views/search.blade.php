@@ -22,7 +22,7 @@
               <input class="form-control" type="text" name="title" placeholder=" Search!">
             </div>
             <div class="form-group col">
-              <input type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box">
+              <input class="btn btn-outline-success" type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box" width="80" height="38">
             </div>
           </div>
         </form>

@@ -6,3 +6,15 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #feba6b;
+    height: 150px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
