@@ -1,66 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# U05 - IMDB clone
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About the project
 
-## About Laravel
+(Background, purpose, goals...)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## How to get started
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Since this is a Laravel project you need to have Docker installed on your machine and the Docker extension in your code editor before you begin. We have been using Visual Studio Code. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+With that in place open your project in your code editor and run **docker compose up** in terminal. With Docker up and running and if you use VS code you click on Docker symbol. Then find the running container for your procect, right click on the line ending with **_php** and choose **attach shell**. You can attach several shells, and you will need more than one to serve on one and be able to make migrations and other things on another. 
 
-## Learning Laravel
+Then click on one of the running shells and run **cd lmdb/**, which is the Laravel project name for this app. Then run **php artisan serve --host 0.0.0.0 --port 8000** to start your local server. Then you can open your browser and type **localhost:8000** to see the application home page. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+To log in to the database which is located in Adminer you need to log in with the login details in the env file. When you are logged in you need to create a database named LMDB. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Role based system
+In this application there is three role types. 
 
-## Laravel Sponsors
+The first one is the guest user which only have access to read and has no dashboard. 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+The second one is the regular user who is signed in. The user has a dashboard (userdashboard) and can there:
+* Create a watchlist by adding movies. 
+* Create other lists with movies named by the user. 
+* Change user settings (email and password). 
 
-### Premium Partners
+The regular user can also write reviews on movies (needs to be approved by admin). 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+The third role is admin (which dashboard is admindashboard), who can do everything a regular user can plus:
+* Create movies. 
+* Handle reviews. 
+* Make CRUD operations on users (change role and delete user).
 
-## Contributing
+TTo create your first admin either create a user in users table in adminer with role 0, or navigate to register user in **localhost:8000/registration** and create a user, a user by default gets role 1 at registration, then go to adminer and change the user role to 0 in users table. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## The views
 
-## Code of Conduct
+### The login view
+By navigating to **localhost:8000/registration** or simply click "register" in nav-bar visitors can registrate themselves to become regular users (name, email, password). After successful registration the visitor gets redirected to **localhost:8000/login** to fill in email and password. Forgot password? No problem - click **forgot password**, type in email adress and the user will get a reset password link sent to their email inbox. 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### The dashboard view
+If the user has role 1 (regular user) the user will be redirected to user dashboard after login. If the user role is 0 the user is admin and will be redirected to admin dashboard. If the user tries to type admin dashboard or vice versa in adress field there will be no success, they will stay on their dashboard. Read about what a user based on role can do on their dashboard under "Role based system" section above. 
 
-## Security Vulnerabilities
+## User stories
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Database structure
 
-## License
+## Design patterns
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contributors 
