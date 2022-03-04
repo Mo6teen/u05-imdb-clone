@@ -36,7 +36,7 @@
                             <div class="form-group py-3 d-flex justify-content-center align-items-center">
                                 <label for="addmovie">Add Movie</label>
                                 <input type="text" name="movie_id" class="form-control">
-                                <button type="submit" class="btn btn-outline-warning">Add</button>
+                                <button type="submit" class="btn btn-success">Add</button>
                             </div>
                         </form>
                     </div>
