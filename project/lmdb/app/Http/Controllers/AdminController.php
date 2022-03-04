@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
-use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
