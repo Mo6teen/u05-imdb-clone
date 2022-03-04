@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="col-auto p-2">
-                                <button type="submit" name="submit" class="btn btn-outline-warning btn-sm">Create List</button>
+                                <button type="submit" name="submit" class="btn btn-success btn-sm">Create List</button>
                             </div>
                         </div>
                     </form>
@@ -42,9 +42,12 @@
                     <!-- Display personal lists -->
                     <ul class="list-inline">
                         @foreach($customLists as $list)
-                        <li class="list-inline-item ms-3 mb-2">
-                            <a href="{{ url('customlist/' . $list->list_name)}}" class="link-warning">{{ $list->list_name }}</a>
-                        </li>
+                        <div class="my-2 text-center">
+                            <p class="h3">Your Lists</p>
+                            <li class="list-inline-item ms-3 mb-2">
+                                <a href="{{ url('customlist/' . $list->list_name)}}" class="link-dark h4">{{ $list->list_name }}</a>
+                            </li>
+                        </div>
                         @endforeach
                     </ul>
                 </div>
