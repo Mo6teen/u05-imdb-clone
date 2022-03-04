@@ -52,7 +52,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 mt-2 ml-1">
                                 <button type="submit" class="btn btn-primary">
                                     Reset Password
                                 </button>
@@ -65,6 +65,9 @@
         </div>
     </div>
 </main>
+<div class="py-5 my-5"></div>
+<div class="py-5 my-5"></div>
+<div class="py-5 my-5"></div>
 @include('footer')
 @endsection
 
