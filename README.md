@@ -3,8 +3,10 @@
 ## About the project
 
 This project started of as a school assignment with the purpose to learn more about how to build a backend with laravel and the main focus throughout the project has been backend functionality.
+
 The goal of the project has been to create a website modelled after the famous site IMDB, which is a website where a user can find information about most movies. The team wanted to create a cleaner, more accessible version of IMDB and still offer many of it's functionalities, which you can read more about below.
-The name LMDB is short for Lobster Movie Database and lobsters have been the theme for the project. In the future if you find that you are in the mood for a movie about lobsters LMDB will be the website to turn to for recommendations.
+
+The name LMDB is short for Lobster Movie Database and lobsters have been the theme for the project. In the future if you find that you are in the mood for a movie about lobsters LMDB will be the website to turn to for recommendations. 🦞
 
 ## How to get started
 
