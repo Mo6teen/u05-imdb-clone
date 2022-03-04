@@ -12,7 +12,7 @@ With that in place open your project in your code editor and run **docker-compos
 
 Then click on one of the running shells and run **cd lmdb/**, which is the Laravel project name for this app. Then run **php artisan serve --host 0.0.0.0 --port 8000** to start your local server. Then you can open your browser and type **localhost:8000** to see the application home page. 
 
-To log in to the database you can use Admine. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database. 
+To log in to the database you can use Adminer. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database. 
 
 You will also need to change the mail section in env file to this to make the reset password function work:
 ```
