@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer mt-5">
     <figure>
         <img src="{{ asset('images/facebook.png') }}" alt="facebook logo">
         <img src="{{ asset('images/instagram.png') }}" alt="instagram logo">

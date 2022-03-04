@@ -2,16 +2,14 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>Homepage</title>
 </head>
 
 <body>
-  @section('content')
-  <main class="container">
+  <main class="container pt-5">
     <section class="d-flex justify-content-center align-items-center flex-column">
-      <h1 style="text-align:center;">Welcome to LMDB</h1>
+      <h2 style="text-align:center;" class="display-1">Welcome to LMDB</h2>
       <figure>
         <img src="{{ asset('images/biglogo.png') }}" alt="LMDB Logo" class="align-center img-fluid" width="300" height="auto">
       </figure>
@@ -59,11 +57,11 @@
         <div class="row">
           @foreach ($Movies as $movie)
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2" style="width: 18rem;">
+            <div class="card p-1 m-2" style="width:350px">
               <a href="/movie/{{ $movie->title }}">
-                <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top pb-1">
+                <img src="{{ url('/public/Image/' .$movie->image) }}" alt="{{ $movie->image }}" class="card-img-top" style="height: 450px;">
               </a>
-              <h3 class="card-title">{{$movie->title}}</h3>
+              <p class="card-title">{{$movie->title}}</p>
               <span style="display: inline;">
                 <img src="{{asset('images/Star.png')}}" alt="Star">{{ $movie->rating }}</span>
             </div>
@@ -83,9 +81,9 @@
         <div class="row">
           @foreach ($moviesDate as $date)
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2" style="width: 18rem;">
+            <div class="card p-1 m-2 mb-5" style="width:350px">
               <a href="/movie/{{ $movie->title }}">
-                <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top">
+                <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top" style="height: 450px;">
               </a>
               <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
                 <p class="card-title">{{$date->title}}</p>
@@ -98,13 +96,8 @@
         </div>
       </div>
     </section>
-
-
-
-
   </main>
   @include('footer')
-  @endsection
 </body>
 
 </html>

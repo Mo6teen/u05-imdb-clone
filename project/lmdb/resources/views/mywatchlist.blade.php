@@ -2,15 +2,13 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Watchlist</title>
 </head>
-@section('content')
 
 <body>
     <main>
-        <div class="container">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -24,43 +22,45 @@
                             @endif
                         </div>
                         <section class="table-responsive">
-                        <div class="card-body text-center">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Movie title</th>
-                                        <th>Genre</th>
-                                        <th>Rating</th>
-                                        <th>Release date</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($watchlists as $watchlist)
-                                    <tr>
-                                        <td>
-                                            <a href="{{ url('movie/' . $watchlist->movie->title)}}">
-                                                {{ $watchlist->movie->title }}
-                                            </a>
-                                        </td>
-                                        <td> {{ $watchlist->movie->genre }}</td>
-                                        <td> {{ $watchlist->movie->rating }}</td>
-                                        <td> {{ $watchlist->movie->release_date }}</td>
-                                        <td>
-                                            <a class="btn btn-danger btn-sm" href="{{ url('mywatchlist/delete/' . $watchlist->id) }}">Delete</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+                            <div class="card-body text-center">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Movie title</th>
+                                            <th>Genre</th>
+                                            <th>Rating</th>
+                                            <th>Release date</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($watchlists as $watchlist)
+                                        <tr>
+                                            <td>
+                                                <a href="{{ url('movie/' . $watchlist->movie->title)}}">
+                                                    {{ $watchlist->movie->title }}
+                                                </a>
+                                            </td>
+                                            <td> {{ $watchlist->movie->genre }}</td>
+                                            <td> {{ $watchlist->movie->rating }}</td>
+                                            <td> {{ $watchlist->movie->release_date }}</td>
+                                            <td>
+                                                <a class="btn btn-danger btn-sm" href="{{ url('mywatchlist/delete/' . $watchlist->id) }}">Delete</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="py-5 my-5"></div>
+            <div class="py-5 my-5"></div>
+            <div class="py-5 my-5"></div>
     </main>
     @include('footer')
-    @endsection
 </body>
 
 </html>
