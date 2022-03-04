@@ -68,6 +68,8 @@
             </div>
         </div>
     </div>
+    <div class="py-5 my-5"></div>
+    <div class="py-5 my-5"></div>
 </main>
 @include('footer')
 @endsection

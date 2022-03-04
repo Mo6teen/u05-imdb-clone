@@ -22,35 +22,37 @@
                         @endif</h2>
                     </div>
 
-            <!-- Create a new personal list -->        
+                    <!-- Create a new personal list -->
                     <form action="{{url('lists-form')}}" method="POST">
                         @csrf
                         <div class="row m-2">
                             <input hidden name="user_id" value="{{ Auth::user()->id }}">
                             <div class="row">
-                            <label for="list_name" class="col-sm-2 col-form-label">Name your list:</label>
-                            <div class="col-sm-10 p-2">
-                            <input type="text" name="list_name" class="form-control">
-                            </div>
+                                <label for="list_name" class="col-sm-2 col-form-label">Name your list:</label>
+                                <div class="col-sm-10 p-2">
+                                    <input type="text" name="list_name" class="form-control">
+                                </div>
                             </div>
                             <div class="col-auto p-2">
-                            <button type="submit" name="submit" class="btn btn-outline-warning btn-sm">Create List</button>
+                                <button type="submit" name="submit" class="btn btn-outline-warning btn-sm">Create List</button>
                             </div>
                         </div>
                     </form>
 
-            <!-- Display personal lists -->
+                    <!-- Display personal lists -->
                     <ul class="list-inline">
-                    @foreach($customLists as $list)
+                        @foreach($customLists as $list)
                         <li class="list-inline-item ms-3 mb-2">
                             <a href="{{ url('customlist/' . $list->list_name)}}" class="link-warning">{{ $list->list_name }}</a>
                         </li>
-                    @endforeach
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <div class="py-5 my-5"></div>
+    <div class="py-5 my-5"></div>
 </main>
 @include('footer')
 @endsection
