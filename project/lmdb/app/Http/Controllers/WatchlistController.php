@@ -10,15 +10,22 @@ use Illuminate\Support\Facades\Auth;
 class WatchlistController extends Controller
 {
     public function store(Request $request)
-    {
-        $input = $request->all();
-        $request->validate([
-            'user_id' => 'required',
-            'movie_id' => 'required'
-        ]);
+    {   
+        $movie = $request->movie_id;
+        $user = Auth::user()->id;
 
-        Watchlist::create($input);
-        return back();
+        if(Watchlist::where('user_id', $user)->where('movie_id', $movie)->first()) {
+            return back()->with('error', 'This movie is already in your watchlist');
+        } else {
+            $input = $request->all();
+            $request->validate([
+                'user_id' => 'required',
+                'movie_id' => 'required'
+            ]);
+
+            Watchlist::create($input);
+            return back()->with('status', 'This movie has been added to your watchlist');
+        }
     }
 
     public function show()

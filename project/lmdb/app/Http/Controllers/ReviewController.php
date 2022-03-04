@@ -16,7 +16,7 @@ class ReviewController extends Controller
             'review'=>'required',
         ]);
         Review::create($input);
-        return redirect()->back()->with('message', 'Your review is awaiting approval. It will be visible once it has been approved.');
+        return back()->with('message', 'Your review is awaiting approval. It will be visible once it has been approved.');
     }
 
     public function show() {
