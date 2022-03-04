@@ -16,7 +16,7 @@
     </div>
 
     <!-- Display thriller movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/thriller">
           <h2>Thriller</h2>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Display drama movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/drama">
           <h2>Drama</h2>
@@ -68,7 +68,7 @@
 
 
     <!-- Display fantasy movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/fantasy">
           <h2>Fantasy</h2>
@@ -93,7 +93,7 @@
     </section>
 
     <!-- Display comedy movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/comedy">
           <h2>Comedy</h2>
@@ -118,7 +118,7 @@
     </section>
 
     <!-- Display action movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/action">
           <h2>Action</h2>
@@ -143,7 +143,7 @@
     </section>
 
     <!-- Display romance movies -->
-    <section class="container">
+    <section class="container my-5">
       <div class="d-flex justify-content-center py-2">
         <a class="btn btn-dark" href="/genre/romance">
           <h2>Romance</h2>
