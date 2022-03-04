@@ -2,13 +2,13 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
+
 @include('meta')
 <title>Homepage</title>
 </head>
 
 <body>
-  @section('content')
+
   <main class="container">
     <section class="d-flex justify-content-center align-items-center flex-column">
       <h1 style="text-align:center;">Welcome to LMDB</h1>
@@ -104,7 +104,6 @@
 
   </main>
   @include('footer')
-  @endsection
 </body>
 
 </html>

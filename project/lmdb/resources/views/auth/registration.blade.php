@@ -2,7 +2,7 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
+<!-- @extends('dashboard') -->
 @include('meta')
 <title>LMDB - Register</title>
 </head>
