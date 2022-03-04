@@ -83,7 +83,7 @@
         <div class="row">
           @foreach ($moviesDate as $date)
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2" style="width:350px">
+            <div class="card p-1 m-2 mb-5" style="width:350px">
               <a href="/movie/{{ $movie->title }}">
                 <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top" style="height: 450px;">
               </a>
