@@ -2,7 +2,9 @@
 
 ## About the project
 
-(Background, purpose, goals...)
+This project started of as a school assignment with the purpose to learn more about how to build a backend with laravel and the main focus throughout the project has been backend functionality.
+The goal of the project has been to create a website modelled after the famous site IMDB, which is a website where a user can find information about most movies. The team wanted to create a cleaner, more accessible version of IMDB and still offer many of it's functionalities, which you can read more about below.
+The name LMDB is short for Lobster Movie Database and lobsters have been the theme for the project. In the future if you find that you are in the mood for a movie about lobsters LMDB will be the website to turn to for recommendations.
 
 ## How to get started
 
@@ -12,11 +14,7 @@ With that in place open your project in your code editor and run **docker-compos
 
 Then click on one of the running shells and run **cd lmdb/**, which is the Laravel project name for this app. Then run **php artisan serve --host 0.0.0.0 --port 8000** to start your local server. Then you can open your browser and type **localhost:8000** to see the application home page.
 
-<<<<<<< HEAD
 To log in to the database you can use Admine. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database.
-=======
-To log in to the database you can use Adminer. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database. 
->>>>>>> 57059463333cc1adb871445d0c3e5c4b67ff5a54
 
 You will also need to change the mail section in env file to this to make the reset password function work:
 
@@ -63,11 +61,29 @@ By navigating to **localhost:8000/registration** or simply click "register" in n
 
 If the user has role 1 (regular user) the user will be redirected to the user dashboard after login. If the user role is 0 the user is an admin and will be redirected to the admin dashboard. If the user tries to type admin dashboard or vice versa in adress field there will be no success, they will stay on their dashboard. Read about what a user based on role can do on their dashboard under "Role based system" section above.
 
+### The single movie view
+
+When a visitor clicks on a movie they are interested in they will be redirected to that movies own view. Here they can read more about the movie, add it to their watchlist, read reviews and if they are signed in they can also leave a review. If a visitor who is not signed in tries to leave a review on a movie they will be redirected to the login view. To avoid offensive reviews a review will need approval from an admin before it is visible to visitors of the page.
+
+### The handle users view
+
+Only an admin is able to access the handle users view. Here they can see all users that are registered to the website in alphabetical order. The admin can choose to either update a user, which will redirect them to a new view to preform the operation on that specific user, or delete a user.
+
+### The edit-user view
+
+When an admin has chosen to update a user they will be redirected to this view. Here they can see all the information about the user and change the users role from regular user to admin or vice versa.
+
 ### Fill with more views
 
 ......
 
 ## User stories
+
+- Website user: Focus on basic read-functions on the website and minimizing redirections.
+- Registered website user: Focus on the users ability to structure information like creating lists and reviews.
+- Admin: Focus on keeping track of users and keeping the website updated.
+- Power user: Focus on accessibility when it comes to creating lists and reviews.
+- Confused user: Focus on overall accessibility and presentation of information on the website.
 
 ## Database structure
 
