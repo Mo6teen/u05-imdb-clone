@@ -73,6 +73,10 @@ Only an admin is able to access the handle users view. Here they can see all use
 
 When an admin has chosen to update a user they will be redirected to this view. Here they can see all the information about the user and change the users role from regular user to admin or vice versa.
 
+### The handlereviews view
+
+An admin can view pending reviews by accessing "Handle reviews" on the dashboard. An admin can choose to either approve or delete the review. If it is approved, it will disappear from the handlereviews view and appear in the reviews section for the movie that the review belongs to.
+
 ### Fill with more views
 
 ......
