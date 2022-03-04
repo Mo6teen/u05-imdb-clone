@@ -2,32 +2,31 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
-  <title>Create movie</title>
+<title>Create movie</title>
 </head>
+
 <body>
-@section('content')
-<main>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
 
-                <div class="card">
-                    <div class="card-header">
-                        <h2 id="handlemovies" style="color: #fd7e14;">Handle movies 
-                            <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a>
-                        </h2>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title text-center">Create Movie</h3>
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 id="handlemovies" style="color: #fd7e14;">Handle movies
+                                <a href="{{ url('admindashboard') }}" class="btn btn-dark float-end">BACK</a>
+                            </h2>
                         </div>
-                        @endif
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Create Movie</h3>
+                            @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                            @endif
 
-                    <!-- Form to add a new movie in the database -->    
+                            <!-- Form to add a new movie in the database -->
                             <form action="{{ url('/save') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="py-2">
@@ -64,12 +63,12 @@
                                     <input type="submit" name="submit" class="btn btn-outline-success" id="submit">
                                 </div>
                             </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-</main>
-@include('footer')
-@endsection
+    </main>
+    @include('footer')
 </body>
+
 </html>

@@ -2,11 +2,9 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Watchlist</title>
 </head>
-@section('content')
 
 <body>
     <main>
@@ -63,7 +61,6 @@
             <div class="py-5 my-5"></div>
     </main>
     @include('footer')
-    @endsection
 </body>
 
 </html>

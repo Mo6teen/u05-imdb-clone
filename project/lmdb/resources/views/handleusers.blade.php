@@ -2,13 +2,11 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Dashboard</title>
 </head>
 
 <body>
-    @section('content')
     <main>
         <div class="container py-5 my-5">
             <div class="row justify-content-center">
@@ -64,7 +62,6 @@
         <div class="py-5 my-5"></div>
     </main>
     @include('footer')
-    @endsection
 </body>
 
 </html>

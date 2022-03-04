@@ -2,13 +2,11 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Genres</title>
 </head>
 
 <body>
-  @section('content')
   <main class="container">
 
     <div class="pb-3 text-center">
@@ -169,7 +167,6 @@
 
   </main>
   @include('footer')
-  @endsection
 </body>
 
 </html>

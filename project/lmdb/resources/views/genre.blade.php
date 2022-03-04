@@ -2,13 +2,11 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - {{ $genre[0]->genre }}</title>
 </head>
 
 <body>
-  @section('content')
   <main>
 
     <section class="container">
@@ -37,7 +35,6 @@
 
   </main>
   @include('footer')
-  @endsection
 </body>
 
 </html>

@@ -2,12 +2,10 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Top Rated Movies</title>
 </head>
 
-@section('content')
 <main>
 
   <section class="container py-5 my-3">
@@ -32,7 +30,6 @@
   </section>
 </main>
 @include('footer')
-@endsection
 </body>
 
 </html>
