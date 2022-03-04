@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <main>
+    <main class="py-5">
         <!-- Form to add a new movie to a list -->
-        <div class="container py-5">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <main class="container text-center">
+    <main class="container text-center my-5">
         <div class="m-2">
             <h1 class="display-2">{{ $movie->title }}</h1>
             <a href="/genre/{{ $movie->genre }}" class="btn btn-dark" id="btn">{{ $movie->genre }}</a>

@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <main class="signup-form">
-        <div class="cotainer">
+    <main class="signup-form py-5 my-5">
+        <div class="cotainer my-5">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card">
@@ -48,8 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="py-5 my-5"></div>
-        <div class="py-5 my-5"></div>
+        <div class="py-5 my-2"></div>
     </main>
     @include('footer')
 </body>

@@ -8,7 +8,7 @@
 
 <body>
     <main>
-        <div class="container">
+        <div class="container my-5">
             <div class="card-header">
                 <h2>Edit user role
                     <a href="{{ url('handleusers') }}" class="btn btn-dark float-end">BACK</a>

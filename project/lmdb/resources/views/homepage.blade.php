@@ -7,9 +7,9 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="container pt-5">
     <section class="d-flex justify-content-center align-items-center flex-column">
-      <h1 style="text-align:center;">Welcome to LMDB</h1>
+      <h2 style="text-align:center;" class="display-1">Welcome to LMDB</h2>
       <figure>
         <img src="{{ asset('images/biglogo.png') }}" alt="LMDB Logo" class="align-center img-fluid" width="300" height="auto">
       </figure>

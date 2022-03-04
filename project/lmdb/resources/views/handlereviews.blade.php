@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <main>
-        <div class="container">
+    <main class="py-5 my-5">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
 
@@ -55,9 +55,9 @@
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-outline-success mb-3">Approve</button>
+                                    <button type="submit" class="btn btn-success mb-3">Approve</button>
                             </form>
-                            <a class="btn btn-outline-danger mb-3" href="{{ url ('handlereviews/delete/' . $review->id) }}">Delete</a>
+                            <a class="btn btn-danger mb-3" href="{{ url ('handlereviews/delete/' . $review->id) }}">Delete</a>
                         </div>
                         @endif
                         @endforeach

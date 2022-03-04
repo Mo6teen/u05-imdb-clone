@@ -9,8 +9,8 @@
 
 
 <body>
-    <main class="login-form">
-        <div class="cotainer">
+    <main class="login-form py-5">
+        <div class="cotainer my-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -64,9 +64,9 @@
             </div>
         </div>
     </main>
-    <div class="py-5 my-5"></div>
-    <div class="py-5 my-5"></div>
-    <div class="py-5 my-5"></div>
+    <div class="py-5 my-2"></div>
+    <div class="py-5 my-2"></div>
+    <div class="py-5 my-2"></div>
     @include('footer')
 </body>
 

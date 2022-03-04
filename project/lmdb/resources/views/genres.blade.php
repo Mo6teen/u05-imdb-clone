@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="container my-5">
 
     <div class="pb-3 text-center">
       <h2 class="display-1">Genres</h2>
@@ -166,6 +166,8 @@
     </section>
 
   </main>
+  <div class="py-5"></div>
+  <div class="py-5"></div>
   @include('footer')
 </body>
 

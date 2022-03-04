@@ -9,7 +9,7 @@
 <body>
   <main>
 
-    <section class="container">
+    <section class="container my-5">
       <div class="pb-3 text-center">
         <h2 class="display-1"> {{ $genre[0]->genre }}</h2>
       </div>
