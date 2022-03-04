@@ -4,7 +4,7 @@
 @include('header')
 @extends('dashboard')
 @include('meta')
-  <title>LMDB - Log in</title>
+<title>LMDB - Log in</title>
 </head>
 
 @section('content')
@@ -37,14 +37,14 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                              <div class="col-md-6 offset-md-4">
-                                  <div class="checkbox">
-                                      <label>
-                                          <a href="{{ route('forget.password.get') }}">Forgot password? Click here</a>
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <a href="{{ route('forget.password.get') }}">Forgot password? Click here</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">Sign in</button>
                             </div>
@@ -54,6 +54,8 @@
             </div>
         </div>
     </div>
+    <div class="py-5 my-5"></div>
+    <div class="py-5 my-5"></div>
 </main>
 @include('footer')
 @endsection
