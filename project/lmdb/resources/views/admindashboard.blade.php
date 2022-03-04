@@ -2,15 +2,14 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Dashboard</title>
 </head>
 
 <body>
-    @section('content')
-    <main>
-        <div class="container py-5">
+
+    <main class="py-5">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -46,10 +45,8 @@
                 </div>
             </div>
         </div>
-        </div>
     </main>
     @include('footer')
-    @endsection
 </body>
 
 </html>

@@ -2,14 +2,12 @@
 
 <html lang="en">
 @include('header')
-@extends('dashboard')
 @include('meta')
 <title>LMDB - Search</title>
 </head>
 
-@section('content')
 <main>
-  <section class="container py-5">
+  <section class="container py-5 my-5">
     <div class="row justify-content-center">
       <div class="card-header d-flex row justify-content-center py-3">
         <h2>Search Movie
@@ -22,7 +20,7 @@
               <input class="form-control" type="text" name="title" placeholder=" Search!">
             </div>
             <div class="form-group col">
-              <input class="btn btn-outline-success" type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box" width="80" height="38">
+              <input class="btn btn-success" type="image" class="search-button" src="{{ asset('images/search.png') }}" alt="Magnifying glass inside search box" width="80" height="38">
             </div>
           </div>
         </form>
@@ -45,5 +43,4 @@
 </main>
 
 @include('footer')
-@endsection
 </body>

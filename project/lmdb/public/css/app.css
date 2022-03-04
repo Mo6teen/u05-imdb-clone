@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 .footer {
@@ -15,6 +16,9 @@
     background-color: #feba6b;
     height: 150px;
     position: relative;
+    margin-top: -200px;
     bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
 }
