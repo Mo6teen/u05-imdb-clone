@@ -93,6 +93,33 @@ An admin can view pending reviews by accessing "Handle reviews" on the dashboard
 
 ## Database structure
 
+In this chapter we will explain which tables we are using and how they are connected. The tables we are using is as followed:
+- Users 
+- Password_resets
+- Watchlist
+- Customlists
+- Listentries
+- Movies
+- Reviews
+
+Even if you are an Admin or an user, you will have the same connections.
+
+The connections are:
+```
+                    User                               Movies
+                     |                                    |
+                     |                                    |
+Password Reset-------|                                    |
+                     |---- Reviews -----------------------|
+                     |                                    |
+                     |---- Watchlist ---------------------|
+                     |                                    |
+                     |---- Customlists --|                |
+                                         |                |
+                                         |--- Listentry --|
+```
+![alt text](https://i.imgur.com/PT7Aa8X.png)
+
 ## Design patterns
 
 ## Contributors
