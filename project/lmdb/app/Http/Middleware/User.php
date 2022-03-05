@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+
 use Illuminate\Support\Facades\Auth;
 
 use Closure;
@@ -30,6 +31,5 @@ class User
         if (Auth::user()->role == 0) {
             return redirect()->route('admin');
         }
-
     }
 }

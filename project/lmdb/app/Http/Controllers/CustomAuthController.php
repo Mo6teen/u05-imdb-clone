@@ -31,8 +31,7 @@ class CustomAuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('userdashboard')
                 ->withSuccess('Signed in');
-        }
-        elseif (Auth::attempt($credentials)) {
+        } elseif (Auth::attempt($credentials)) {
             return redirect()->intended('admindashboard')
                 ->withSuccess('Signed in');
         }
@@ -62,7 +61,7 @@ class CustomAuthController extends Controller
     }
 
     // create user 
-    
+
     public function create(array $data)
     {
         return User::create([

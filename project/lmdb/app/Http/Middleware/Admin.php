@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -18,7 +19,7 @@ class Admin
      */
 
     // check user role and redirect to correct dashboard
-    
+
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
@@ -32,6 +33,5 @@ class Admin
         if (Auth::user()->role == 1) {
             return redirect()->route('user');
         }
-
     }
 }
