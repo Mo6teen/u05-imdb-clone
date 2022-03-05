@@ -4,7 +4,7 @@
 
 This project started of as a school assignment with the purpose to learn more about how to build a backend with laravel and the main focus throughout the project has been backend functionality.
 
-The goal of the project has been to create a website modelled after the famous site IMDB, which is a website where a user can find information about most movies. The team wanted to create a cleaner, more accessible version of IMDB and still offer many of it's functionalities, which you can read more about below.
+The goal of the project has been to create a website modelled after the famous site IMDB, which is a website where a user can find information about most movies. The team wanted to create a cleaner, more accessible version of IMDB and still offer many of its functionalities, which you can read more about below.
 
 The name LMDB is short for Lobster Movie Database and lobsters have been the theme for the project. In the future if you find that you are in the mood for a movie about lobsters LMDB will be the website to turn to for recommendations. 🦞
 
@@ -16,7 +16,7 @@ With that in place open your project in your code editor and run **docker-compos
 
 Then click on one of the running shells and run **cd lmdb/**, which is the Laravel project name for this app. Then run **php artisan serve --host 0.0.0.0 --port 8000** to start your local server. Then you can open your browser and type **localhost:8000** to see the application home page.
 
-To log in to the database you can use Admine. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database.
+To log in to the database you can use Adminer. You need to log in with the login details in the env file (DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD). When you are logged in you need to create a database named for example LMDB, make sure you have the same database name in env file. Then go back to your code editor and run **php artisan migrate** to get all the application tables into your database.
 
 You will also need to change the mail section in env file to this to make the reset password function work:
 
