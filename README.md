@@ -51,7 +51,7 @@ The third role is admin (whos dashboard is admindashboard), who can do everythin
 - Handle reviews (approve and delete).
 - Make CRUD operations on users (change role and delete user).
 
-To create your first admin register a user at **localhost:8000/registration**, a user by default gets role 1 at registration. Then go to adminer and change the user role to 0 in users table.
+To create your first admin register a user at **localhost:8000/registration**, a user by default gets role 1 at registration. Then go to Adminer and change the user role to 0 in users table.
 
 ## The views
 
