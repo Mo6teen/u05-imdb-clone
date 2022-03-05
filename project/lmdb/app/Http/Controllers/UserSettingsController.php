@@ -23,6 +23,8 @@ public function editEmail() {
     else return back();
 }
 
+// let user change email with confirmation
+
 public function updateEmail(Request $request) {
     $request->validate([
 		'email' => ['required', 'email', 'unique:users'],
@@ -44,6 +46,8 @@ public function editPassword() {
     }
     else return back();
 }
+
+// let user change password, validate the old and confirm the new password 
 
 public function updatePassword(Request $request) {
     $user = Auth::user();

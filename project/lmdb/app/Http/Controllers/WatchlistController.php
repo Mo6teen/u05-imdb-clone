@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class WatchlistController extends Controller
 {
+    // Add movie to watchlist if it does not already exist
+
     public function store(Request $request)
     {   
         $movie = $request->movie_id;
@@ -39,6 +41,8 @@ class WatchlistController extends Controller
         }
         else return back();
     }
+    
+    // delete a movie from watchlist
     
     public function delete($id) {
         $data = Watchlist::find($id);

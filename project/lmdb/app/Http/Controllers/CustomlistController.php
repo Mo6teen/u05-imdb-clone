@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Customlist;
 use App\Models\Listentry;
 use App\Models\Movie;
-use App\Models\Watchlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

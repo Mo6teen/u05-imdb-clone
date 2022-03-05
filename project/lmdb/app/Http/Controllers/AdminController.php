@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    // If admin middleware approves 
+    
     public function index()
     {
         return view('admindashboard');
     }
+    // Get a list with all registered users
 
     public function show() {
         $users = User::all()->sortBy('name');
@@ -28,6 +31,8 @@ class AdminController extends Controller
         }
         else return back();
     }
+
+    // get user details and update role
 
     public function update(Request $request, $id) {
         $user = User::find($id);
@@ -57,6 +62,8 @@ class AdminController extends Controller
         else return back();
     }
 
+    // approve a users movie review
+
     public function approveReview($id) {
         $review = Review::find($id);
         $review->approved = 1;
@@ -66,6 +73,8 @@ class AdminController extends Controller
         } 
         else return back();
     }
+
+    // Delete not accepted review
 
     public function deleteReview($id) {
         $data = Review::find($id);

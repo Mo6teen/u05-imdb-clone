@@ -93,6 +93,4 @@ An admin can view pending reviews by accessing "Handle reviews" on the dashboard
 
 ## Database structure
 
-## Design patterns
-
 ## Contributors
