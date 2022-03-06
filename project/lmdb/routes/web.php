@@ -33,6 +33,7 @@ Route::get('/', [MovieController::class, 'index']);
 Route::get('/movie/{title}', [MovieController::class, 'showMovie']);
 Route::put('/edit-movie/{id}', [MovieController::class, 'update']);
 Route::get('/edit-movie/{id}', [MovieController::class, 'showEdit']);
+Route::get('/delete/movie/{id}', [MovieController::class, 'deleteMovie']);
 
 // Watchlist test
 Route::get('watchlist', [WatchlistController::class, 'show']);

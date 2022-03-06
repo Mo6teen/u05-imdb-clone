@@ -85,7 +85,6 @@ class MovieController extends Controller
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
 
-<<<<<<< HEAD
     // Controllers to show and edit a movie
     public function showEdit($id)
     {
@@ -106,26 +105,15 @@ class MovieController extends Controller
         $movie->update();
         if (Auth::user()->role == 0) {
             return back()->with('status', 'The movie has been updated!');
-        } else return back();
-=======
-
-
-
-
-
-
-
-
-
-
-
+        } else
+            return back();
+    }
 
     public function deleteMovie($id)
     {
         $data = Movie::find($id);
         $data->delete();
 
-        return back();
->>>>>>> origin/main
+        return redirect('/')->with('status', 'Movie has been deleted');
     }
 }

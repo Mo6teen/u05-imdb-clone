@@ -8,6 +8,11 @@
 
 <body>
   <main class="container pt-5">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+      {{ session('status') }}
+    </div>
+    @endif
     <section class="d-flex justify-content-center align-items-center flex-column">
       <h2 style="text-align:center;" class="display-1">Welcome to LMDB</h2>
       <figure>

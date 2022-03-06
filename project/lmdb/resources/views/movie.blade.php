@@ -35,21 +35,22 @@
             @auth
             @if(Auth::user()->role == 0)
             <div>
-                <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-movie/'.$movie->id) }}">Update description</a>
+                <a class="btn btn-warning btn-sm" href="{{ url('edit-movie/'.$movie->id) }}">Update Movie</a>
+                <a class="btn btn-danger btn-sm" href="{{ url('/delete/movie/' . $movie->id) }}">Delete Movie</a>
             </div>
             @endif
             @endauth
-            
+
             @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-                @endif
-                @if (session('error'))
-                <div class="alert alert-danger" role="alert">
-                    {{ session('error') }}
-                </div>
-                @endif
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+            @endif
+            @if (session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+            @endif
             </div>
             <div class="row align-items-center">
                 <h2 class="display-6 mb-2">Description</h2>
