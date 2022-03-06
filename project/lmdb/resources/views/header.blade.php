@@ -12,9 +12,6 @@
                         <a class="link-dark text-decoration-none" href="top-movies">Top Movies</a>
                     </li>
                     <li class="nav-item px-3 py-1">
-                        <a class="link-dark text-decoration-none" href="/coming-soon">Coming Soon</a>
-                    </li>
-                    <li class="nav-item px-3 py-1">
                         <a class="link-dark text-decoration-none" href="genres">Browse All Genres</a>
                     </li>
                     @guest
