@@ -83,4 +83,24 @@ class MovieController extends Controller
 
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function deleteMovie($id)
+    {
+        $data = Movie::find($id);
+        $data->delete();
+
+        return back();
+    }
 }
