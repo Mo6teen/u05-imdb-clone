@@ -14,6 +14,11 @@
                     <a href="{{ url('handleusers') }}" class="btn btn-dark float-end">BACK</a>
                 </h2>
             </div>
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+            @endif
 
             <!-- Form to edit the users role to or from admin -->
             <div class="card-body">

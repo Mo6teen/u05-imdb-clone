@@ -32,6 +32,14 @@
                     </div>
                 </form>
             </div>
+            @auth
+            @if(Auth::user()->role == 0)
+            <div>
+                <a class="btn btn-outline-warning btn-sm" href="{{ url('edit-movie/'.$movie->id) }}">Update description</a>
+            </div>
+            @endif
+            @endauth
+            
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
