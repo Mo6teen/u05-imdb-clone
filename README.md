@@ -93,7 +93,6 @@ An admin can view pending reviews by accessing "Handle reviews" on the dashboard
 
 ## Database structure
 
-<<<<<<< HEAD
 In this chapter we will explain which tables we are using and how they are connected. The tables we are using is as followed:
 - Users 
 - Password_resets
@@ -131,6 +130,4 @@ The Listentry has the information of an movie_id and a customlists_id. customlis
 
 ## Design patterns
 
-=======
->>>>>>> main
 ## Contributors
