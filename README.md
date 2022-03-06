@@ -102,9 +102,12 @@ In this chapter we will explain which tables we are using and how they are conne
 - Movies
 - Reviews
 
-Even if you are an Admin or an user, you will have the same connections.
+Here is an img displaying the table name and the columns
 
-The connections are:
+![alt text](https://i.imgur.com/p5bMREA.png)
+
+The User and the Movie tables are the main tables in our database. Here is an img off our tables connecting.
+
 ```
                     User                               Movies
                      |                                    |
@@ -119,6 +122,11 @@ Password Reset-------|                                    |
                                          |--- Listentry --|
 ```
 ![alt text](https://i.imgur.com/PT7Aa8X.png)
+
+From Users we have connections to Reviews and Watchlist which are also connected to the movie table. Our ideal was to have lists which are connected with an user_id and a movie_id which we then could display in the frontend.
+
+The Customlists is connected to Listenries. We can see that Listentry is connected to Movies table and Customlists is connected to User table.
+The Listentry has the information of an movie_id and a customlists_id. customlists_id is connected to the correct Customlists id and having been connected to the user table with User_id column we can now see for example that Customlists id 1 has User_id 1 and has movie_id 1 added to that list.
 
 ## Design patterns
 
