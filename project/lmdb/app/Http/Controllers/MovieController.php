@@ -7,26 +7,12 @@ use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-
-    //Get all movies to show in /movies
-    public function allMovies()
-    {
-        $movies = Movie::get();
-        return view('movies', ['movies' => $movies]);
-    }
-
+    // Function that will return 3 movies based on rating.
     public function index()
     {
         $Movies = Movie::orderby('rating', 'DESC')->take(3)->get();
-        $moviesDate = Movie::orderby('release_date', 'ASC')->take(3)->get();
 
-        // If statement that only shows movies coming in the future and 
-        // not staying in coming soon if date has passed. 
-
-        // if ($moviesDate->release_date) {
-        // }
-
-        return view('homepage', ['moviesDate' => $moviesDate, 'Movies' => $Movies]);
+        return view('homepage', ['Movies' => $Movies]);
     }
 
     //Get all movies to show in genrepage.
@@ -53,7 +39,6 @@ class MovieController extends Controller
     }
 
     // function for search movie
-
     public function search(Request $request)
     {
         $request->validate([
@@ -65,7 +50,7 @@ class MovieController extends Controller
 
         return view('search', compact('movies'));
     }
-
+    //function will let admin create a movie
     public function createMovie(Request $request)
     {
         $request->validate([

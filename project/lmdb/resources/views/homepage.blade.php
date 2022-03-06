@@ -70,32 +70,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Coming soon section -->
-    <section class="container mt-5">
-      <div class="d-flex justify-content-between">
-        <h2>Coming Soon</h2>
-        <a href="#" class="link-dark"><span>see more...</span></a>
-      </div>
-      <div class="d-flex justify-content-evenly">
-        <div class="row">
-          @foreach ($moviesDate as $date)
-          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <div class="card p-1 m-2 mb-5" style="width:350px">
-              <a href="/movie/{{ $movie->title }}">
-                <img src="{{ url('/public/Image/' .$date->image) }}" alt="{{ $date->image }}" class="card-img-top" style="height: 450px;">
-              </a>
-              <div class="card-body" style="border: solid 0px transparent;  z-index: 0;">
-                <p class="card-title">{{$date->title}}</p>
-                <p class="card-title">Release Date:</p>
-                <p class="card-title">{{$date->release_date}}</p>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
-      </div>
-    </section>
   </main>
   @include('footer')
 </body>
