@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -97,5 +98,28 @@ class MovieController extends Controller
         $movie->save();
 
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
+    }
+
+    // Controllers to show and edit a movie
+    public function showEdit($id)
+    {
+        if (Movie::where('id', $id)->exists()) {
+            $movie = Movie::where('id', $id)->first();
+
+            return view('edit-movie', ['movie' => $movie]);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $movie = Movie::find($id);
+        $movie->title = $request->input('title');
+        $movie->description = $request->input('description');
+        $movie->genre = $request->input('genre');
+        $movie->rating = $request->input('rating');
+        $movie->update();
+        if (Auth::user()->role == 0) {
+            return back()->with('status', 'The movie has been updated!');
+        } else return back();
     }
 }
