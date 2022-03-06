@@ -89,7 +89,7 @@ An admin can view pending reviews by accessing "Handle reviews" on the dashboard
 
 ## Database structure
 
-In this chapter we will explain which tables we are using and how they are connected. The tables we are using are as following:
+In this chapter we will explain which tables we are using and how they are connected. The tables we are using are as follows:
 
 - users 
 - password_resets
@@ -123,6 +123,6 @@ Password Reset-------|                                    |
 From users we have connections to reviews and watchlists which are also connected to the movies table. Our ideal was to have lists which are connected with an user_id and a movie_id which we then could display in the frontend.
 
 The customlists is connected to listenries. We can see that listentries is connected to movies table and customlists is connected to users table.
-The listentry has the information of an movie_id and a customlists_id. customlists_id is connected to the correct customlists id and having been connected to the user table with user_id column we can now see for example that customlists id 1 has user_id 1 and has movie_id 1 added to that list.
+The listentries table has the information of an movie_id and a customlists_id. customlists_id is connected to the correct customlists id and having been connected to the users table with user_id column we can now see for example that customlists id 1 has user_id 1 and has movie_id 1 added to that list.
 
 ## Contributors
