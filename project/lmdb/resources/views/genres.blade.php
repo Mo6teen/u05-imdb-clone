@@ -29,7 +29,7 @@
                 <img src="{{ url('/public/Image/' .$thriller->image) }}" alt="{{ $thriller->image }}" class="card-img-top pb-1" style="height: 450px;">
               </a>
               <!-- <div class="card-body"> -->
-              <p class="card-title">{{$thriller->title}}</p>
+              <h3 class="card-title">{{$thriller->title}}</h3>
               <span style="display: inline;"><img src="{{asset('images/Star.png')}}" alt="Star">{{ $thriller->rating }}</span>
               <!-- </div> -->
             </div>
