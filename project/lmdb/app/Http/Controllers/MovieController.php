@@ -8,26 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
-
-    //Get all movies to show in /movies
-    public function allMovies()
-    {
-        $movies = Movie::get();
-        return view('movies', ['movies' => $movies]);
-    }
-
+    // Function that will return 3 movies based on rating.
     public function index()
     {
         $Movies = Movie::orderby('rating', 'DESC')->take(3)->get();
-        $moviesDate = Movie::orderby('release_date', 'ASC')->take(3)->get();
 
-        // If statement that only shows movies coming in the future and 
-        // not staying in coming soon if date has passed. 
-
-        // if ($moviesDate->release_date) {
-        // }
-
-        return view('homepage', ['moviesDate' => $moviesDate, 'Movies' => $Movies]);
+        return view('homepage', ['Movies' => $Movies]);
     }
 
     //Get all movies to show in genrepage.
@@ -54,7 +40,6 @@ class MovieController extends Controller
     }
 
     // function for search movie
-
     public function search(Request $request)
     {
         $request->validate([
@@ -66,7 +51,7 @@ class MovieController extends Controller
 
         return view('search', compact('movies'));
     }
-
+    //function will let admin create a movie
     public function createMovie(Request $request)
     {
         $request->validate([
@@ -100,6 +85,7 @@ class MovieController extends Controller
         return redirect('createmovie')->with('status', 'Movie Has Been Created');
     }
 
+<<<<<<< HEAD
     // Controllers to show and edit a movie
     public function showEdit($id)
     {
@@ -121,5 +107,25 @@ class MovieController extends Controller
         if (Auth::user()->role == 0) {
             return back()->with('status', 'The movie has been updated!');
         } else return back();
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+    public function deleteMovie($id)
+    {
+        $data = Movie::find($id);
+        $data->delete();
+
+        return back();
+>>>>>>> origin/main
     }
 }
