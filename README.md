@@ -128,14 +128,8 @@ The listentries table has the information of an movie_id and a customlists_id. c
 
 ## Contributors
 
-Dimosthenis Emmanouil, github: Albatraoz12
-Louise Hedman, github: louisehedman
-Frida Nicander, github: frinica
-André Mourad, github: Mo6teen
+- Dimosthenis Emmanouil, github: [Albatraoz12](https://github.com/Albatraoz12/)
+- Louise Hedman, github: [louisehedman](https://github.com/louisehedman/)
+- Frida Nicander, github: [frinica](https://github.com/frinica/)
+- André Mourad, github: [Mo6teen](https://github.com/Mo6teen/)
 
-<a href = "https://github.com/Mo6teen/u05-imdb-clone/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = Albatraoz12/u05-imdb-clone"/>
-</a>
-<a href = "https://github.com/Mo6teen/u05-imdb-clone/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
-</a>
