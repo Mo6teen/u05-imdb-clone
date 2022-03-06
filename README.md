@@ -132,3 +132,7 @@ Dimosthenis Emmanouil, github: Albatraoz12
 Louise Hedman, github: louisehedman
 Frida Nicander, github: frinica
 André Mourad, github: Mo6teen
+
+<a href = "https://github.com/Mo6teen/u05-imdb-clone/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+</a>
