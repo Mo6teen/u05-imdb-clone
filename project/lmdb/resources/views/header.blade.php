@@ -9,10 +9,10 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav text-end align-items-center">
                     <li class="nav-item px-3 py-1">
-                        <a class="link-dark text-decoration-none" href="top-movies">Top Movies</a>
+                        <a class="link-dark text-decoration-none" href="/top-movies">Top Movies</a>
                     </li>
                     <li class="nav-item px-3 py-1">
-                        <a class="link-dark text-decoration-none" href="genres">Browse All Genres</a>
+                        <a class="link-dark text-decoration-none" href="/genres">Browse All Genres</a>
                     </li>
                     @guest
                     <li class="nav-item px-3 py-1">
