@@ -134,7 +134,7 @@ Frida Nicander, github: frinica
 André Mourad, github: Mo6teen
 
 <a href = "https://github.com/Mo6teen/u05-imdb-clone/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_Albatraoz12/u05-imdb-clone"/>
+  <img src = "https://contrib.rocks/image?repo = Albatraoz12/u05-imdb-clone"/>
 </a>
 <a href = "https://github.com/Mo6teen/u05-imdb-clone/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
