@@ -93,4 +93,42 @@ An admin can view pending reviews by accessing "Handle reviews" on the dashboard
 
 ## Database structure
 
+In this chapter we will explain which tables we are using and how they are connected. The tables we are using are as following:
+
+- users 
+- password_resets
+- watchlists
+- customlists
+- listentries
+- movies
+- reviews
+
+Here is an img displaying the table name and the columns
+
+![alt text](https://i.imgur.com/XnGMisF.png)
+
+The User and the Movie tables are the main tables in our database. Here is an img off our tables connecting.
+
+```
+                    User                               Movies
+                     |                                    |
+                     |                                    |
+Password Reset-------|                                    |
+                     |---- Reviews -----------------------|
+                     |                                    |
+                     |---- Watchlist ---------------------|
+                     |                                    |
+                     |---- Customlists --|                |
+                                         |                |
+                                         |--- Listentry --|
+```
+![alt text](https://i.imgur.com/PT7Aa8X.png)
+
+From users we have connections to reviews and watchlists which are also connected to the movie table. Our ideal was to have lists which are connected with an user_id and a movie_id which we then could display in the frontend.
+
+The customlists is connected to listenries. We can see that listentry is connected to movies table and customlists is connected to users table.
+The listentry has the information of an movie_id and a customlists_id. customlists_id is connected to the correct customlists id and having been connected to the user table with user_id column we can now see for example that customlists id 1 has user_id 1 and has movie_id 1 added to that list.
+
+## Design patterns
+
 ## Contributors
