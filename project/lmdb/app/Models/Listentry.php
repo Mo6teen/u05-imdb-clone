@@ -11,9 +11,9 @@ class Listentry extends Model
 
     protected $table = 'listentries';
     protected $fillable = [
-           
-        'customlist_id',    
-        'movie_id'        
+
+        'customlist_id',
+        'movie_id'
     ];
 
     public function customList()
@@ -22,7 +22,7 @@ class Listentry extends Model
     }
 
     public function movie()
-    { 
+    {
         return $this->belongsTo(Movie::class);
     }
 }

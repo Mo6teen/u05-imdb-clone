@@ -32,13 +32,13 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        switch(Auth::user()->role){
+        switch (Auth::user()->role) {
             case 0:
-            $this->redirectTo = '/admindashboard';
-            return $this->redirectTo;
+                $this->redirectTo = '/admindashboard';
+                return $this->redirectTo;
                 break;
             case 1:
-                    $this->redirectTo = '/userdashboard';
+                $this->redirectTo = '/userdashboard';
                 return $this->redirectTo;
                 break;
             default:
@@ -46,7 +46,7 @@ class LoginController extends Controller
                 return $this->redirectTo;
         }
     }
-         
+
 
     /**
      * Create a new controller instance.

@@ -15,8 +15,6 @@ class Movie extends Model
         'genre',
         'rating',
         'release_date'
-        /* 'image_name',
-        'image_path', */
     ];
 
     public function reviews()
@@ -32,5 +30,5 @@ class Movie extends Model
     public function listentry()
     {
         return $this->hasMany(Listentry::class);
-    } 
+    }
 }

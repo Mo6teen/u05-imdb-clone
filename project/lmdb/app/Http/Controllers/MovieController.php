@@ -27,7 +27,6 @@ class MovieController extends Controller
         // }
 
         return view('homepage', ['moviesDate' => $moviesDate, 'Movies' => $Movies]);
-   
     }
 
     //Get all movies to show in genrepage.

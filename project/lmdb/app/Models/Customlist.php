@@ -16,15 +16,13 @@ class Customlist extends Model
         'list_name'
     ];
 
-    public function user() 
+    public function user()
     {
         return $this->belongsTo(User::class);
-
     }
-    
+
     public function listentry()
     {
         return $this->hasMany(Listentry::class);
-    } 
+    }
 }
-

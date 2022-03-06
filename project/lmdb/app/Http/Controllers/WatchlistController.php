@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class WatchlistController extends Controller
 {
+    // Add movie to watchlist if it does not already exist
+
     public function store(Request $request)
-    {   
+    {
         $movie = $request->movie_id;
         $user = Auth::user()->id;
 
-        if(Watchlist::where('user_id', $user)->where('movie_id', $movie)->first()) {
+        if (Watchlist::where('user_id', $user)->where('movie_id', $movie)->first()) {
             return back()->with('error', 'This movie is already in your watchlist');
         } else {
             $input = $request->all();
@@ -32,18 +34,20 @@ class WatchlistController extends Controller
     {
         $id = Auth::user()->id;
         $watchlists = Watchlist::where('user_id', $id)->get();
-        if (Auth::user()){
-        return view('mywatchlist', [
-            'watchlists' => $watchlists
-        ]);
-        }
-        else return back();
+        if (Auth::user()) {
+            return view('mywatchlist', [
+                'watchlists' => $watchlists
+            ]);
+        } else return back();
     }
-    
-    public function delete($id) {
+
+    // delete a movie from watchlist
+
+    public function delete($id)
+    {
         $data = Watchlist::find($id);
         $data->delete();
 
-        return back();    
+        return back();
     }
 }

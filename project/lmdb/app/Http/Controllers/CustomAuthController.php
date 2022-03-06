@@ -17,6 +17,9 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
+
+    // Validate login details and redirect
+
     public function customLogin(Request $request)
     {
         $request->validate([
@@ -28,8 +31,7 @@ class CustomAuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('userdashboard')
                 ->withSuccess('Signed in');
-        }
-        elseif (Auth::attempt($credentials)) {
+        } elseif (Auth::attempt($credentials)) {
             return redirect()->intended('admindashboard')
                 ->withSuccess('Signed in');
         }
@@ -41,6 +43,8 @@ class CustomAuthController extends Controller
     {
         return view('auth.registration');
     }
+
+    // register new user
 
     public function customRegistration(Request $request)
     {
@@ -55,6 +59,8 @@ class CustomAuthController extends Controller
 
         return redirect("userdashboard")->withSuccess('You have signed-in');
     }
+
+    // create user 
 
     public function create(array $data)
     {

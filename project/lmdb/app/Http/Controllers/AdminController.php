@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Review;
@@ -8,71 +9,81 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    // If admin middleware approves 
+
     public function index()
     {
         return view('admindashboard');
     }
+    // Get a list with all registered users
 
-    public function show() {
+    public function show()
+    {
         $users = User::all()->sortBy('name');
-        if (auth::user()->role == 0){
-        return view('handleusers', ['users' => $users]);
-        }
-        else return back();
+        if (auth::user()->role == 0) {
+            return view('handleusers', ['users' => $users]);
+        } else return back();
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $user = User::find($id);
-        if (auth::user()->role == 0){
-        return view('edit-user', compact('user'));
-        }
-        else return back();
+        if (auth::user()->role == 0) {
+            return view('edit-user', compact('user'));
+        } else return back();
     }
 
-    public function update(Request $request, $id) {
+    // get user details and update role
+
+    public function update(Request $request, $id)
+    {
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->created_at = $request->input('created_at');
         $user->role = $request->input('role');
         $user->update();
-        if (auth::user()->role == 0){
-        return redirect('handleusers')->with('status', 'The user has been updated!');
-        } 
-        else return back();
+        if (auth::user()->role == 0) {
+            return redirect('handleusers')->with('status', 'The user has been updated!');
+        } else return back();
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $data = User::find($id);
         $data->delete();
 
-        return back();    
+        return back();
     }
 
-    public function indexReview() {
+    public function indexReview()
+    {
         $reviews = Review::get();
-        if (auth::user()->role == 0){
-        return view('handlereviews', ['reviews' => $reviews]);
-        } 
-        else return back();
+        if (auth::user()->role == 0) {
+            return view('handlereviews', ['reviews' => $reviews]);
+        } else return back();
     }
 
-    public function approveReview($id) {
+    // approve a users movie review
+
+    public function approveReview($id)
+    {
         $review = Review::find($id);
         $review->approved = 1;
         $review->update();
-        if (auth::user()->role == 0){
-        return redirect('handlereviews')->with('status', 'The review has been approved!');
-        } 
-        else return back();
+        if (auth::user()->role == 0) {
+            return redirect('handlereviews')->with('status', 'The review has been approved!');
+        } else return back();
     }
 
-    public function deleteReview($id) {
+    // Delete not accepted review
+
+    public function deleteReview($id)
+    {
         $data = Review::find($id);
         $data->delete();
-        if (auth::user()->role == 0){
-        return redirect('handlereviews');    
-        }
-        else return back();
+        if (auth::user()->role == 0) {
+            return redirect('handlereviews');
+        } else return back();
     }
 }

@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    /* public function showGenre($genre) 
-    {
-        return $genre;
 
-    } */
     public function getMovieGenre()
     {
         $genreThriller = Movie::select()->where('genre', 'thriller')->take(3)->orderby('id', 'DESC')->get();
